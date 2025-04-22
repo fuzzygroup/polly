@@ -1,0 +1,12 @@
+<% content_for :title, "Editing vetting transcript" %>
+
+<h1>Editing vetting transcript</h1>
+
+<%= render "form", vetting_transcript: @vetting_transcript %>
+
+<br>
+
+<div>
+  <%= link_to "Show this vetting transcript", @vetting_transcript %> |
+  <%= link_to "Back to vetting transcripts", vetting_transcripts_path %>
+</div>

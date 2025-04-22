@@ -1,0 +1,2 @@
+module VettingQuestionsHelper
+end

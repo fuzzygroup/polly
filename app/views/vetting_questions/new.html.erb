@@ -1,0 +1,11 @@
+<% content_for :title, "New vetting question" %>
+
+<h1>New vetting question</h1>
+
+<%= render "form", vetting_question: @vetting_question %>
+
+<br>
+
+<div>
+  <%= link_to "Back to vetting questions", vetting_questions_path %>
+</div>

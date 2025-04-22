@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @vetting_transcript %>
+
+<div>
+  <%= link_to "Edit this vetting transcript", edit_vetting_transcript_path(@vetting_transcript) %> |
+  <%= link_to "Back to vetting transcripts", vetting_transcripts_path %>
+
+  <%= button_to "Destroy this vetting transcript", @vetting_transcript, method: :delete %>
+</div>

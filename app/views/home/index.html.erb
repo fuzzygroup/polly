@@ -12,3 +12,11 @@
 <% if signed_in? && current_user.admin? %>
   <%= render 'home/dashboard' %>
 <% end %>
+
+<% if signed_in?%>
+  <ul>
+    <li><%= link_to("Organizations", organizations_controller_path)%>
+    <li><%= link_to("Users", organizations_controller_path)%>
+    <li><%= link_to("Vetting Questions", organizations_controller_path)%>
+    <li><%= link_to("Vetting Transcripts", organizations_controller_path)%>
+<% end %>

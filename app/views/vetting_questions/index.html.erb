@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Vetting questions" %>
+
+<h1>Vetting questions</h1>
+
+<div id="vetting_questions">
+  <% @vetting_questions.each do |vetting_question| %>
+    <%= render vetting_question %>
+    <p>
+      <%= link_to "Show this vetting question", vetting_question %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New vetting question", new_vetting_question_path %>

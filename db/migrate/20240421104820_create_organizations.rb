@@ -6,8 +6,11 @@ class CreateOrganizations < ActiveRecord::Migration[8.0]
       t.string :state
       t.string :location
       t.string :organization_type
+      t.string :identifier, null: false
 
       t.timestamps
     end
+    add_index :organizations, :identifier, unique: true
+
   end
 end

@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_28_044933) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_22_083405) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.bigint "organization_id", null: false
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_groups_on_organization_id"
+  end
 
   create_table "organizations", force: :cascade do |t|
     t.string "name"
@@ -20,8 +29,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_28_044933) do
     t.string "state"
     t.string "location"
     t.string "organization_type"
+    t.string "identifier", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["identifier"], name: "index_organizations_on_identifier", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,5 +71,42 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_28_044933) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  create_table "vetting_questions", force: :cascade do |t|
+    t.text "body"
+    t.bigint "organization_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "group_id"
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_vetting_questions_on_group_id"
+    t.index ["organization_id"], name: "index_vetting_questions_on_organization_id"
+    t.index ["user_id"], name: "index_vetting_questions_on_user_id"
+  end
+
+  create_table "vetting_transcripts", force: :cascade do |t|
+    t.string "name"
+    t.bigint "organization_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "group_id", null: false
+    t.string "chat_type"
+    t.string "chat_user"
+    t.boolean "active"
+    t.text "body"
+    t.jsonb "extracted_objects"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_vetting_transcripts_on_group_id"
+    t.index ["organization_id"], name: "index_vetting_transcripts_on_organization_id"
+    t.index ["user_id"], name: "index_vetting_transcripts_on_user_id"
+  end
+
+  add_foreign_key "groups", "organizations"
   add_foreign_key "users", "organizations"
+  add_foreign_key "vetting_questions", "groups"
+  add_foreign_key "vetting_questions", "organizations"
+  add_foreign_key "vetting_questions", "users"
+  add_foreign_key "vetting_transcripts", "groups"
+  add_foreign_key "vetting_transcripts", "organizations"
+  add_foreign_key "vetting_transcripts", "users"
 end

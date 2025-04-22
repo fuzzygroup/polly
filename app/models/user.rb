@@ -1,4 +1,13 @@
 class User < ApplicationRecord
+  
+  #
+  # Scott Changes from Here On
+  #
+  IDENTITY_RELATIONSHIP = :any # could also be :all
+  IDENTITY_COLUMNS = [:username]
+  include FindOrCreate
+  
+  
   # Include default devise modules. Others available are:
   # :omniauthable
   devise :database_authenticatable, :registerable,
@@ -13,7 +22,7 @@ class User < ApplicationRecord
   validates :password, length: { maximum: 20 }
   validate :valid_date?
 
-  enum :role, { user: "user", admin: "admin" }
+  enum :role, { user: "user", admin: "admin", volunteer: "volunteer", superuser: "superuser" }
   validates :role, inclusion: { in: roles.keys }
 
   def full_name
@@ -22,6 +31,30 @@ class User < ApplicationRecord
 
   def super_admin?
     admin? && email == ENV["ADMIN_EMAIL"]
+  end
+  
+  def self.fuzzygroup
+    User.where(username: 'fuzzygroup').first
+  end
+  
+  def self.scott
+    User.where(username: 'fuzzygroup').first
+  end
+
+  def self.helpful_hippie
+    User.where(username: 'helpfulhippie').first
+  end
+  
+  def self.helpfulhippie
+    User.where(username: 'helpfulhippie').first
+  end
+  
+  def self.hippie
+    User.where(username: 'helpfulhippie').first
+  end
+  
+  def self.taelar
+    User.where(username: 'taelar').first
   end
 
   private

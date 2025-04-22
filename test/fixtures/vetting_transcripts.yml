@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  organization: one
+  user: one
+  group: one
+  chat_type: MyString
+  chat_user: MyString
+  active: false
+  body: MyText
+  extracted_objects: 
+
+two:
+  name: MyString
+  organization: two
+  user: two
+  group: two
+  chat_type: MyString
+  chat_user: MyString
+  active: false
+  body: MyText
+  extracted_objects: 

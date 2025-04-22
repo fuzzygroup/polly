@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @vetting_question %>
+
+<div>
+  <%= link_to "Edit this vetting question", edit_vetting_question_path(@vetting_question) %> |
+  <%= link_to "Back to vetting questions", vetting_questions_path %>
+
+  <%= button_to "Destroy this vetting question", @vetting_question, method: :delete %>
+</div>

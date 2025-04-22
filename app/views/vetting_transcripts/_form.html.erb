@@ -1,0 +1,62 @@
+<%= form_with(model: vetting_transcript) do |form| %>
+  <% if vetting_transcript.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(vetting_transcript.errors.count, "error") %> prohibited this vetting_transcript from being saved:</h2>
+
+      <ul>
+        <% vetting_transcript.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :organization_id, style: "display: block" %>
+    <%= form.text_field :organization_id %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :group_id, style: "display: block" %>
+    <%= form.text_field :group_id %>
+  </div>
+
+  <div>
+    <%= form.label :chat_type, style: "display: block" %>
+    <%= form.text_field :chat_type %>
+  </div>
+
+  <div>
+    <%= form.label :chat_user, style: "display: block" %>
+    <%= form.text_field :chat_user %>
+  </div>
+
+  <div>
+    <%= form.label :active, style: "display: block" %>
+    <%= form.checkbox :active %>
+  </div>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.textarea :body %>
+  </div>
+
+  <div>
+    <%= form.label :extracted_objects, style: "display: block" %>
+    <%= form.text_field :extracted_objects %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
