@@ -1,6 +1,8 @@
 
 # Rails 8 Authentication with Bootstrap 5 and Devise Gem
 
+NOTE: ORIGINALLY SOURCED FROM: https://github.com/dangkhoa2016/Rails-8-Authentication but fork was lost so git init and then re-added to fuzzygroup github as a starting place; apologies
+
 This is a simple Rails 8 application that implements authentication using the popular `devise` gem along with Bootstrap 5 for styling. This project provides an easy-to-use authentication system with features like user registration, login, logout, and password management.
 
 ## Features
