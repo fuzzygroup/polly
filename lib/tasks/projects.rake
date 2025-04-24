@@ -133,6 +133,17 @@ namespace :projects do
       due_date: Date.new(2025, 4,30),
       active: true 
     )
+    
+    project_structs << 
+    OpenStruct.new(
+      name: "Stickers",
+      body: "Get in touch with Lucy out of Pittsburgh.  Lucy found great stick pricing out of MinuteMan and wanted to do anti trump stickers but got busy https://minuteman.com/us/locations/in/#8/40.675/-86.752"
+      user_id: User.scott.id,
+      organization_id: Organization.indiana50501.id, 
+      project_type: "marketing", 
+      due_date: Date.new(2025, 4,30),
+      active: true 
+    )
 
     
     # splits = []

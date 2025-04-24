@@ -7,6 +7,8 @@ class Project < ApplicationRecord
   IDENTITY_COLUMNS = [:name, :user_id]
   include FindOrCreate
   
+  acts_as_votable
+  
   def leader
     self.user.full_name
   end

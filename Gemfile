@@ -76,3 +76,5 @@ gem "time_common"
 gem "url_common"
 gem 'ostruct'
 gem 'awesome_print'
+
+gem 'acts_as_votable'
