@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :projects
   resources :vetting_transcripts
   resources :vetting_questions
   resources :groups

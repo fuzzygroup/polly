@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_22_083405) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_23_205602) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -33,6 +33,24 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_22_083405) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["identifier"], name: "index_organizations_on_identifier", unique: true
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.bigint "organization_id"
+    t.bigint "user_id"
+    t.bigint "group_id"
+    t.string "project_type"
+    t.boolean "active", default: false
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
+    t.date "due_date"
+    t.string "url"
+    t.index ["group_id"], name: "index_projects_on_group_id"
+    t.index ["organization_id"], name: "index_projects_on_organization_id"
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -102,6 +120,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_22_083405) do
   end
 
   add_foreign_key "groups", "organizations"
+  add_foreign_key "projects", "groups"
+  add_foreign_key "projects", "organizations"
+  add_foreign_key "projects", "users"
   add_foreign_key "users", "organizations"
   add_foreign_key "vetting_questions", "groups"
   add_foreign_key "vetting_questions", "organizations"

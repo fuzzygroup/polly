@@ -29,6 +29,13 @@ namespace :users do
     
     splits << "first_name:Cody |last_name:Unknown|username:cody|password:bloomingtonrocked!|email:Cody.hutcherson11@gmail.com|role:admin|organization_id:#{Organization.district_9_50501.id}"
     
+    splits << "first_name:Brian|last_name:Jonaesen|username:brian|password:veterans50501!|email:brian.s.jonasen@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
+    
+    splits << "first_name:Sara|last_name:|username:sara|password:fuckice!|email:sara-idont-know@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
+
+    splits << "first_name:Jackie|last_name:|username:jackie|password:oyveylife!|email:jackie-idont-know@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
+    
+    
     add_user(splits)
   end
   

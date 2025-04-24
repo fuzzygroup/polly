@@ -12,5 +12,7 @@ class VettingQuestion < ApplicationRecord
   belongs_to :user
   belongs_to :group
   
-  
+  def active
+    return true unless self.active == false
+  end
 end

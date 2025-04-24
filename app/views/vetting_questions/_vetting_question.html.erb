@@ -6,18 +6,20 @@
 
   <p>
     <strong>Organization:</strong>
-    <%= vetting_question.organization_id %>
+    <%= vetting_question.organization.name %>
   </p>
 
   <p>
     <strong>User:</strong>
-    <%= vetting_question.user_id %>
+    <%= vetting_question.user.full_name %>
   </p>
 
+  <% if vetting_question.group %>
   <p>
     <strong>Group:</strong>
     <%= vetting_question.group_id %>
   </p>
+  <% end %>
 
   <p>
     <strong>Active:</strong>
