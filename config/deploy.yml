@@ -7,7 +7,10 @@ image: fuzzygroup/polly
 # Deploy to these servers.
 servers:
   web:
-    - polly.indiana50501.org
+    hosts:
+      - polly.indiana50501.org
+    options:
+      "add-host": host.docker.internal:host-gateway
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -42,11 +45,12 @@ builder:
 
 # Inject ENV variables into containers (secrets come from .kamal/secrets).
 #
-# env:
-#   clear:
-#     DB_HOST: 192.168.0.2
-#   secret:
-#     - RAILS_MASTER_KEY
+env:
+  # clear:
+  #   DB_HOST: 192.168.0.2
+  secret:
+    - RAILS_MASTER_KEY
+    - DATABASE_URL
 
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
 # "bin/kamal app logs -r job" will tail logs from the first server in the job section.
