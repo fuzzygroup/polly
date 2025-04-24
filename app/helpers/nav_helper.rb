@@ -10,6 +10,7 @@ module NavHelper
   NAVS = [
     { path: "root_path", name: "Home" },
     { path: "projects_path", name: "Projects" },
+    { path: "fliers_path", name: "Fliers" },
     
   ]
 end

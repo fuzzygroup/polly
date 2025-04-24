@@ -1,0 +1,34 @@
+<div id="<%= dom_id flier %>">
+  <p>
+    <strong>Title:</strong>
+    <%= flier.title %>
+  </p>
+  
+  <% if @post.image.attached? %>
+    <p>
+      <strong>Image:</strong><br>
+      <%= image_tag url_for(@post.image) %>
+    </p>
+  <% end %>
+
+  <p>
+    <strong>Organization:</strong>
+    <%= flier.organization_id %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= flier.user_id %>
+  </p>
+
+  <p>
+    <strong>Group:</strong>
+    <%= flier.group_id %>
+  </p>
+
+  <p>
+    <strong>Project:</strong>
+    <%= flier.project_id %>
+  </p>
+
+</div>

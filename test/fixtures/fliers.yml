@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  organization: one
+  user: one
+  group: one
+  project: one
+
+two:
+  title: MyString
+  organization: two
+  user: two
+  group: two
+  project: two

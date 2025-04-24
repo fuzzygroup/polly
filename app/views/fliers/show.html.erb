@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @flier %>
+
+<div>
+  <%= link_to "Edit this flier", edit_flier_path(@flier) %> |
+  <%= link_to "Back to fliers", fliers_path %>
+
+  <%= button_to "Destroy this flier", @flier, method: :delete %>
+</div>

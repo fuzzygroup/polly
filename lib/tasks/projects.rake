@@ -10,6 +10,7 @@ namespace :projects do
   
   # be rake user:seed --trace
   task :seed => :environment do
+    
     project_structs = []
     project_structs << 
     OpenStruct.new(
@@ -58,7 +59,7 @@ namespace :projects do
     project_structs << 
     OpenStruct.new(
       name: "Make Up 50501 Buttons at a Public Library",
-      user_id: User.scott.id,
+      user_id: User.jackie.id,
       organization_id: Organization.indiana50501.id, 
       project_type: "marketing",
       active: false
@@ -87,7 +88,7 @@ namespace :projects do
     project_structs << 
     OpenStruct.new(
       name: "Make Sign Lanyards using Cord and Alligator Clips to Give Away",
-      user_id: User.scott.id,
+      user_id: User.jackie.id,
       organization_id: Organization.indiana50501.id, 
       project_type: "crafts",
       active: false      
@@ -127,7 +128,7 @@ namespace :projects do
     project_structs << 
     OpenStruct.new(
       name: "Stage",
-      user_id: User.brian.id,
+      user_id: User.amyk.id,
       organization_id: Organization.indiana50501.id, 
       project_type: "props", 
       due_date: Date.new(2025, 4,30),
@@ -137,11 +138,51 @@ namespace :projects do
     project_structs << 
     OpenStruct.new(
       name: "Stickers",
-      body: "Get in touch with Lucy out of Pittsburgh.  Lucy found great stick pricing out of MinuteMan and wanted to do anti trump stickers but got busy https://minuteman.com/us/locations/in/#8/40.675/-86.752"
-      user_id: User.scott.id,
+      body: "Get in touch with Lucy out of Pittsburgh.  Lucy found great sticker pricing out of MinuteMan and wanted to do anti trump stickers but got busy https://minuteman.com/us/locations/in/#8/40.675/-86.752",
+      user_id: User.jackie.id,
       organization_id: Organization.indiana50501.id, 
       project_type: "marketing", 
+      due_date: Date.new(2025, 5,24),
+      active: true 
+    )
+    
+    project_structs << 
+    OpenStruct.new(
+      name: "5/1 Event - SMASH",
+      user_id: User.scott.id,
+      organization_id: Organization.indiana50501.id, 
+      project_type: "event", 
       due_date: Date.new(2025, 4,30),
+      active: true 
+    )
+
+    project_structs << 
+    OpenStruct.new(
+      name: "5/17 Event - The Social",
+      user_id: User.scott.id,
+      organization_id: Organization.indiana50501.id, 
+      project_type: "event", 
+      due_date: Date.new(2025, 5,16),
+      active: true 
+    )
+    
+    project_structs << 
+    OpenStruct.new(
+      name: "5/25 Event - The VROOM VROOM",
+      user_id: User.scott.id,
+      organization_id: Organization.indiana50501.id, 
+      project_type: "event", 
+      due_date: Date.new(2025, 5,24),
+      active: true 
+    )
+    
+    project_structs << 
+    OpenStruct.new(
+      name: "Paint the Collection Tarp the State Outline and Something Else",
+      user_id: User.jackie.id,
+      organization_id: Organization.indiana50501.id, 
+      project_type: "marketing", 
+      due_date: Date.new(2025, 4,27),
       active: true 
     )
 

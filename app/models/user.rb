@@ -24,6 +24,8 @@ class User < ApplicationRecord
 
   enum :role, { user: "user", admin: "admin", volunteer: "volunteer", superuser: "superuser" }
   validates :role, inclusion: { in: roles.keys }
+  
+  belongs_to :organization
 
   def full_name
     [ first_name, last_name ].join(" ")
@@ -70,10 +72,20 @@ class User < ApplicationRecord
   end
   
   def self.jackie
-    User.where(username: 'sara').first
+    User.where(username: 'jackie').first
   end
   
+  def self.tori
+    User.where(username: 'tori').first
+  end
 
+  def self.amyk
+    User.where(username: 'amyk').first
+  end
+
+  def self.janet
+    User.where(username: 'janet').first
+  end
 
   private
 

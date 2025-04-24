@@ -1,0 +1,12 @@
+<% content_for :title, "Editing flier" %>
+
+<h1>Editing flier</h1>
+
+<%= render "form", flier: @flier %>
+
+<br>
+
+<div>
+  <%= link_to "Show this flier", @flier %> |
+  <%= link_to "Back to fliers", fliers_path %>
+</div>

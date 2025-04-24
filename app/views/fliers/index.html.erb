@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Fliers" %>
+
+<h1>Fliers</h1>
+
+<div id="fliers">
+  <% @fliers.each do |flier| %>
+    <%= render flier %>
+    <p>
+      <%= link_to "Show this flier", flier %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New flier", new_flier_path %>

@@ -10,9 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_24_012501) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_24_180035) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.string "service_name", null: false
+    t.bigint "byte_size", null: false
+    t.string "checksum"
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "active_storage_variant_records", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "fliers", force: :cascade do |t|
+    t.string "name"
+    t.bigint "organization_id"
+    t.bigint "user_id"
+    t.bigint "group_id"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "due_date"
+    t.string "flier_type"
+    t.index ["group_id"], name: "index_fliers_on_group_id"
+    t.index ["organization_id"], name: "index_fliers_on_organization_id"
+    t.index ["project_id"], name: "index_fliers_on_project_id"
+    t.index ["user_id"], name: "index_fliers_on_user_id"
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
@@ -135,6 +179,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_24_012501) do
     t.index ["voter_type", "voter_id"], name: "index_votes_on_voter"
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "fliers", "groups"
+  add_foreign_key "fliers", "organizations"
+  add_foreign_key "fliers", "projects"
+  add_foreign_key "fliers", "users"
   add_foreign_key "groups", "organizations"
   add_foreign_key "projects", "groups"
   add_foreign_key "projects", "organizations"
