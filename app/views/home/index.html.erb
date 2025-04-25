@@ -25,3 +25,9 @@
     <li><%= link_to("Vetting Transcripts", vetting_transcripts_path)%>
     <li><%= link_to("Projects", projects_path)%>
 <% end %>
+<% if signed_in? && current_user == User.scott%>
+    <li><%= link_to("DockerHub", "https://hub.docker.com/repositories/fuzzygroup")%>
+    <li><%= link_to("Github Issues", "https://github.com/fuzzygroup/polly/issues")%>
+    <li><%= link_to("Github Repo", "https://github.com/fuzzygroup/polly/")%>
+<% end %>
+</ul>
