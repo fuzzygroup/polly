@@ -6,18 +6,18 @@
 
   <p>
     <strong>Organization:</strong>
-    <%= project.organization_id %>
+    <%= project.organization.name %>
   </p>
 
   <p>
     <strong>User:</strong>
-    <%= project.user_id %>
+    <%= project.user.full_name %>
   </p>
 
-  <p>
+  <!-- <p>
     <strong>Group:</strong>
-    <%= project.group_id %>
-  </p>
+    <%#= project.group.name %>
+  </p> -->
 
   <p>
     <strong>Project type:</strong>
@@ -32,6 +32,12 @@
   <p>
     <strong>Body:</strong>
     <%= project.body %>
+  </p>
+
+
+  <p>
+    <strong>Due Date:</strong>
+    <%= project.due_date %>
   </p>
 
 </div>

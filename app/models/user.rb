@@ -26,6 +26,8 @@ class User < ApplicationRecord
   validates :role, inclusion: { in: roles.keys }
   
   belongs_to :organization
+  
+  acts_as_voter
 
   def full_name
     [ first_name, last_name ].join(" ")

@@ -3,5 +3,9 @@
       <td><%= project.project_type %></td>
       <td><%= link_to(project.name, project_path(project)) %></td>      
       <td><%= project.leader %></td>
+      <td>
+        <%= link_to 'Upvote', upvote_project_path(project), method: :put %>
+        <%= link_to 'Downvote', downvote_project_path(project), method: :put %>
+      </td>
       <td><%= project.votes_for.size%></td>
     </tr>

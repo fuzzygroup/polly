@@ -1,5 +1,27 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
+  
+  before_action :set_post, only: [:upvote, :downvote]
+  
+  def upvote
+    if current_user.voted_up_on?(@project)
+      @project.unvote_by current_user
+    else
+      @project.upvote_by current_user
+    end
+    redirect_to @project
+  end
+
+  def downvote
+    if current_user.voted_down_on?(@project)
+      @project.unvote_by current_user
+    else
+      @project.downvote_by current_user
+    end
+    redirect_to @project
+  end
+
+
 
   # GET /projects or /projects.json
   def index
@@ -62,7 +84,7 @@ class ProjectsController < ApplicationController
     def set_project
       @project = Project.find(params.expect(:id))
     end
-
+    
     # Only allow a list of trusted parameters through.
     def project_params
       params.expect(project: [ :name, :organization_id, :user_id, :group_id, :project_type, :active, :body ])

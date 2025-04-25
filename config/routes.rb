@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
-  resources :fliers
-  resources :projects
+  resources :fliers do 
+    member do
+      put 'upvote'
+      put 'downvote'
+    end
+  end
+  
+  resources :projects do
+    member do
+      put 'upvote'
+      put 'downvote'
+    end
+  end
+  
   resources :vetting_transcripts
   resources :vetting_questions
   resources :groups
