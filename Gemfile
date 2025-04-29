@@ -79,3 +79,5 @@ gem 'awesome_print'
 
 gem 'acts_as_votable'
 gem 'image_processing', '~> 1.12'
+gem 'vobject'
+gem "meilisearch-rails"

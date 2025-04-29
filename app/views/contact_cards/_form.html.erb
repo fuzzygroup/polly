@@ -1,0 +1,177 @@
+<%= form_with(model: contact_card) do |form| %>
+  <% if contact_card.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(contact_card.errors.count, "error") %> prohibited this contact_card from being saved:</h2>
+
+      <ul>
+        <% contact_card.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :full_name, style: "display: block" %>
+    <%= form.text_field :full_name %>
+  </div>
+
+  <div>
+    <%= form.label :company, style: "display: block" %>
+    <%= form.text_field :company %>
+  </div>
+
+  <div>
+    <%= form.label :city, style: "display: block" %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div>
+    <%= form.label :state, style: "display: block" %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div>
+    <%= form.label :congressional_district, style: "display: block" %>
+    <%= form.number_field :congressional_district %>
+  </div>
+
+  <div>
+    <%= form.label :county, style: "display: block" %>
+    <%= form.text_field :county %>
+  </div>
+
+  <div>
+    <%= form.label :is_me, style: "display: block" %>
+    <%= form.checkbox :is_me %>
+  </div>
+
+  <div>
+    <%= form.label :organization_id, style: "display: block" %>
+    <%= form.text_field :organization_id %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :birthday, style: "display: block" %>
+    <%= form.date_field :birthday %>
+  </div>
+
+  <div>
+    <%= form.label :birth_date, style: "display: block" %>
+    <%= form.text_field :birth_date %>
+  </div>
+
+  <div>
+    <%= form.label :birth_year, style: "display: block" %>
+    <%= form.number_field :birth_year %>
+  </div>
+
+  <div>
+    <%= form.label :email_primary, style: "display: block" %>
+    <%= form.text_field :email_primary %>
+  </div>
+
+  <div>
+    <%= form.label :email_secondary, style: "display: block" %>
+    <%= form.text_field :email_secondary %>
+  </div>
+
+  <div>
+    <%= form.label :phone_mobile, style: "display: block" %>
+    <%= form.text_field :phone_mobile %>
+  </div>
+
+  <div>
+    <%= form.label :phone_secondary, style: "display: block" %>
+    <%= form.text_field :phone_secondary %>
+  </div>
+
+  <div>
+    <%= form.label :signal_username, style: "display: block" %>
+    <%= form.text_field :signal_username %>
+  </div>
+
+  <div>
+    <%= form.label :discord_username, style: "display: block" %>
+    <%= form.text_field :discord_username %>
+  </div>
+
+  <div>
+    <%= form.label :discord_server, style: "display: block" %>
+    <%= form.text_field :discord_server %>
+  </div>
+
+  <div>
+    <%= form.label :url, style: "display: block" %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div>
+    <%= form.label :favorite_movie, style: "display: block" %>
+    <%= form.text_field :favorite_movie %>
+  </div>
+
+  <div>
+    <%= form.label :favorite_color, style: "display: block" %>
+    <%= form.text_field :favorite_color %>
+  </div>
+
+  <div>
+    <%= form.label :favorite_coffee, style: "display: block" %>
+    <%= form.text_field :favorite_coffee %>
+  </div>
+
+  <div>
+    <%= form.label :favorite_cocktail, style: "display: block" %>
+    <%= form.text_field :favorite_cocktail %>
+  </div>
+
+  <div>
+    <%= form.label :vip, style: "display: block" %>
+    <%= form.checkbox :vip %>
+  </div>
+
+  <div>
+    <%= form.label :politician, style: "display: block" %>
+    <%= form.checkbox :politician %>
+  </div>
+
+  <div>
+    <%= form.label :donor, style: "display: block" %>
+    <%= form.checkbox :donor %>
+  </div>
+
+  <div>
+    <%= form.label :needs_attention, style: "display: block" %>
+    <%= form.checkbox :needs_attention %>
+  </div>
+
+  <div>
+    <%= form.label :notes, style: "display: block" %>
+    <%= form.textarea :notes %>
+  </div>
+
+  <div>
+    <%= form.label :history, style: "display: block" %>
+    <%= form.textarea :history %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

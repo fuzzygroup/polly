@@ -1,0 +1,2 @@
+json.extract! contact_card, :id, :first_name, :last_name, :full_name, :company, :city, :state, :congressional_district, :county, :is_me, :organization_id, :user_id, :birthday, :birth_date, :birth_year, :email_primary, :email_secondary, :phone_mobile, :phone_secondary, :signal_username, :discord_username, :discord_server, :url, :favorite_movie, :favorite_color, :favorite_coffee, :favorite_cocktail, :vip, :politician, :donor, :needs_attention, :notes, :history, :created_at, :updated_at
+json.url contact_card_url(contact_card, format: :json)

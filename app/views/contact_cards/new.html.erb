@@ -1,0 +1,11 @@
+<% content_for :title, "New contact card" %>
+
+<h1>New contact card</h1>
+
+<%= render "form", contact_card: @contact_card %>
+
+<br>
+
+<div>
+  <%= link_to "Back to contact cards", contact_cards_path %>
+</div>

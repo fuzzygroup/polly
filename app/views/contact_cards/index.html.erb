@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Contact cards" %>
+
+<h1>Contact cards</h1>
+
+<div id="contact_cards">
+  <% @contact_cards.each do |contact_card| %>
+    <%= render contact_card %>
+    <p>
+      <%= link_to "Show this contact card", contact_card %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New contact card", new_contact_card_path %>

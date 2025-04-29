@@ -22,4 +22,8 @@ class Organization < ApplicationRecord
   def self.district_8_50501
     Organization.where(identifier: "evansville_resistance_district_8_50501").first
   end
+  
+  def self.westsidedemocrats
+    Organization.where(identifier: "westsidedemocrats").first
+  end
 end

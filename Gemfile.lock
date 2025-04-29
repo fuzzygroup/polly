@@ -104,6 +104,7 @@ GEM
     crass (1.0.6)
     cssbundling-rails (1.4.3)
       railties (>= 6.0.0)
+    csv (3.3.4)
     date (3.4.1)
     date_common (0.13)
     debug (1.10.0)
@@ -142,6 +143,10 @@ GEM
       activesupport (>= 6.1)
     http-cookie (1.0.8)
       domain_name (~> 0.5)
+    httparty (0.23.1)
+      csv
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     image_processing (1.14.0)
@@ -197,6 +202,11 @@ GEM
       rubyntlm (~> 0.6, >= 0.6.3)
       webrick (~> 1.7)
       webrobots (~> 0.1.2)
+    meilisearch (0.31.0)
+      httparty (~> 0.22)
+    meilisearch-rails (0.15.0)
+      meilisearch (~> 0.31.0)
+      mutex_m (~> 0.2)
     mime-types (3.6.2)
       logger
       mime-types-data (~> 3.2015)
@@ -208,6 +218,9 @@ GEM
     mini_portile2 (2.8.8)
     minitest (5.25.5)
     msgpack (1.8.0)
+    multi_xml (0.7.1)
+      bigdecimal (~> 3.1)
+    mutex_m (0.3.0)
     net-http-digest_auth (1.4.1)
     net-http-persistent (4.0.5)
       connection_pool (~> 2.2)
@@ -317,6 +330,7 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.4.1)
+    rsec (1.0.0)
     rubocop (1.73.0)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
@@ -398,6 +412,8 @@ GEM
       railties (>= 7.1.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2025.2)
+      tzinfo (>= 1.0.0)
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
@@ -406,6 +422,10 @@ GEM
       fuzzyurl (~> 0.9.0)
       mechanize (~> 2.6)
     useragent (0.16.11)
+    vobject (1.1.0)
+      rsec (~> 1.0)
+      tzinfo
+      tzinfo-data
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -454,6 +474,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
+  meilisearch-rails
   ostruct
   pg
   propshaft
@@ -471,6 +492,7 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   url_common
+  vobject
   web-console
   wicked
 

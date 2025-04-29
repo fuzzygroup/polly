@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  resources :political_actions
+  resources :team_users
+  resources :contact_cards
+  #resources :contacts
+  #resources :contacts
+  #resources :contacts
+  resources :rules
+  resources :teams
+  resources :event_slot_types
+  resources :speakers
+  resources :event_types
   resources :fliers do 
     member do
       put 'upvote'

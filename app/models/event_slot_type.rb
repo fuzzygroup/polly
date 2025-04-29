@@ -1,0 +1,2 @@
+class EventSlotType < ApplicationRecord
+end
