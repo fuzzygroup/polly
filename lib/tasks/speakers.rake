@@ -32,9 +32,9 @@ namespace :speakers do
       status, speaker = Speaker.find_or_create(team_struct)
     end
   end
-  
 
-  
+
+
   # be rake speaker:metrics
   task :metrics => :environment do
     klass = "Speaker"
