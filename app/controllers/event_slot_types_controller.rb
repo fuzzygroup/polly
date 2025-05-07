@@ -1,4 +1,5 @@
 class EventSlotTypesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_event_slot_type, only: %i[ show edit update destroy ]
 
   # GET /event_slot_types or /event_slot_types.json

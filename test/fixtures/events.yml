@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  event_type: one
+  date_start: 2025-05-05
+  date_end: 2025-05-05
+  time_start: 2025-05-05 16:39:51
+  time_end: 2025-05-05 16:39:51
+  location: MyString
+  share_code: one
+  organization: one
+  user: one
+  has_speakers: false
+  has_musicians: false
+  has_props: false
+  has_partners: false
+  body: MyText
+
+two:
+  name: MyString
+  event_type: two
+  date_start: 2025-05-05
+  date_end: 2025-05-05
+  time_start: 2025-05-05 16:39:51
+  time_end: 2025-05-05 16:39:51
+  location: MyString
+  share_code: two
+  organization: two
+  user: two
+  has_speakers: false
+  has_musicians: false
+  has_props: false
+  has_partners: false
+  body: MyText

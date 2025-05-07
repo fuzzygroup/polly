@@ -1,0 +1,92 @@
+<%= form_with(model: event) do |form| %>
+  <% if event.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+        <% event.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :event_type_id, style: "display: block" %>
+    <%= form.text_field :event_type_id %>
+  </div>
+
+  <div>
+    <%= form.label :date_start, style: "display: block" %>
+    <%= form.date_field :date_start %>
+  </div>
+
+  <div>
+    <%= form.label :date_end, style: "display: block" %>
+    <%= form.date_field :date_end %>
+  </div>
+
+  <div>
+    <%= form.label :time_start, style: "display: block" %>
+    <%= form.time_field :time_start %>
+  </div>
+
+  <div>
+    <%= form.label :time_end, style: "display: block" %>
+    <%= form.time_field :time_end %>
+  </div>
+
+  <div>
+    <%= form.label :location, style: "display: block" %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div>
+    <%= form.label :share_code_id, style: "display: block" %>
+    <%= form.text_field :share_code_id %>
+  </div>
+
+  <div>
+    <%= form.label :organization_id, style: "display: block" %>
+    <%= form.text_field :organization_id %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :has_speakers, style: "display: block" %>
+    <%= form.checkbox :has_speakers %>
+  </div>
+
+  <div>
+    <%= form.label :has_musicians, style: "display: block" %>
+    <%= form.checkbox :has_musicians %>
+  </div>
+
+  <div>
+    <%= form.label :has_props, style: "display: block" %>
+    <%= form.checkbox :has_props %>
+  </div>
+
+  <div>
+    <%= form.label :has_partners, style: "display: block" %>
+    <%= form.checkbox :has_partners %>
+  </div>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.textarea :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
