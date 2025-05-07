@@ -12,6 +12,10 @@
             <%= link_to nav[:name], url, class: "nav-link px-2 py-1#{' active' if current_page?(url)}" %>
           </li>
         <% end %>
+        <% if signed_in? && current_user.first_name == 'Scott'%>
+          <li><%= link_to('Issues', 'https://github.com/fuzzygroup/polly/issues')%>
+        <% end %>
+
         <% if signed_in? && current_user.admin? %>
           <li class="dropdown">
             <a class="nav-link px-2 py-1 dropdown-toggle" href="#" role="button"

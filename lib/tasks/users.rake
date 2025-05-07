@@ -33,11 +33,13 @@ namespace :users do
 
     splits << "first_name:Amy|last_name:Kleyla|username:amyk|password:seabees50501!|email:Ames3588@tuta.com |role:admin|organization_id:#{Organization.indiana50501.id}"
 
+    splits << "first_name:Kayla|last_name:McGuire|username:pride|password:pride123!|email:kaylamcguire91@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
     
     splits << "first_name:Sara|last_name:|username:sara|password:fuckice!|email:sara-idont-know@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
 
     splits << "first_name:Jacqui|last_name:|username:jacqui|password:oyveylife!|email:jackie-idont-know@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
     
+        
     
     add_user(splits)
   end

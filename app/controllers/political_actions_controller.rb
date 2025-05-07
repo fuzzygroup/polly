@@ -1,4 +1,5 @@
 class PoliticalActionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_political_action, only: %i[ show edit update destroy ]
 
   # GET /political_actions or /political_actions.json

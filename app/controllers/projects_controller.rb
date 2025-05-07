@@ -1,15 +1,18 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_project, only: %i[ show edit update destroy ]
   
-  before_action :set_post, only: [:upvote, :downvote]
+  before_action :set_project, only: [:upvote, :downvote]
   
   def upvote
+    #raise "foo"
     if current_user.voted_up_on?(@project)
       @project.unvote_by current_user
     else
       @project.upvote_by current_user
     end
-    redirect_to @project
+    #redirect_to @project
+    redirect_to '/projects'
   end
 
   def downvote
@@ -18,7 +21,8 @@ class ProjectsController < ApplicationController
     else
       @project.downvote_by current_user
     end
-    redirect_to @project
+    #redirect_to @project
+    redirect_to '/projects'
   end
 
 

@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :bank_deposits
+  resources :poll_responses
+  resources :poll_options
+  resources :polls
+  resources :events
+  resources :share_codes
+  resources :organization_rules
+  resources :team_rules
+  resources :organization_user_rules
+  resources :team_user_rules
   resources :political_actions
   resources :team_users
   resources :contact_cards
@@ -19,13 +29,25 @@ Rails.application.routes.draw do
   
   resources :projects do
     member do
-      put 'upvote'
-      put 'downvote'
+      #put 'upvote'
+      #put 'downvote'
+      post 'upvote'
+      post 'downvote'
     end
   end
   
   resources :vetting_transcripts
-  resources :vetting_questions
+  resources :vetting_questions do
+    collection do
+      post :ask_questions
+    end
+    member do
+      #put 'upvote'
+      #put 'downvote'
+      post 'upvote'
+      post 'downvote'
+    end
+  end
   resources :groups
   resources :organizations
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

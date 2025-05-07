@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "__Object_name__" %>
+
+<h1>__OBJECT_NAME__</h1>
+
+<div id="teams">
+  <% @teams.each do |team| %>
+    <%= render team %>
+    <p>
+      <%= link_to "Show this team", team %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New team", new_team_path %>
+
+

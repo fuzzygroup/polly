@@ -12,15 +12,48 @@ namespace :speakers do
   task :seed => :environment do
     
     speaker_structs = []
+
     speaker_structs << 
     OpenStruct.new(
       name: "Jamie Flemington",
       url: "https://www.westfielddemocrats.org/",
-      organization_id: Organization.indiana50501.id, 
+      organization_id: Organization.westfield_democrats.id, 
       user_id: User.scott.id,
       contact_id: Contact.jamie_flemington.id,
       notes: "Wants to speak at May 25 on Trump's executive orders and Abortion Rights; suffered from an Ectopic pregnancy and would likely be DEAD under today's laws"
     )
+    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "Scott Johnson",
+      url: "https://www.linktr.ee/fuzzygroup",
+      organization_id: Organization.indiana50501.id, 
+      user_id: User.scott.id,
+      contact_id: Contact.jamie_flemington.id,
+      notes: "The Scott"
+    )
+    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "Someone from AARP on Senior Issues",
+      url: "https://www.aarp.org",
+      user_id: User.scott.id,
+      notes: ""
+    )
+    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "Destiny Wells",
+      url: "",
+      organization_id: Organization.indiana50501.id, 
+      user_id: User.scott.id,
+      contact_id: Contact.jamie_flemington.id,
+      notes: "Maybe get her to talk about Trump using executive orders to go after law firms"
+    )
+    
+    # speaker_structs <<
+    # OpenStruct.new(
+    # name: "GallifreyanValkyrie")
   
     add_speakers(speaker_structs)
   end

@@ -9,8 +9,10 @@ module NavHelper
   
   NAVS = [
     { path: "root_path", name: "Home" },
+    { path: "polls_path", name: "Polls" },    
     { path: "projects_path", name: "Projects" },
-    { path: "fliers_path", name: "Fliers" },
-    
+    { path: "teams_path", name: "Teams" },
+    { path: "vetting_questions_path", name: "Ask Vetting Questions" },
+    { path: "fliers_path", name: "Fliers" }
   ]
 end
