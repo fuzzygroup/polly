@@ -1,0 +1,39 @@
+<div id="<%= dom_id poll %>">
+  <% if current_user && 3 == 4%>
+  <p>
+    <strong>Name:</strong>
+    <%= poll.name %>
+  </p>
+
+  <p>
+    <strong>Share code:</strong>
+    <%= poll.share_code_id %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= poll.user_id %>
+  </p>
+
+  <p>
+    <strong>Organization:</strong>
+    <%= poll.organization_id %>
+  </p>
+
+  <p>
+    <strong>Body:</strong>
+    <%= poll.body %>
+  </p>
+<% else %>
+<h2 class="text-center"><%= poll.body %></h2>
+
+
+<%= render 'poll_responses', {poll_response: @poll_response, poll: @poll}%>
+
+
+
+
+
+
+<% end %>
+</div>

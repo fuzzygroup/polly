@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  poll: one
+  widget_type: MyString
+  value: MyString
+  body: MyText
+
+two:
+  name: MyString
+  poll: two
+  widget_type: MyString
+  value: MyString
+  body: MyText

@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Poll options" %>
+
+<h1>Poll options</h1>
+
+<div id="poll_options">
+  <% @poll_options.each do |poll_option| %>
+    <%= render poll_option %>
+    <p>
+      <%= link_to "Show this poll option", poll_option %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New poll option", new_poll_option_path %>

@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @poll %>
+
+<div>
+  <% if current_user && current_user.admin?  == 'Scott' && 3==4 %>
+    <%= link_to "Edit this poll", edit_poll_path(@poll) %> |
+    <%= link_to "Back to polls", polls_path %>
+
+    <%= button_to "Destroy this poll", @poll, method: :delete %>
+  <% end %>
+</div>

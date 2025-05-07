@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  share_code: one
+  user: one
+  organization: one
+  body: MyText
+
+two:
+  name: MyString
+  share_code: two
+  user: two
+  organization: two
+  body: MyText

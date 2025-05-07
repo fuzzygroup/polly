@@ -1,0 +1,31 @@
+<%= form_with(model: poll_response) do |form| %>
+  <% if poll_response.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(poll_response.errors.count, "error") %> prohibited this poll_response from being saved:</h2>
+
+      <ul>
+        <% poll_response.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- <div>
+    <%#= form.label :poll_id, style: "display: block" %>
+    <%#= form.text_field :poll_id %>
+  </div> -->
+  
+  <%= show_poll_options(form, poll.poll_options)%>
+  
+  <%# poll.poll_options.each do |poll_option| %>
+  <%#= poll_option.body %>
+    <%#= show_poll_option(poll_option)%>
+  <%# end %>
+  
+
+  <div>
+    <p>&nbsp;</p>
+    <%= form.submit "Answer!" %>
+  </div>
+<% end %>
