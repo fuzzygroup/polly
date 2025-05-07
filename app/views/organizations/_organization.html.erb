@@ -23,5 +23,13 @@
     <strong>Organization type:</strong>
     <%= organization.organization_type %>
   </p>
-
+  
+  <% if organization.rules.all? %>
+  <p>This organization has these rules attached to it:</p>
+    <ul>
+      <% organization.rules.each do |rule| %>
+        <li><%= rule.name %>
+      <% end %>
+    </ul>
+  <% end %>
 </div>

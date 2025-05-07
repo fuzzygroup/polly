@@ -7,6 +7,9 @@ class Organization < ApplicationRecord
   IDENTITY_COLUMNS = [:identifier]
   include FindOrCreate
   
+  has_many :rules
+  has_many :organization_rules
+  
   def self.indiana50501
     Organization.where(identifier: "indiana50501").first
   end
