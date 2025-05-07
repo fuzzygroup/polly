@@ -1,0 +1,2 @@
+module TeamRulesHelper
+end

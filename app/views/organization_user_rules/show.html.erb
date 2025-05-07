@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @organization_user_rule %>
+
+<div>
+  <%= link_to "Edit this organization user rule", edit_organization_user_rule_path(@organization_user_rule) %> |
+  <%= link_to "Back to organization user rules", organization_user_rules_path %>
+
+  <%= button_to "Destroy this organization user rule", @organization_user_rule, method: :delete %>
+</div>

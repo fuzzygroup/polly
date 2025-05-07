@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Team user rules" %>
+
+<h1>Team user rules</h1>
+
+<div id="team_user_rules">
+  <% @team_user_rules.each do |team_user_rule| %>
+    <%= render team_user_rule %>
+    <p>
+      <%= link_to "Show this team user rule", team_user_rule %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New team user rule", new_team_user_rule_path %>

@@ -1,0 +1,12 @@
+<% content_for :title, "Editing organization rule" %>
+
+<h1>Editing organization rule</h1>
+
+<%= render "form", organization_rule: @organization_rule %>
+
+<br>
+
+<div>
+  <%= link_to "Show this organization rule", @organization_rule %> |
+  <%= link_to "Back to organization rules", organization_rules_path %>
+</div>

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  team: one
+  rule: one
+  active: false
+
+two:
+  team: two
+  rule: two
+  active: false

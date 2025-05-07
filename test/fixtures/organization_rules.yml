@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  organization: one
+  rule: one
+  active: false
+
+two:
+  organization: two
+  rule: two
+  active: false

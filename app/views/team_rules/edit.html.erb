@@ -1,0 +1,12 @@
+<% content_for :title, "Editing team rule" %>
+
+<h1>Editing team rule</h1>
+
+<%= render "form", team_rule: @team_rule %>
+
+<br>
+
+<div>
+  <%= link_to "Show this team rule", @team_rule %> |
+  <%= link_to "Back to team rules", team_rules_path %>
+</div>
