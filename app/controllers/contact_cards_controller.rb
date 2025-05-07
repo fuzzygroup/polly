@@ -1,4 +1,5 @@
 class ContactCardsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_contact_card, only: %i[ show edit update destroy ]
 
   # GET /contact_cards or /contact_cards.json
