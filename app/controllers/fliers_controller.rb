@@ -1,4 +1,5 @@
 class FliersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_flier, only: %i[ show edit update destroy ]
   
   before_action :set_flier_types, only: %i[new edit]
