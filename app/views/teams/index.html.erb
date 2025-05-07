@@ -5,12 +5,13 @@
 <h1>Teams</h1>
 
 <div id="teams">
+  <!-- insert partial reference -->
+  <%= render 'teams_header' %>
+  
   <% @teams.each do |team| %>
-    <%= render team %>
-    <p>
-      <%= link_to "Show this team", team %>
-    </p>
+    <%= render 'teams', {team: team} %>
   <% end %>
+  <%= render 'teams_footer' %>
 </div>
 
 <%= link_to "New team", new_team_path %>

@@ -1,22 +1,29 @@
 <div id="<%= dom_id team %>">
   <p>
-    <strong>Name:</strong>
+    <strong>Team Name:</strong>
     <%= team.name %>
   </p>
 
   <p>
-    <strong>Organization:</strong>
+    <strong>Organization Name:</strong>
     <%= team.organization_id %>
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= team.user_id %>
+    <strong>Team Created By:</strong>
+    <%= team.user.full_name %>
   </p>
 
   <p>
     <strong>Active:</strong>
     <%= team.active %>
   </p>
-
+  <% if team.team_rules.any? %>
+  <p>This team has these rules attached to it:</p>
+    <ul>
+      <% team.team_rules.each do |team_rule| %>
+        <li><%= team_rule.rule.name %>
+      <% end %>
+    </ul>
+  <% end %>
 </div>

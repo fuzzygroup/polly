@@ -10,26 +10,32 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label"  %>
+    <%= form.text_field :name, { class: "form-control" } %>
   </div>
-
-  <div>
-    <%= form.label :organization_id, style: "display: block" %>
-    <%= form.text_field :organization_id %>
+  
+  <div class="mb-3">
+    <strong>Organization</strong>:
+    <%= team.organization.name%>
   </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+  
+  <div class="mb-3">
+    <strong>Team Created By</strong>:
+    <%= team.user.full_name%>
+    <%#= link_to(user_path(team.user.full_name, team.user))%>
   </div>
-
-  <div>
-    <%= form.label :active, style: "display: block" %>
+  
+  <div class="mb-3">
+    <%= form.label "Active or Inactive?", class: "form-label"  %>
     <%= form.checkbox :active %>
   </div>
+
+  
+  <!-- <div>
+    https://signal.group/#CjQKIHhXPEksicNH8kFLl0NIamuGaDyKs1X18exsin3-wDGZEhCwS_jabmLJzfbqOxeHRl1U
+  </div> -->
 
   <div>
     <%= form.submit %>
