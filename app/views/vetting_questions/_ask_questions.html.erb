@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Ask Vetting Questions" %>
+
+<h1>Vetting questions to ask the person you are vetting</h1>
+
+<p><strong>INSTRUCTIONS</strong>.  Please copy the text below and paste it into Signal to the person you are vetting.  This gives them the questions you want answered.  After they answer them, you can then copy the results and paste it back into Polly as a Vetting Transcript.</p>
+
+<div id="vetting_questions">
+  <p>Hi There, 
+  
+  <p>My name is <%= current_user.full_name%>
+    
+  <p>I'd like to ask you some questions to determine how you could help us.  
+    
+  <p>Can you please answer these questions?
+  
+  <ul>
+  <% @selected_questions.each do |selected_question| %>
+    <li><%= selected_question.body %>
+  </ul>
+  <% end %>
+  
+</div>
+
+
+

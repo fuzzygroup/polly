@@ -4,13 +4,27 @@
 
 <h1>Vetting questions</h1>
 
-<div id="vetting_questions">
+<div id="projects">
+  <%= form_with url: ask_questions_vetting_questions_path, method: :post do %>
+  <div class="text-center">
+    <%= submit_tag "Ask Selected Questions" %>
+  </div>
+  <%= render 'vetting_questions_header' %>
+  
   <% @vetting_questions.each do |vetting_question| %>
-    <%= render vetting_question %>
-    <p>
-      <%= link_to "Show this vetting question", vetting_question %>
-    </p>
+    <%= render 'vetting_questions', {vetting_question: vetting_question} %>
+    <!-- <p>
+      <%#= link_to "Show this project", project %>
+    </p> -->
+  <% end %>
+  <%= render 'vetting_questions_footer' %>
+  <div class="text-center">
+  
+  <%= submit_tag "Ask Selected Questions" %>
+</div>
   <% end %>
 </div>
+
+
 
 <%= link_to "New vetting question", new_vetting_question_path %>

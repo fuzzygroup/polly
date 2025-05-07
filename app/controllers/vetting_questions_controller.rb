@@ -1,5 +1,6 @@
 class VettingQuestionsController < ApplicationController
-  before_action :set_vetting_question, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
+  before_action :set_vetting_question, only: %i[ show edit update destroy upvote downvote]
 
   # GET /vetting_questions or /vetting_questions.json
   def index
@@ -17,6 +18,27 @@ class VettingQuestionsController < ApplicationController
 
   # GET /vetting_questions/1/edit
   def edit
+  end
+  
+  def upvote
+    #raise "foo"
+    if current_user.voted_up_on?(@vetting_question)
+      @vetting_question.unvote_by current_user
+    else
+      @vetting_question.upvote_by current_user
+    end
+    #redirect_to @project
+    redirect_to '/vetting_questions'
+  end
+
+  def downvote
+    if current_user.voted_down_on?(@vetting_question)
+      @vetting_question.unvote_by current_user
+    else
+      @vetting_question.downvote_by current_user
+    end
+    #redirect_to @project
+    redirect_to '/vetting_questions'
   end
 
   # POST /vetting_questions or /vetting_questions.json
@@ -56,6 +78,21 @@ class VettingQuestionsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def ask_questions
+    #raise "Still being finished"
+    selected_question_ids = params[:question_ids] || []
+    @selected_questions = VettingQuestion.where(id: selected_question_ids)
+    # respond_to do |format|
+    #   format.html { redirect_to '/vetting_questions/show_selected_questions', notice: "Please follow the instructions belowddd." }
+    #   #format.json { render :show, status: :ok, location: @contact_card }
+    # end
+    
+    #redirect_to 'show_selected_questions' and return
+    # Now you can do whatever you want with @selected_items
+    # For example:
+    #
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -65,6 +102,6 @@ class VettingQuestionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def vetting_question_params
-      params.expect(vetting_question: [ :body, :organization_id, :user_id, :group_id, :active ])
+      params.expect(vetting_question: [ :body, :organization_id, :user_id, :group_id, :active, :question_ids])
     end
 end

@@ -1,4 +1,5 @@
 class VettingTranscriptsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_vetting_transcript, only: %i[ show edit update destroy ]
 
   # GET /vetting_transcripts or /vetting_transcripts.json

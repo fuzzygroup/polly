@@ -1,0 +1,26 @@
+    <tr>
+      <td scope="row">
+        <%= vetting_question.id%>
+      </th>
+      <td  class="text-center">
+        <%= check_box_tag 'vetting_question_ids[]', vetting_question.id %>
+        <%#= check_box_tag 'item_ids[]', item.id %>
+      </td>
+      <td  class="text-center">
+        <%= link_to(vetting_question.user.full_name, user_path(vetting_question.user)) %>
+      </td>
+      <td>
+        <%= link_to(vetting_question.body, vetting_question_path(vetting_question)) %>
+      </td>      
+      <td  class="text-center">
+        <%= show_active(vetting_question) %>
+      </td>      
+      <td  class="text-center">
+        <%= link_to 'Upvote', upvote_vetting_question_path(vetting_question), data: { turbo_method: :post } %>
+         | 
+        <%= link_to 'Upvote', downvote_vetting_question_path(vetting_question), data: { turbo_method: :post } %>
+      </td>
+      <td  class="text-center">
+        <%= vetting_question.votes_for.size%>
+      </td>
+    </tr>

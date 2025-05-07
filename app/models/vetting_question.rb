@@ -7,12 +7,19 @@ class VettingQuestion < ApplicationRecord
   IDENTITY_COLUMNS = [:body]
   include FindOrCreate
   
-  
+  #
+  # Belongs_to 
+  #
   belongs_to :organization
   belongs_to :user
-  belongs_to :group
+  belongs_to :group, optional: true  
   
-  def active
-    return true unless self.active == false
-  end
+  #
+  # Gem based includes
+  #
+  acts_as_votable
+  
+  # def active
+  #   return true unless self.active == false
+  # end
 end
