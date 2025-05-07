@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date_collected: 2025-05-06
+  amount: 9.99
+  event: one
+  user: one
+  organization: one
+  funds_type: MyString
+  notes: MyText
+
+two:
+  name: MyString
+  date_collected: 2025-05-06
+  amount: 9.99
+  event: two
+  user: two
+  organization: two
+  funds_type: MyString
+  notes: MyText

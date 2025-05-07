@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Bank deposits" %>
+
+<h1>Bank deposits</h1>
+
+<div id="bank_deposits">
+  <% @bank_deposits.each do |bank_deposit| %>
+    <%= render bank_deposit %>
+    <p>
+      <%= link_to "Show this bank deposit", bank_deposit %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New bank deposit", new_bank_deposit_path %>
