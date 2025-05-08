@@ -13,25 +13,45 @@ namespace :contact_cards do
   # be rake contact_cards:seed --trace
   task :seed => :environment do
 
-    # contact_cards = []
-    # contact_cards <<
-    # OpenStruct.new(
-    #   first_name: "Taelar",
-    #   last_name: "",
-    #   company: "",
-    #   url: "https://indiana50501.org/",
-    #   user_id: User.taelar.id,
-    #   organization_id: Organization.indiana50501.id,
-    #   phone_mobile: "‬",
-    #   history: "",
-    #   active: true,
-    #   congressional_district: 5,
-    #   town: "Franklin",
-    #   notes: "",
-    #   favorite_cocktail: "margarita",
-    #   is_me: true
-    # )
-    #
+    contact_cards = []
+    contact_cards <<
+    OpenStruct.new(
+      first_name: "Taelar",
+      last_name: "",
+      company: "",
+      url: "https://indiana50501.org/",
+      user_id: User.taelar.id,
+      organization_id: Organization.indiana50501.id,
+      phone_mobile: "‬",
+      history: "",
+      active: true,
+      congressional_district: 5,
+      town: "Franklin",
+      notes: "",
+      favorite_cocktail: "margarita",
+      is_me: false
+    )
+    
+    contact_cards <<
+    OpenStruct.new(
+      first_name: "Angie",
+      last_name: "Foreman",
+      company: "A Foreman Designs",
+      url: "https://aforemandesigns.com/",
+      email: "aforemandesigns@gmail.com",
+      user_id: nil,
+      organization_id: Organization.indiana50501.id,
+      phone_mobile: "‬317 508 0266",
+      history: "",
+      active: true,
+      congressional_district: 5,
+      town: "Noblesville",
+      notes: "",
+      favorite_cocktail: "",
+      notes: "Organizer for Dads for Democract"
+      is_me: false
+    )
+
     # contact_cards <<
     #   OpenStruct.new(
     #     first_name: "Cameron",

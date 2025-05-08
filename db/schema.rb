@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_07_114536) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_08_081518) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -40,6 +40,18 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_07_114536) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "availabilities", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "organization_id"
+    t.date "date_start"
+    t.date "date_end"
+    t.boolean "availability", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_availabilities_on_organization_id"
+    t.index ["user_id"], name: "index_availabilities_on_user_id"
   end
 
   create_table "bank_deposits", force: :cascade do |t|
@@ -349,6 +361,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_07_114536) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "chat_url"
+    t.date "date_expires"
     t.index ["organization_id"], name: "index_teams_on_organization_id"
     t.index ["user_id"], name: "index_teams_on_user_id"
   end
@@ -438,6 +451,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_07_114536) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "availabilities", "organizations"
+  add_foreign_key "availabilities", "users"
   add_foreign_key "bank_deposits", "events"
   add_foreign_key "bank_deposits", "organizations"
   add_foreign_key "bank_deposits", "users"

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :availabilities
   resources :bank_deposits
   resources :poll_responses
   resources :poll_options

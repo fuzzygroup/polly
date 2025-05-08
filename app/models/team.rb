@@ -3,12 +3,15 @@ class Team < ApplicationRecord
   #
   # Scott Changes from Here On
   #
-  IDENTITY_RELATIONSHIP = :any # could also be :all
+  IDENTITY_RELATIONSHIP = :all # could also be :all
   IDENTITY_COLUMNS = [:name]
   include FindOrCreate
   
+  has_many :team_users
+  has_many :team_rules
+  
   def new
-    self.organization = current_user.organization_id:
+    self.organization = current_user.organization_id
   end
   
   

@@ -1,0 +1,8 @@
+    <tr>
+      
+      <td scope="row"><%= availability.id%></th>
+      <td><%= link_to(availability.user.full_name, user_path(availability.user)) %></td>      
+      <td><%= availability.date_start %></td>
+      <td><%= availability.date_end %></td>
+      <td><%= show_availability(availability)%></td>
+    </tr>

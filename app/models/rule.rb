@@ -37,6 +37,10 @@ class Rule < ApplicationRecord
   
   def self.not_run_to_national
     Rule.where(short_name: 'not_run_to_national').first
-  end  
+  end 
+  
+  def self.equality_and_not_discriminate
+    Rule.where(short_name: 'equality_and_not_discriminate').first
+  end 
   
 end

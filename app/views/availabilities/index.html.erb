@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Availabilities" %>
+
+<h1>Availabilities</h1>
+
+<p>An availability is a record of when someone IS or ISN'T available.</p>
+
+<div id="availabilities">
+  <%# @availabilities.each do |availability| %>
+    <%#= render availability %>
+    <!-- <p>
+      <%#= link_to "Show this availability", availability %>
+    </p> -->
+  <%# end %>
+  
+  <%= render 'availabilities_header' %>
+  
+  <% @availabilities.each do |availability| %>
+    <%= render 'availabilities', {availability: availability} %>
+    <!-- <p>
+      <%#= link_to "Show this project", project %>
+    </p> -->
+  <% end %>
+  <%= render 'availabilities_footer' %>
+  
+</div>
+
+<%= link_to "New availability", new_availability_path %>

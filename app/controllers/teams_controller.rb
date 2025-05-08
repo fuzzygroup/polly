@@ -4,7 +4,7 @@ class TeamsController < ApplicationController
 
   # GET /teams or /teams.json
   def index
-    @teams = Team.where(organization_id: current_user.organization.id).order("name ASC")
+    @teams = Team.where(organization_id: current_user.organization.id, active: true).order("name ASC")
     #raise "foo"
   end
 

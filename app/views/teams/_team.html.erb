@@ -6,7 +6,7 @@
 
   <p>
     <strong>Organization Name:</strong>
-    <%= team.organization_id %>
+    <%= team.organization.name %>
   </p>
 
   <p>
@@ -16,8 +16,18 @@
 
   <p>
     <strong>Active:</strong>
-    <%= team.active %>
+    <%= show_active(team) %>
   </p>
+  <p>
+    <strong>Team Size:</strong>
+    <%= team.team_users.count %>
+  </p>
+  <p>
+    <strong>Team Members: </strong>
+    <%= team.team_users.map(&:user).map(&:full_name).join(", ")%>
+  </p>
+
+
   <% if team.team_rules.any? %>
   <p>This team has these rules attached to it:</p>
     <ul>

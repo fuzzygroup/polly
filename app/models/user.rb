@@ -73,8 +73,8 @@ class User < ApplicationRecord
     User.where(username: 'sara').first
   end
   
-  def self.jackie
-    User.where(username: 'jackie').first
+  def self.jacqui
+    User.where(username: 'Jacqui').first
   end
   
   def self.tori
@@ -91,6 +91,14 @@ class User < ApplicationRecord
 
   def self.pride
     User.where(username: 'pride').first
+  end
+  
+  def self.belladonna 
+    User.where(username: 'belladonna').first
+  end
+
+  def self.resisting_oracle 
+    User.where(username: 'resisting_oracle').first
   end
 
 

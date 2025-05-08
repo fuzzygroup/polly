@@ -82,3 +82,10 @@ bin/rails g scaffold OrganizationRule organization:references rule:references ac
 
 bin/rails g scaffold CheckList name:string
 bin/rails g scaffold CheckListItem name:string status:boolean
+
+Also - giving you dates in summer that I’m out of town - May 15-18; June 6-10; August 3-10. Also, Sunil is having surgery on his knee July 2. I anticipate a huge protest around the 4th. I will make sure I can speak, but then I’ll likely have to bounce and take care of him. He tore his meniscus.
+
+
+bin/rails g scaffold Availability user:references date_start:date date_end:date availability:boolean
+
+bin/rails g scaffold Links organization:references team:references user:references name:string url:string

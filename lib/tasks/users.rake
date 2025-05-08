@@ -13,9 +13,9 @@ namespace :users do
   task :seed => :environment do
     splits = []
     splits << #"first_name:Scott|last_name:Johnson|username:fuzzygroup|password:dd87934aadfed!|email:fuzzygroup@gmail.com|signal_username:CancelTesla.2025|role:superuser"
-    "first_name:Scott|last_name:Johnson|username:fuzzygroup|password:dd87934aadfed!|email:fuzzygroup@gmail.com|role:superuser|organization_id:#{Organization.indiana50501.id}"
+    "first_name:Scott|last_name:Johnson|username:fuzzygroup|password:dd87934aadfed!|email:fuzzygroup@tutamail.com|role:superuser|organization_id:#{Organization.indiana50501.id}"
     
-    splits << "first_name:Taelar|last_name:Christman|username:taelar|password:christmas3334|email:Taelar.christman@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
+    splits << "first_name:Taelar|last_name:Christman|username:taelar|password:christmas3334|email:Yogitaelar@tutamail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
     
     splits << "first_name:Janet|last_name:Wall-Myers|username:janet|password:Halloween2022|email:janatheshort@yahoo.com|role:admin|organization_id:#{Organization.indiana50501.id}"
     
@@ -37,9 +37,15 @@ namespace :users do
     
     splits << "first_name:Sara|last_name:|username:sara|password:fuckice!|email:sara-idont-know@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
 
-    splits << "first_name:Jacqui|last_name:|username:jacqui|password:oyveylife!|email:jackie-idont-know@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
+    # splits << "first_name:Jacqui|last_name:|username:jacqui|password:oyveylife!|email:jackie-idont-know@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
     
+    # splits << "first_name:Jacqui|last_name:|username:jacqui|password:oyveylife!|email:jackie-idont-know@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
+
+    splits << "first_name:Alisa|last_name:Advani|username:resisting_oracle|password:MatrixForever!|email:alias@something.com|role:admin|organization_id:#{Organization.indiana50501.id}"
         
+        splits << "first_name:Lori|last_name:Daughtery|username:lorid|password:I_help_out!|email:alias111@something.com|role:admin|organization_id:#{Organization.indiana50501.id}"
+            
+            splits << "first_name:Mary|last_name:Hardin|username:maryhardin|password:PRisLife!|email:alias222@something.com|role:admin|organization_id:#{Organization.indiana50501.id}"
     
     add_user(splits)
   end

@@ -85,7 +85,7 @@ namespace :rules do
     
     rules_structs << 
     OpenStruct.new(
-      name: "We will treat each other with equality and not discriminate",
+      name: "We will treat each other with equity, equality and dignity.  We will not discriminate based on race, religion, sexual orientation, gender identity or nationality.  GOOGLE GENDER EQUALITY STATEMNET FOR WORKPLACE",
       user_id: User.scott.id,
       organization_id: Organization.indiana50501.id,
       short_name: 'equality_and_not_discriminate',
