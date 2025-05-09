@@ -48,7 +48,7 @@ namespace :contact_cards do
       town: "Noblesville",
       notes: "",
       favorite_cocktail: "",
-      notes: "Organizer for Dads for Democract"
+      notes: "Organizer for Dads for Democracy",
       is_me: false
     )
 

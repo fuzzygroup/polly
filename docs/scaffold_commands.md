@@ -42,9 +42,11 @@ bin/rails g scaffold EventType name:string organization:references user:referenc
 
 bin/rails g scaffold EventSlotType name:string default_duration:integer default_duration_units:string
 
-bin/rails g Speaker name:string bio:text url:string pronouns:string speaking_count:integer notes:text organization_name:string user:references contact_card:references url:string
+bin/rails g scaffold Speaker name:string bio:text url:string pronouns:string speaking_count:integer notes:text organization_name:string user:references contact_card:references url:string
 
-bin/rails g scaffold EventSlot name:string event_slot_type:references speaker:references duration:integer computed_start_at:time
+bin/rails g scaffold Musician name:string band_name:string bio:text url:string pronouns:string play_count:integer notes:text user:references contact_card:references 
+
+bin/rails g scaffold EventSlot name:string event:references event_slot_type:references speaker:references duration:integer computed_start_at:time body:text
 
 bin/rails g scaffold Poll name:string share_code:references user:references organization:references body:text
 bin/rails g scaffold PollOption name:string poll:references widget_type:string value:string body:text 

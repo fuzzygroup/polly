@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :musicians
+  resources :event_slots
   resources :availabilities
   resources :bank_deposits
   resources :poll_responses

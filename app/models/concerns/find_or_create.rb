@@ -113,7 +113,7 @@ module FindOrCreate
       thing = self.new(struct.to_h)
 
       thing.save
-
+      #debugger
       if thing.persisted?
         # if date_to_update
         # # monkey patch (ok no its not monkey patching technically but this feels like monkeys are involved)

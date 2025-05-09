@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_08_081518) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_09_103622) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -119,6 +119,21 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_08_081518) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "event_slots", force: :cascade do |t|
+    t.string "name"
+    t.bigint "event_id"
+    t.bigint "event_slot_type_id"
+    t.bigint "speaker_id"
+    t.integer "duration"
+    t.time "computed_start_at"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_slots_on_event_id"
+    t.index ["event_slot_type_id"], name: "index_event_slots_on_event_slot_type_id"
+    t.index ["speaker_id"], name: "index_event_slots_on_speaker_id"
+  end
+
   create_table "event_types", force: :cascade do |t|
     t.string "name"
     t.bigint "organization_id"
@@ -148,6 +163,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_08_081518) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.boolean "active", default: true
     t.index ["event_type_id"], name: "index_events_on_event_type_id"
     t.index ["organization_id"], name: "index_events_on_organization_id"
     t.index ["share_code_id"], name: "index_events_on_share_code_id"
@@ -178,6 +194,22 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_08_081518) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["organization_id"], name: "index_groups_on_organization_id"
+  end
+
+  create_table "musicians", force: :cascade do |t|
+    t.string "name"
+    t.string "band_name"
+    t.text "bio"
+    t.string "url"
+    t.string "pronouns"
+    t.integer "play_count"
+    t.text "notes"
+    t.bigint "user_id"
+    t.bigint "contact_card_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contact_card_id"], name: "index_musicians_on_contact_card_id"
+    t.index ["user_id"], name: "index_musicians_on_user_id"
   end
 
   create_table "organization_rules", force: :cascade do |t|
@@ -458,6 +490,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_08_081518) do
   add_foreign_key "bank_deposits", "users"
   add_foreign_key "contact_cards", "organizations"
   add_foreign_key "contact_cards", "users"
+  add_foreign_key "event_slots", "event_slot_types"
+  add_foreign_key "event_slots", "events"
+  add_foreign_key "event_slots", "speakers"
   add_foreign_key "event_types", "organizations"
   add_foreign_key "event_types", "users"
   add_foreign_key "events", "event_types"
@@ -469,6 +504,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_08_081518) do
   add_foreign_key "fliers", "projects"
   add_foreign_key "fliers", "users"
   add_foreign_key "groups", "organizations"
+  add_foreign_key "musicians", "contact_cards"
+  add_foreign_key "musicians", "users"
   add_foreign_key "organization_rules", "organizations"
   add_foreign_key "organization_rules", "rules"
   add_foreign_key "organization_user_rules", "organizations"
