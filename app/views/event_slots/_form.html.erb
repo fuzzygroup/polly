@@ -1,0 +1,52 @@
+<%= form_with(model: event_slot) do |form| %>
+  <% if event_slot.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(event_slot.errors.count, "error") %> prohibited this event_slot from being saved:</h2>
+
+      <ul>
+        <% event_slot.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :event_id, style: "display: block" %>
+    <%= form.text_field :event_id %>
+  </div>
+
+  <div>
+    <%= form.label :event_slot_type_id, style: "display: block" %>
+    <%= form.text_field :event_slot_type_id %>
+  </div>
+
+  <div>
+    <%= form.label :speaker_id, style: "display: block" %>
+    <%= form.text_field :speaker_id %>
+  </div>
+
+  <div>
+    <%= form.label :duration, style: "display: block" %>
+    <%= form.number_field :duration %>
+  </div>
+
+  <div>
+    <%= form.label :computed_start_at, style: "display: block" %>
+    <%= form.time_field :computed_start_at %>
+  </div>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.textarea :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  event: one
+  event_slot_type: one
+  speaker: one
+  duration: 1
+  computed_start_at: 2025-05-08 16:07:40
+  body: MyText
+
+two:
+  name: MyString
+  event: two
+  event_slot_type: two
+  speaker: two
+  duration: 1
+  computed_start_at: 2025-05-08 16:07:40
+  body: MyText

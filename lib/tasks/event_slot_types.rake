@@ -28,8 +28,29 @@ namespace :event_slot_types do
     
     event_slot_type_structs << 
     OpenStruct.new(
+      name: "Musician",
+      default_duration: 15,
+      default_duration_units: 'minutes'
+    )
+    
+    event_slot_type_structs << 
+    OpenStruct.new(
       name: "Buffer",
       default_duration: 3,
+      default_duration_units: 'minutes'
+    )
+    
+    event_slot_type_structs << 
+    OpenStruct.new(
+      name: "Volunteer - 1 Hour",
+      default_duration: 60,
+      default_duration_units: 'minutes'
+    )
+
+    event_slot_type_structs << 
+    OpenStruct.new(
+      name: "Volunteer - 1/2 Hour",
+      default_duration: 30,
       default_duration_units: 'minutes'
     )
   

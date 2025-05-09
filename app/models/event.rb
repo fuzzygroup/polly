@@ -6,24 +6,72 @@ class Event < ApplicationRecord
   
   has_many :event_slots
   
-  after_create :set_share_code
+  IDENTITY_RELATIONSHIP = :all # could also be :all
+  IDENTITY_COLUMNS = [:name, :user_id]
+  include FindOrCreate
+  
+  scope :active, -> { where(active: true) }
+  
+  #after_create :set_share_code
+  
+  before_validation :generate_slug, on: :create
+
+  validates :slug, presence: true, uniqueness: true
+
+  def to_param
+    slug
+  end
+
+
+  # def ensure_unique_slug
+  #   base_slug = self.slug
+  #   counter = 2
+  #   while Event.exists?(slug: self.slug)
+  #     self.slug = "#{base_slug}-#{counter}"
+  #     counter += 1
+  #   end
+  # end
   
   
-  def add_speaker(name, duration)
-    event_slot_type = EventSlotType.speaker
+  
+  def add_speaker(name, speaker, duration)
+    est = EventSlotType.speaker
+    
+    event_slot_struct = OpenStruct.new
+    event_slot_struct.event_slot_type_id = est.id
+    event_slot_struct.speaker_id = speaker.id
+    event_slot_struct.duration = duration
+    event_slot_struct.event_id = self.id 
+    
+    status, event_slot = EventSlot.find_or_create(event_slot_struct)
   end
   
   def add_buffer
-    event_slot_type_buffer = EventSlotType.buffer
+    est = EventSlotType.buffer
+    
+    event_slot_struct = OpenStruct.new
+    event_slot_struct.event_slot_type_id = est.id
+    event_slot_struct.duration = est.duration
+    event_slot_struct.event_id = self.id 
+    
+    status, event_slot = EventSlot.find_or_create(event_slot_struct)
   end
   
-  def add_musician(name, duration)
-    event_slot_type = EventSlotType.musician
-    event_slot_type_buffer = EventSlotType.buffer
+  def add_musician(name, musician, duration)
+    est = EventSlotType.musician
+    
+    event_slot_struct = OpenStruct.new
+    event_slot_struct.event_slot_type_id = est.id
+    event_slot_struct.duration = est.duration
+    event_slot_struct.event_id = self.id 
+    event_slot_struct.musician_id = musician.id
+    
+    status, event_slot = EventSlot.find_or_create(event_slot_struct)
   end
   
   def add_march(name, duration)
-    event_slot_type = EventSlotType.march
+    est = EventSlotType.march
+    
     event_slot_type_buffer = EventSlotType.buffer
     
   end
@@ -44,6 +92,19 @@ class Event < ApplicationRecord
     Event.where(name: "5/1 Protest").first
   end
   
+  #private
+
+  def generate_slug
+    struct = OpenStruct.new(user_id: self.user_id, organization_id: self.organization_id)
+    status, sc = ShareCode.find_or_create(struct)
+    self.slug = sc.share_code
+    self.share_code_id = sc.id
+    #debugger
+    # if title.present? && slug.blank?
+    #   self.slug = title.parameterize
+    #   ensure_unique_slug
+    # end
+  end
   
   
 end

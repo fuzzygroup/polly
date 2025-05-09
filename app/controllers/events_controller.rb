@@ -3,7 +3,8 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    @events = Event.all
+    @events = Event.active.where(organization: current_user.organization).order("date_start DESC")
+    #.where(["date_start >= ?", Date.today])
   end
 
   # GET /events/1 or /events/1.json
@@ -60,7 +61,7 @@ class EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params.expect(:id))
+      @event = Event.find_by_slug(params.expect(:id))
     end
 
     # Only allow a list of trusted parameters through.

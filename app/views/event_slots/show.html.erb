@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @event_slot %>
+
+<div>
+  <%= link_to "Edit this event slot", edit_event_slot_path(@event_slot) %> |
+  <%= link_to "Back to event slots", event_slots_path %>
+
+  <%= button_to "Destroy this event slot", @event_slot, method: :delete %>
+</div>

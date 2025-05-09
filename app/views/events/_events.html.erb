@@ -1,0 +1,13 @@
+    <tr>
+      <% if Rails.env.development? %>
+      <td scope="row"><%= event.id%></th>
+        <% end %>
+      <td><%= event.event_type.name %></td>
+      <td nowrap><%= event.date_start.strftime("%m-%d")%></td>
+      <td><%= event.time_start.strftime("%H:%M") %></td>
+      <td><%= event.time_end.strftime("%H:%M") %></td>
+      <td><%= link_to(event.name, event_path(event)) %></td>      
+      <td>
+      <td><%= event.location[0..40] %></td>
+      </td>
+    </tr>

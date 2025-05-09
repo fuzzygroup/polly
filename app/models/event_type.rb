@@ -37,5 +37,9 @@ class EventType < ApplicationRecord
   def self.picnic
     EventType.where(name: "Picnic").first
   end
+  
+  def self.volunteer_pitch_in
+    EventType.where(name: "Volunteer Pitch-In").first
+  end
 
 end

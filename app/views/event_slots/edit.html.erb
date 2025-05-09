@@ -1,0 +1,12 @@
+<% content_for :title, "Editing event slot" %>
+
+<h1>Editing event slot</h1>
+
+<%= render "form", event_slot: @event_slot %>
+
+<br>
+
+<div>
+  <%= link_to "Show this event slot", @event_slot %> |
+  <%= link_to "Back to event slots", event_slots_path %>
+</div>

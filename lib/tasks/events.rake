@@ -13,12 +13,15 @@ namespace :events do
   # 5/25 START WITH def MARCHING
   # March at the end 
   
+  # be rake events:flesh_out_525
   task :flesh_out_525 => :environment do
     event = Event.where(name: "5/25 Protest").first 
     
     event.add_march("Opening March", 60)
     event.add_buffer
-    event.add_speaker("Scott Johnson Opening Address", 10)
+    event.add_speaker("Scott Johnson Opening Address - The Good and the Bad",10)
+    event.add_buffer
+    event.add_speaker("Captain Crunch Goes to the Capital", 10)
     event.add_buffer
     event.add_musician("Jen Carlson Midkiff", 15)
     event.add_buffer
@@ -26,8 +29,8 @@ namespace :events do
     event.add_buffer
     event.add_speaker("Scott Johnson on XYZ", 10)
     event.add_buffer
-    event.add_speaker("Jamie Flemington on Abortion", 10)
-    event.add_buffer
+    #event.add_speaker("Jamie Flemington on Abortion", 10)
+    #event.add_buffer
     event.add_musician("Greg Zeismer", 15)
     event.add_buffer    
     event.add_speaker("Max Haddad: Let's Mock the King's Decrees", 10)
@@ -127,6 +130,61 @@ namespace :events do
       has_partners: true
       
     )
+    
+    event_structs << 
+    OpenStruct.new(
+      name: "6/15 Protest - Dads for Democracy",
+      user_id: User.scott.id,
+      organization_id: Organization.indiana50501.id,
+      event_type: EventType.protest,
+      date_start: Date.new(2025,6,15),
+      date_end: Date.new(2025,6,15),
+      time_start: "12:00",
+      time_end: "15:00",
+      location: "Noblesville Court House",
+      has_speakers: true,
+      has_musicians: true,
+      has_props: true,
+      has_partners: true
+      
+    )
+    
+    event_structs << 
+    OpenStruct.new(
+      name: "5/31 - Earth Day Volunteering on Recycling Electronics - Man the Dumpsters!",
+      user_id: User.scott.id,
+      organization_id: Organization.indiana50501.id,
+      event_type: EventType.volunteer_pitch_in,
+      date_start: Date.new(2025,5,31),
+      date_end: Date.new(2025,5,31),
+      time_start: "11:00",
+      time_end: "17:00",
+      location: "Providence Christo Rey High School at :  2717 S East St, Indianapolis, IN 46225",
+      has_speakers: false,
+      has_musicians: false,
+      has_props: false,
+      has_partners: true,
+      body: "Hello Daniel and Scott:
+
+This is an e-introduction of you both.  Scott, your name was given to me by Greg Ziesemer as the person who will recruit and manage the volunteers for our electronics recycling. 
+
+RecycleForce will deliver 12 Gaylord containers to the parking lot pictured below of Providence Christo Rey High School at :  2717 S East St, Indianapolis, IN 46225
+
+We will need 2 volunteers on site the entire time - which is 11 am to 5 pm (or whenever the containers are full).  We also have some simple stake signs that will need to be put up as well. 
+
+Daniel - we will need from you the exact time the containers will be delivered.  I hope to be on site but I am also setting up my own activity at the festival at the park.  
+
+Also, to recognize our sponsor LRS recycling, can we tape of a sign or two on a couple of the containers?
+
+I have posted info on our website and will link to the listed of accepted items.
+
+Scott, truly grateful for the help. We haven't had this event in a few years and am glad to have it back.
+
+Warmly - Laurie Counsel
+Board President, Earth Day Indiana
+317-513-8248"
+      
+    )
   
     add_events(event_structs)
   end
@@ -134,7 +192,10 @@ namespace :events do
   def add_events(event_structs) 
     event_structs.each do |event_struct|
       puts "Processing event :\n   #{event_struct.name}"
-      status, event_type = Event.find_or_create(event)
+      struct = OpenStruct.new(user_id: event_struct.user_id, organization_id: event_struct.organization_id)
+      # status, sc = ShareCode.find_or_create(struct)
+      # event_struct.slug = sc.share_code
+      status, event_type = Event.find_or_create(event_struct)
     end
   end
   
