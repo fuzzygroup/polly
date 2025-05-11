@@ -13,13 +13,13 @@ development:
     <<: *default
     database: polly_development
 
-production:
-  primary:
-    url: <%= ENV["DATBASE_URL"] %>
-  cable:
-    adapter: solid_cable
-    #adapter: postgresql
-    username: polly
-    password: <%= ENV["APP_DATABASE_PASSWORD"] %>
-    database: polly_production_cable
-    migrations_paths: db/cable_migrate
+# production:
+#   primary:
+#     url: <%= ENV["DATBASE_URL"] %>
+#   cable:
+#     adapter: solid_cable
+#     #adapter: postgresql
+#     username: polly
+#     password: <%= ENV["APP_DATABASE_PASSWORD"] %>
+#     database: polly_production_cable
+#     migrations_paths: db/cable_migrate
