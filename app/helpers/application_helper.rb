@@ -16,6 +16,11 @@ module ApplicationHelper
     end
   end
   
+  def show_yes_no(boolean_field)
+    return 'Yes' if boolean_field
+    return 'No'
+  end
+  
   def show_availability(obj)
     return 'Available' if obj.availability == true
     return 'Away' if obj.availability == false

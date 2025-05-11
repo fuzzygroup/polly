@@ -91,3 +91,6 @@ Also - giving you dates in summer that I’m out of town - May 15-18; June 6-10;
 bin/rails g scaffold Availability user:references date_start:date date_end:date availability:boolean
 
 bin/rails g scaffold Links organization:references team:references user:references name:string url:string
+
+bin/rails g scaffold EventShift name:string duration:integer time_start:time time_end:time people_needed:integer
+bin/rails g scaffold EventProp name:string

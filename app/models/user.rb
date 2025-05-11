@@ -101,6 +101,10 @@ class User < ApplicationRecord
     User.where(username: 'resisting_oracle').first
   end
 
+  def self.dgl 
+    User.where(username: 'dgl').first
+  end
+
 
   private
 

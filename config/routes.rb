@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :event_props
   resources :musicians
   resources :event_slots
   resources :availabilities

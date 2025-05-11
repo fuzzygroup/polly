@@ -6,7 +6,7 @@
 
   <p>
     <strong>Event type:</strong>
-    <%= event.event_type_id %>
+    <%= event.event_type.name %>
   </p>
 
   <p>
@@ -21,12 +21,12 @@
 
   <p>
     <strong>Time start:</strong>
-    <%= event.time_start %>
+    <%= event.time_start.strftime("%H:%M") %>
   </p>
 
   <p>
     <strong>Time end:</strong>
-    <%= event.time_end %>
+    <%= event.time_end.strftime("%H:%M") %>
   </p>
 
   <p>
@@ -35,43 +35,38 @@
   </p>
 
   <p>
-    <strong>Share code:</strong>
-    <%= event.share_code_id %>
-  </p>
-
-  <p>
     <strong>Organization:</strong>
-    <%= event.organization_id %>
+    <%= event.organization.name %>
   </p>
 
   <p>
     <strong>User:</strong>
-    <%= event.user_id %>
+    <%= event.user.full_name %>
   </p>
 
   <p>
-    <strong>Has speakers:</strong>
-    <%= event.has_speakers %>
+    <strong>Does this event have speakers:</strong>
+    <%= show_yes_no(event.has_speakers) %>
   </p>
 
   <p>
-    <strong>Has musicians:</strong>
-    <%= event.has_musicians %>
+    <strong>Does this event have Musicians:</strong>
+    <%= show_yes_no(event.has_musicians) %>
   </p>
 
   <p>
-    <strong>Has props:</strong>
-    <%= event.has_props %>
+    <strong>Does this event have props:</strong>
+    <%= show_yes_no(event.has_props) %>
   </p>
 
   <p>
-    <strong>Has partners:</strong>
-    <%= event.has_partners %>
+    <strong>Does this event have partners:</strong>
+    <%= show_yes_no(event.has_partners) %>
   </p>
 
   <p>
     <strong>Body:</strong>
-    <%= event.body %>
+    <%= simple_format(event.body) %>
   </p>
 
 </div>

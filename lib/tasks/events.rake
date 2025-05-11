@@ -51,6 +51,42 @@ namespace :events do
     
   end
   
+  # be rake events:flesh_out_525
+  task :flesh_out_66 => :environment do
+    event = Event.where(name: "6/6 Protest - D Day").first 
+    
+    event.add_speaker("Scott Johnson Welcoming Remarks",5)
+    event.add_buffer
+    event.add_musician("Jen Carlson Midkiff National Anthem", 15)
+    event.add_buffer
+    event.add_speaker("Color Guard Amy and Brian @ same time",0)
+    event.add_buffer
+    event.add_speaker("Moment of Silence and then Taps to Honor the Dead", 10)
+    event.add_buffer
+    event.add_speaker("Brian Jonasen Opening Remarks w/ Group Oath",10)
+    event.add_buffer
+    event.add_speaker("David Hoffman, Retired Colonel, History Teacher - Intro by Amy", 10)
+    event.add_buffer
+    event.add_march("March", 60)
+    event.add_buffer
+    event.add_speaker("Renee Turner Pack, State Representative", 10)
+    event.add_buffer
+    event.add_speaker("Jackson Franklin", 10)
+    event.add_buffer
+    event.add_speaker("Connie Karras", 10)
+    event.add_buffer
+    event.add_musician("TBD", 15)
+    event.add_buffer
+    event.add_speaker("J.D. Ford", 10)
+    event.add_buffer
+    event.add_speaker("Amy - Trans People Have Always Served", 10)
+    event.add_buffer
+    event.add_march("Brian Closing Remarks", 10)
+    event.add_buffer
+    event.add_musician("Open Mic - Veterans Speak Out", 60)
+    event.add_buffer
+  end
+  
   #
   # POLL SYSTEM
   #
@@ -183,6 +219,26 @@ Scott, truly grateful for the help. We haven't had this event in a few years and
 Warmly - Laurie Counsel
 Board President, Earth Day Indiana
 317-513-8248"
+      
+    )
+    
+    
+    event_structs << 
+    OpenStruct.new(
+      name: "6/6 Protest - D Day",
+      user_id: User.brian.id,
+      organization_id: Organization.indiana50501.id,
+      event_type: EventType.protest,
+      date_start: Date.new(2025,6,6),
+      date_end: Date.new(2025,6,6),
+      time_start: "12:00",
+      time_end: "16:00",
+      location: "Indianapolis State House",
+      has_speakers: true,
+      has_musicians: true,
+      has_props: false,
+      has_partners: true,
+      body: "Need to get AVER's flags"
       
     )
   

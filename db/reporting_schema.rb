@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_09_103622) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_11_111857) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -109,6 +109,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_09_103622) do
     t.text "ao_notes"
     t.index ["organization_id"], name: "index_contact_cards_on_organization_id"
     t.index ["user_id"], name: "index_contact_cards_on_user_id"
+  end
+
+  create_table "event_props", force: :cascade do |t|
+    t.string "name"
+    t.bigint "organization_id"
+    t.bigint "user_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_event_props_on_organization_id"
+    t.index ["user_id"], name: "index_event_props_on_user_id"
   end
 
   create_table "event_slot_types", force: :cascade do |t|
@@ -490,6 +501,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_09_103622) do
   add_foreign_key "bank_deposits", "users"
   add_foreign_key "contact_cards", "organizations"
   add_foreign_key "contact_cards", "users"
+  add_foreign_key "event_props", "organizations"
+  add_foreign_key "event_props", "users"
   add_foreign_key "event_slots", "event_slot_types"
   add_foreign_key "event_slots", "events"
   add_foreign_key "event_slots", "speakers"

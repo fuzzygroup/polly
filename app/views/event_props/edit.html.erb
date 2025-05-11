@@ -1,0 +1,12 @@
+<% content_for :title, "Editing event prop" %>
+
+<h1>Editing event prop</h1>
+
+<%= render "form", event_prop: @event_prop %>
+
+<br>
+
+<div>
+  <%= link_to "Show this event prop", @event_prop %> |
+  <%= link_to "Back to event props", event_props_path %>
+</div>
