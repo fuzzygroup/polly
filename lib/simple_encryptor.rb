@@ -17,7 +17,8 @@ class SimpleEncryptor
     end
 
     def secret_key
-      Rails.application.credentials.secret_key_base[0..15]
+      #Rails.application.credentials.secret_key_base[0..15]
+      ENV['SECRET_KEY_BASE']
     end
   end
 end
