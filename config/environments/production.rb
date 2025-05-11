@@ -16,7 +16,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
   
   # serve assets from rails host itself
-  config.public_file_server.enabled = true
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Cache assets for far-future expiry since they are all digest stamped.
   config.public_file_server.headers = { "cache-control" => "public, max-age=#{1.year.to_i}" }
@@ -93,4 +93,5 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
   
   config.require_master_key = ENV["SECRET_KEY_BASE_DUMMY"].nil?
+  
 end
