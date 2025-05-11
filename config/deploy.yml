@@ -49,7 +49,6 @@ env:
   # clear:
   #   DB_HOST: 192.168.0.2
   secret:
-    - RAILS_MASTER_KEY
     - DATABASE_URL
 
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
