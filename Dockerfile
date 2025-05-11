@@ -77,6 +77,15 @@ RUN groupadd --system --gid 1000 rails && \
     useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
 
+#
+RUN bundle install && \
+    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
+    bundle exec bootsnap precompile --gemfile
+
+# Install node modules
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile    
+
 RUN chmod +rx /rails/bin
 
 USER 1000:1000
