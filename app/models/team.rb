@@ -1,5 +1,13 @@
 class Team < ApplicationRecord
   
+  belongs_to :organization
+  belongs_to :user
+  belongs_to :event, optional: true
+  belongs_to :project, optional: true
+  
+  has_many :team_users
+  has_many :team_rules
+  
   #
   # Scott Changes from Here On
   #
@@ -7,18 +15,11 @@ class Team < ApplicationRecord
   IDENTITY_COLUMNS = [:name]
   include FindOrCreate
   
-  has_many :team_users
-  has_many :team_rules
-  
   def new
     self.organization = current_user.organization_id
   end
   
   
-  belongs_to :organization
-  belongs_to :user
-  
-  has_many :team_rules
   
   def self.editable_fields
     #[:]
