@@ -104,6 +104,14 @@ class User < ApplicationRecord
   def self.dgl 
     User.where(username: 'dgl').first
   end
+  
+  def self.max_haddad
+    User.where(username: 'maxhaddad').first
+  end
+  
+  def self.alex_hardy
+    user.where(username: "captaincrunch").first
+  end
 
 
   private

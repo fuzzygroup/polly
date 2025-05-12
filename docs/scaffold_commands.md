@@ -94,3 +94,5 @@ bin/rails g scaffold Links organization:references team:references user:referenc
 
 bin/rails g scaffold EventShift name:string duration:integer time_start:time time_end:time people_needed:integer
 bin/rails g scaffold EventProp name:string
+
+bin/rails g scaffold EventAttendance event:references organization:references user:references status:boolean name:string ip_address:string user_agent:string

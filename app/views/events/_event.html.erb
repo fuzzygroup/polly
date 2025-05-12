@@ -1,4 +1,9 @@
 <div id="<%= dom_id event %>">
+  <p class="text-center">
+    <%= link_to("I want to Attend", new_event_attendance_path(slug: event.slug))%>
+    &nbsp;|&nbsp;
+    <%= link_to("I want to Volunteer", new_event_attendance_path(slug: event.slug))%>
+  </p>
   <p>
     <strong>Name:</strong>
     <%= event.name %>

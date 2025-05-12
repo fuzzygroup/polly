@@ -34,10 +34,13 @@ class Event < ApplicationRecord
   
   
   
+  
+  
   def add_speaker(name, speaker, duration)
-    est = EventSlotType.speaker
+    est = EventSlotType.speech
     
     event_slot_struct = OpenStruct.new
+    event_slot_struct.name = name
     event_slot_struct.event_slot_type_id = est.id
     event_slot_struct.speaker_id = speaker.id
     event_slot_struct.duration = duration
@@ -50,38 +53,78 @@ class Event < ApplicationRecord
     est = EventSlotType.buffer
     
     event_slot_struct = OpenStruct.new
+    event_slot_struct.name = "#{est.default_duration} Buffer"
     event_slot_struct.event_slot_type_id = est.id
-    event_slot_struct.duration = est.duration
+    event_slot_struct.duration = est.default_duration
     event_slot_struct.event_id = self.id 
     
-    status, event_slot = EventSlot.find_or_create(event_slot_struct)
+    # Need to skip find_or_create due to the NEED for many identical buffers
+    #status, event_slot = EventSlot.find_or_create(event_slot_struct)
+    es = EventSlot.new(event_slot_struct.to_h)
+    #debugger
+    if es.save
+    else
+      # jsj need to deal with this
+      raise es.errors.full_messages.inspect
+    end
   end
   
   def add_musician(name, musician, duration)
-    est = EventSlotType.musician
+    est = EventSlotType.music
     
     event_slot_struct = OpenStruct.new
+    event_slot_struct.name = name
     event_slot_struct.event_slot_type_id = est.id
-    event_slot_struct.duration = est.duration
+    event_slot_struct.duration = est.default_duration
     event_slot_struct.event_id = self.id 
     event_slot_struct.musician_id = musician.id
     
     status, event_slot = EventSlot.find_or_create(event_slot_struct)
   end
   
-  def add_march(name, duration)
+  def add_march(name, march_duration)
     est = EventSlotType.march
-    
+    #debugger
     event_slot_type_buffer = EventSlotType.buffer
     
+    event_slot_struct = OpenStruct.new
+    event_slot_struct.name = name
+    event_slot_struct.event_slot_type_id = est.id
+    if march_duration.nil? 
+      event_slot_struct.duration = est.default_duration
+    else
+      event_slot_struct.duration = march_duration
+    end
+    event_slot_struct.event_id = self.id 
+    #event_slot_struct.musician_id = musician.id
+    tatus, event_slot = EventSlot.find_or_create(event_slot_struct)
   end
   
-  def duration
+  def duration_in_minutes
     durations = []
     self.event_slots.each do |es|
       durations << es.duration
     end
     durations.sum
+  end
+  
+  def compute_start_times
+    # last_start_at = 0
+    # self.event_slots.each do |es|
+    #   if last_start_at == 0
+    #     es.computed_start_at = event.time_start
+    #     last_start_at =
+    #   else
+    #   end
+    # end
+  end
+  
+  def duration_in_hours
+    durations = []
+    self.event_slots.each do |es|
+      durations << es.duration
+    end
+    (durations.sum.to_f / 60).round(2)
   end
   
   def self.four_nineteen

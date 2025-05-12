@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_11_111857) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_12_101542) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -111,6 +111,21 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_11_111857) do
     t.index ["user_id"], name: "index_contact_cards_on_user_id"
   end
 
+  create_table "event_attendances", force: :cascade do |t|
+    t.bigint "event_id"
+    t.bigint "organization_id"
+    t.bigint "user_id"
+    t.boolean "status"
+    t.string "name"
+    t.string "ip_address"
+    t.string "user_agent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_attendances_on_event_id"
+    t.index ["organization_id"], name: "index_event_attendances_on_organization_id"
+    t.index ["user_id"], name: "index_event_attendances_on_user_id"
+  end
+
   create_table "event_props", force: :cascade do |t|
     t.string "name"
     t.bigint "organization_id"
@@ -140,8 +155,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_11_111857) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "musician_id"
     t.index ["event_id"], name: "index_event_slots_on_event_id"
     t.index ["event_slot_type_id"], name: "index_event_slots_on_event_slot_type_id"
+    t.index ["musician_id"], name: "index_event_slots_on_musician_id"
     t.index ["speaker_id"], name: "index_event_slots_on_speaker_id"
   end
 
@@ -219,7 +236,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_11_111857) do
     t.bigint "contact_card_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "identifier"
     t.index ["contact_card_id"], name: "index_musicians_on_contact_card_id"
+    t.index ["identifier"], name: "index_musicians_on_identifier", unique: true
     t.index ["user_id"], name: "index_musicians_on_user_id"
   end
 
@@ -358,6 +377,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_11_111857) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "identifier"
+    t.index ["identifier"], name: "index_speakers_on_identifier", unique: true
     t.index ["organization_id"], name: "index_speakers_on_organization_id"
     t.index ["user_id"], name: "index_speakers_on_user_id"
   end
@@ -501,10 +522,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_11_111857) do
   add_foreign_key "bank_deposits", "users"
   add_foreign_key "contact_cards", "organizations"
   add_foreign_key "contact_cards", "users"
+  add_foreign_key "event_attendances", "events"
+  add_foreign_key "event_attendances", "organizations"
+  add_foreign_key "event_attendances", "users"
   add_foreign_key "event_props", "organizations"
   add_foreign_key "event_props", "users"
   add_foreign_key "event_slots", "event_slot_types"
   add_foreign_key "event_slots", "events"
+  add_foreign_key "event_slots", "musicians"
   add_foreign_key "event_slots", "speakers"
   add_foreign_key "event_types", "organizations"
   add_foreign_key "event_types", "users"

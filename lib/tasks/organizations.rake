@@ -17,6 +17,12 @@ namespace :organizations do
     splits << "name:50501 District 9|state:Indiana|organization_type:collective|identifier:district_9_50501"    
     splits << "name:Westside Democrats|organization_type:collective|identifier:westsidedemocrats"
     add_organizations(splits)
+    splits << "name:Westfield Democrats|organization_type:collective|identifier:westfield_democrats"
+    add_organizations(splits)
+    splits << "name:We're Folking Mad|organization_type:collective|identifier:we_are_folking_mad"
+    add_organizations(splits)
+    
+    
   end
   
   def add_organizations(splits) 

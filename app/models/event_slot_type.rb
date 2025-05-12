@@ -8,16 +8,16 @@ class EventSlotType < ApplicationRecord
     EventSlotType.where(name: "March").first
   end
   
-  def self.speaker
-    EventSlotType.where(name: "Speaker").first
+  def self.speech
+    EventSlotType.where(name: "Speech").first
   end
   
   def self.buffer
     EventSlotType.where(name: "Buffer").first
   end
   
-  def self.musician
-    EventSlotType.where(name: "Musician").first
+  def self.music
+    EventSlotType.where(name: "Music").first
   end
   
 end

@@ -1,0 +1,52 @@
+<%= form_with(model: event_attendance) do |form| %>
+  <% if event_attendance.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(event_attendance.errors.count, "error") %> prohibited this event_attendance from being saved:</h2>
+
+      <ul>
+        <% event_attendance.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :event_id, style: "display: block" %>
+    <%= form.text_field :event_id %>
+  </div>
+
+  <div>
+    <%= form.label :organization_id, style: "display: block" %>
+    <%= form.text_field :organization_id %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.checkbox :status %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :ip_address, style: "display: block" %>
+    <%= form.text_field :ip_address %>
+  </div>
+
+  <div>
+    <%= form.label :user_agent, style: "display: block" %>
+    <%= form.text_field :user_agent %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

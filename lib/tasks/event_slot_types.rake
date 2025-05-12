@@ -25,10 +25,25 @@ namespace :event_slot_types do
       default_duration: 10,
       default_duration_units: 'minutes'
     )
+
+    event_slot_type_structs << 
+    OpenStruct.new(
+      name: "Speech",
+      default_duration: 10,
+      default_duration_units: 'minutes'
+    )
+
     
     event_slot_type_structs << 
     OpenStruct.new(
       name: "Musician",
+      default_duration: 15,
+      default_duration_units: 'minutes'
+    )
+    
+    event_slot_type_structs << 
+    OpenStruct.new(
+      name: "Music",
       default_duration: 15,
       default_duration_units: 'minutes'
     )

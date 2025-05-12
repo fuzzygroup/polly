@@ -1,0 +1,30 @@
+<h2 class="text-center">Schedule for <%= event.name %></h2>
+
+<p class="text-center">
+  Protest Starts At: <strong><%=@event.time_start.strftime("%H:%M")%></strong>
+</p>
+<p class="text-center">
+  Event Duration: <strong><%=@event.duration_in_minutes%> minutes or <%= @event.duration_in_hours%> hours</strong>
+</p>
+
+<%# event.event_slots.each do |event_slot| %>
+
+<%# end %>
+
+<div id="events">
+  <%= render 'schedule_event_slot_header' %>
+  
+  <% event.event_slots.each do |event_slot| %>
+    <%= render 'schedule_event_slot', {event_slot: event_slot} %>
+    <!-- <p>
+      <%#= link_to "Show this project", project %>
+    </p> -->
+  <% end %>
+  <%= render 'schedule_event_slot_footer' %>
+  <!-- <%# @events.each do |event| %>
+    <%#= render event %>
+    <p>
+      <%#= link_to "Show this event", event %>
+    </p>
+  <%# end %> -->
+</div>

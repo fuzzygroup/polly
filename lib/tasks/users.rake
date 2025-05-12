@@ -43,11 +43,16 @@ namespace :users do
 
     splits << "first_name:Alisa|last_name:Advani|username:resisting_oracle|password:MatrixForever!|email:alias@something.com|role:admin|organization_id:#{Organization.indiana50501.id}"
         
-        splits << "first_name:Lori|last_name:Daughtery|username:lorid|password:I_help_out!|email:alias111@something.com|role:admin|organization_id:#{Organization.indiana50501.id}"
+        splits << "first_name:Lori|last_name:Daughtery|username:lorid|password:I_help_out!|email:alias111@something.com|role:user|organization_id:#{Organization.indiana50501.id}"
             
-    splits << "first_name:Mary|last_name:Hardin|username:maryhardin|password:PRisLife!|email:alias222@something.com|role:admin|organization_id:#{Organization.indiana50501.id}"
+    splits << "first_name:Mary|last_name:Hardin|username:maryhardin|password:PRisLife!|email:alias222@something.com|role:user|organization_id:#{Organization.indiana50501.id}"
     
-    splits << "first_name:Dave|last_name:L|username:dgl|password:battery3333!|email:aliasdgl@something.com|role:admin|organization_id:#{Organization.indiana50501.id}"
+    splits << "first_name:Dave|last_name:L|username:dgl|password:battery3333!|email:aliasdgl@something.com|role:user|organization_id:#{Organization.indiana50501.id}"
+
+    splits << "first_name:Max|last_name:Maddad|username:maxhaddad|password:comedy333!|email:comedy@something.com|role:user|organization_id:#{Organization.indiana50501.id}"
+    
+        splits << "first_name:Alex|last_name:Hardy|username:captaincrunch|password:crunchberries4ever!|email:crunc@something.com|role:user|organization_id:#{Organization.indiana50501.id}"
+
     
     add_user(splits)
   end

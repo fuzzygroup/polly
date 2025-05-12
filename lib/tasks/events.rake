@@ -19,24 +19,25 @@ namespace :events do
     
     event.add_march("Opening March", 60)
     event.add_buffer
-    event.add_speaker("Scott Johnson Opening Address - The Good and the Bad",10)
+    event.add_speaker("Scott Johnson Opening Address - The Good and the Bad", Speaker.scott_johnson,10)
     event.add_buffer
-    event.add_speaker("Captain Crunch Goes to the Capital", 10)
+    event.add_speaker("Captain Crunch Goes to the Capital",Speaker.captain_crunch, 10)
     event.add_buffer
-    event.add_musician("Jen Carlson Midkiff", 15)
+    event.add_musician("Jen Carlson Midkiff", Musician.jen_carlson_midkiff, 15)
     event.add_buffer
-    event.add_speaker("Resisting Oracle on XYZ", 10)
+    event.add_speaker("Resisting Oracle on XYZ", Speaker.resisting_oracle,10)
     event.add_buffer
-    event.add_speaker("Scott Johnson on XYZ", 10)
+    event.add_speaker("Scott Johnson Roams Over the Madness of Exec Orders",Speaker.scott_johnson, 10)
     event.add_buffer
     #event.add_speaker("Jamie Flemington on Abortion", 10)
     #event.add_buffer
-    event.add_musician("Greg Zeismer", 15)
+    event.add_musician("Greg Zeismer", Musician.greg_ziesemer,15)
     event.add_buffer    
-    event.add_speaker("Max Haddad: Let's Mock the King's Decrees", 10)
+    event.add_speaker("Max Haddad: Let's Mock the King's Decrees", Speaker.max_haddad, 10)
     event.add_buffer
-    event.add_speaker("Scott Johnson Closing Remarks", 5)
-    event.add_march("Closing March", 0)
+    event.add_speaker("Scott Johnson Closing Remarks", Speaker.scott_johnson,5)
+    event.add_buffer
+    event.add_march("Closing March - Optional", 0)
     
     # slots = []
     # slots << OpenStruct.new(
