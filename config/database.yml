@@ -12,6 +12,13 @@ development:
   reporting:
     <<: *default
     database: polly_development
+    
+#
+# NOTE: REQUIRED FOR DOCKERIZED ASSET COMPILATION
+# HERE THERE BE DRAGONS
+#
+production:
+  adapter: postgresql
 
 # production:
 #   primary:
