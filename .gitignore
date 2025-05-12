@@ -40,3 +40,4 @@
 !/app/assets/builds/.keep
 
 /node_modules
+lib/tasks/data/usernames_to_passwords.json
