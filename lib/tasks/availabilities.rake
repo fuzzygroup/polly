@@ -59,6 +59,16 @@ namespace :availabilities do
       availability: false
     )
 
+    availabilities_structs << 
+    OpenStruct.new(
+      user_id: User.ryan.id,
+      organization_id: Organization.indiana50501.id,
+      date_start: Date.new(2025, 5, 22),
+      date_end: Date.new(2025, 5,26),
+      availability: false
+    )
+
+
     add_availabilities(availabilities_structs)
   end
   
