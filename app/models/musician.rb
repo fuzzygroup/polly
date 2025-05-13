@@ -17,4 +17,9 @@ class Musician < ApplicationRecord
   def self.greg_ziesemer
     Musician.where(identifier: 'greg_ziesemer').first    
   end
+  
+  def self.tbd
+    Musician.where(identifier: "tbd").first
+  end
+  
 end

@@ -46,14 +46,16 @@ namespace :musicians do
     
     musician_structs << 
     OpenStruct.new(
-      name: "TBD Musician",
+      name: "TBD",
       url: "",
       #organization_id: Organization.indiana50501.id, 
       user_id: User.scott.id,
       #contact_id: nil,
       notes: "This is a musician still to be found",
-      identifier: "tbd_musician"
+      identifier: "tbd"
     )
+    
+
     
     # musician_structs <<
     # OpenStruct.new(
