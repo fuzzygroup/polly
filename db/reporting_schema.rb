@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_12_101542) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_12_145129) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -413,6 +413,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_101542) do
     t.string "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "primary_team_role"
+    t.string "secondary_team_role"
     t.index ["team_id"], name: "index_team_users_on_team_id"
     t.index ["user_id"], name: "index_team_users_on_user_id"
   end
@@ -426,7 +428,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_101542) do
     t.datetime "updated_at", null: false
     t.string "chat_url"
     t.date "date_expires"
+    t.bigint "event_id"
+    t.bigint "project_id"
+    t.index ["event_id"], name: "index_teams_on_event_id"
     t.index ["organization_id"], name: "index_teams_on_organization_id"
+    t.index ["project_id"], name: "index_teams_on_project_id"
     t.index ["user_id"], name: "index_teams_on_user_id"
   end
 
@@ -573,7 +579,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_101542) do
   add_foreign_key "team_user_rules", "users"
   add_foreign_key "team_users", "teams"
   add_foreign_key "team_users", "users"
+  add_foreign_key "teams", "events"
   add_foreign_key "teams", "organizations"
+  add_foreign_key "teams", "projects"
   add_foreign_key "teams", "users"
   add_foreign_key "users", "organizations"
   add_foreign_key "vetting_questions", "groups"

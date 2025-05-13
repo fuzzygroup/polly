@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_12_131511) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_12_145129) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -413,6 +413,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_131511) do
     t.string "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "primary_team_role"
+    t.string "secondary_team_role"
     t.index ["team_id"], name: "index_team_users_on_team_id"
     t.index ["user_id"], name: "index_team_users_on_user_id"
   end
