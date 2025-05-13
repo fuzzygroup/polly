@@ -6,6 +6,8 @@
 <p class="text-center">
   Event Duration: <strong><%=@event.duration_in_minutes%> minutes or <%= @event.duration_in_hours%> hours</strong>
 </p>
+<p>
+
 
 <%# event.event_slots.each do |event_slot| %>
 
@@ -14,7 +16,8 @@
 <div id="events">
   <%= render 'schedule_event_slot_header' %>
   
-  <% event.event_slots.each do |event_slot| %>
+  <%# event.event_slots.each do |event_slot| %>
+  <% event.non_buffer_slots.each do |event_slot| %>
     <%= render 'schedule_event_slot', {event_slot: event_slot} %>
     <!-- <p>
       <%#= link_to "Show this project", project %>
@@ -28,3 +31,5 @@
     </p>
   <%# end %> -->
 </div>
+<p>&nbsp;</p>
+  <strong>Note:</strong> The schedule above includes 3 minutes buffer time between each Speaker or Musician or Whatever.  This helps prevent time overruns.</p>
