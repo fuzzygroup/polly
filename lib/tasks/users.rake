@@ -2,6 +2,7 @@ namespace :users do
   # be rake users:init --trace
   task :init => :environment do
     Rake::Task["users:seed"].invoke
+    #Rake::Task["users:seed2"].invoke
     Rake::Task["users:metrics"].invoke
   end
   
@@ -9,11 +10,83 @@ namespace :users do
     u = User.find()
   end
   
+  task :seed2 => :environment do
+    user_structs = []
+    
+    user_structs <<
+    OpenStruct.new(
+      first_name: "Anne",
+      last_name: "Edwards",
+      password: "sbi2025why!",
+      username: "anne",
+      email: "anneedwards@tutamail.com",
+      #signal_username: "Anne Edwards⁩",
+      role: "user",
+      organization_id: Organization.indiana50501.id
+    )
+    
+    user_structs <<
+    OpenStruct.new(
+      first_name: "Brigid",
+      last_name: "Joy",
+      password: "243ldsafsa!",
+      username: "brigid",
+      email: "brigid@foo.com",
+      #signal_username: "⁨Brigid Joy⁩",
+      role: "user",
+      organization_id: Organization.indiana50501.id
+    )
+    
+    user_structs <<
+    OpenStruct.new(
+      first_name: "Bryan⁩",
+      last_name: "",
+      password: "4329458asf!",
+      username: "bryan⁩",
+      email: "Bryan⁩@foo.com",
+      #signal_username: "⁨Bryan⁩",
+      role: "user",
+      organization_id: Organization.indiana50501.id
+    )
+    
+    user_structs <<
+    OpenStruct.new(
+      first_name: "Whitney⁩",
+      last_name: "",
+      password: "fdsafdasfsa!",
+      username: "whitney⁩",
+      email: "whitney⁩@foo.com",
+      #signal_username: "⁨Whitney first aid & marketing⁩⁩",
+      role: "user",
+      organization_id: Organization.indiana50501.id
+    )
+    
+    user_structs <<
+    OpenStruct.new(
+      first_name: "Bri⁩",
+      last_name: "Hall",
+      password: "afdsafas!",
+      username: "bri⁩",
+      email: "bri⁩@foo.com",
+      #signal_username: "⁨Aphrodite⁩",
+      role: "user",
+      organization_id: Organization.indiana50501.id
+    )
+    
+    add_users(user_structs)
+  end
+  
+  def add_users(user_structs) 
+    user_structs.each do |user_struct|
+      puts "Processing user: #{user_struct.first_name}"
+      status, user = User.find_or_create(user_struct)
+    end
+  end
+  
   # be rake user:seed --trace
   task :seed => :environment do
     splits = []
-    splits << #"first_name:Scott|last_name:Johnson|username:fuzzygroup|password:dd87934aadfed!|email:fuzzygroup@gmail.com|signal_username:CancelTesla.2025|role:superuser"
-    "first_name:Scott|last_name:Johnson|username:fuzzygroup|password:dd87934aadfed!|email:fuzzygroup@tutamail.com|role:superuser|organization_id:#{Organization.indiana50501.id}"
+    splits <<   "first_name:Scott|last_name:Johnson|username:fuzzygroup|password:dd87934aadfed!|email:fuzzygroup@tutamail.com|role:superuser|organization_id:#{Organization.indiana50501.id}"
     
     splits << "first_name:Taelar|last_name:Christman|username:taelar|password:christmas3334|email:Yogitaelar@tutamail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
     
@@ -52,6 +125,16 @@ namespace :users do
     splits << "first_name:Max|last_name:Maddad|username:maxhaddad|password:comedy333!|email:comedy@something.com|role:user|organization_id:#{Organization.indiana50501.id}"
     
         splits << "first_name:Alex|last_name:Hardy|username:captaincrunch|password:crunchberries4ever!|email:crunc@something.com|role:user|organization_id:#{Organization.indiana50501.id}"
+
+        splits << "first_name:Ryan|last_name:|username:ryan|password:movies4ever!|email:rtmeacham@gmail.comm|role:user|organization_id:#{Organization.indiana50501.id}"
+
+        splits << "first_name:Angie|last_name:Foreman|username:angie|password:dadsrule!|email:aforemandesigns@gmail.com 
+|role:user|organization_id:#{Organization.indiana50501.id}"
+
+        splits << "first_name:Bri|last_name:Hall|username:bri|password:fdfdfdfdaaa!|email:bri@foo.com 
+|role:user|organization_id:#{Organization.indiana50501.id}"
+
+
 
     
     add_user(splits)

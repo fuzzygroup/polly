@@ -53,7 +53,7 @@ namespace :teams do
       name: "Money",
       user_id: User.scott.id,
       organization_id: Organization.indiana50501.id, 
-      active: true,
+      active: false,
       chat_url: "https://signal.group/#CjQKILVirT3SY8tqPU-7m8uOu0Y21fjooiC2U-TxQdrLLDy8EhCM07MikEavYJpsdle-KjMR"
     )
     

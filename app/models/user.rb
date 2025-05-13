@@ -110,7 +110,15 @@ class User < ApplicationRecord
   end
   
   def self.alex_hardy
-    user.where(username: "captaincrunch").first
+    User.where(username: "captaincrunch").first
+  end
+  
+  def self.ryan
+    User.where(username: "ryan").first
+  end
+  
+  def self.angie_foreman
+    User.where(username: "angie").first
   end
 
 

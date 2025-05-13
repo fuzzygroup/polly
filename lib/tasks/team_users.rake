@@ -192,7 +192,7 @@ namespace :team_users do
     team_users_structs << 
     OpenStruct.new(
       team_id: Team.where(name: "GenCon").first.id,
-      user_id: User.bryan,
+      user_id: User.where(username: "bryan").first.id,
       leader: false,
       primary_team_role: "Stat Block",
       secondary_team_role: "One Shot"
@@ -212,7 +212,7 @@ namespace :team_users do
     team_users_structs << 
     OpenStruct.new(
       team_id: Team.where(name: "GenCon").first.id,
-      user_id: User.bri,
+      user_id: User.where(username: "bri").first.id,
       leader: false,
       primary_team_role: "Cosplayer Lead",
       secondary_team_role: nil
@@ -222,7 +222,7 @@ namespace :team_users do
     team_users_structs << 
     OpenStruct.new(
       team_id: Team.where(name: "GenCon").first.id,
-      user_id: User.brigid_joy,
+      user_id: User.where(username: "brigid_joy").first.id,
       leader: false,
       primary_team_role: "Cosplayer",
       secondary_team_role: nil
@@ -232,7 +232,7 @@ namespace :team_users do
     team_users_structs << 
     OpenStruct.new(
       team_id: Team.where(name: "GenCon").first.id,
-      user_id: User.whitney,
+      user_id: User.where(username: "whitney").first.id,
       leader: false,
       primary_team_role: "Research???",
       secondary_team_role: nil
@@ -242,12 +242,16 @@ namespace :team_users do
     team_users_structs << 
     OpenStruct.new(
       team_id: Team.where(name: "GenCon").first.id,
-      user_id: User.anne_edwards,
+      user_id: User.where(username: "anne_edwards").first.id,
       leader: false,
       primary_team_role: "Tabling",
       secondary_team_role: nil
       
     )
+    
+
+    
+    
     
 
     
