@@ -2,13 +2,18 @@ namespace :generate_passwords_env_file do
   # be rake generate_passwords_env_file:init --trace
   task :init => :environment do
     usernames_to_passwords = {}
+    #debugger
     User.all.each do |user|
-      password_command = 'cat /dev/urandom | base64 | head -c 16'
-      password = exec(password_command)
-      usernames[user.username] = password
+      puts "Processing user: #{user.id} -- #{user.username}"
+      password_command = 'cat /dev/urandom | base64 | head -c 8'
+      password = `#{password_command}`
+      puts "After password command"
+      usernames_to_passwords[user.username] = password
     end
+    #debugger
     #json_string = usernames_to_passwords.to_json
     file_destination = File.join(Rails.root, 'lib/tasks/data/usernames_to_passwords.json')
-    File.write(file_destination, JSON.pretty_generate(usernames))
+    
+    result = File.write(file_destination, JSON.pretty_generate(usernames_to_passwords))
   end
 end
