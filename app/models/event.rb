@@ -11,6 +11,7 @@ class Event < ApplicationRecord
   include FindOrCreate
   
   scope :active, -> { where(active: true) }
+  #scope :non_buffer_slots, -> { where }
   
   #after_create :set_share_code
   
@@ -20,6 +21,11 @@ class Event < ApplicationRecord
 
   def to_param
     slug
+  end
+  
+  def non_buffer_slots
+    buffer_type = EventSlotType.buffer
+    self.event_slots.where(["event_slot_type_id <> ?", buffer_type.id])
   end
 
 
@@ -108,6 +114,11 @@ class Event < ApplicationRecord
     durations.sum
   end
   
+  def duration_in_hours
+    d = self.duration_in_minutes
+    (d.to_f / 60).round(2)
+  end
+
   def compute_start_times
     # last_start_at = 0
     # self.event_slots.each do |es|
@@ -119,13 +130,6 @@ class Event < ApplicationRecord
     # end
   end
   
-  def duration_in_hours
-    durations = []
-    self.event_slots.each do |es|
-      durations << es.duration
-    end
-    (durations.sum.to_f / 60).round(2)
-  end
   
   def self.four_nineteen
     Event.where(name: "4/19 Protest").first

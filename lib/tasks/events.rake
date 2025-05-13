@@ -52,39 +52,87 @@ namespace :events do
     
   end
   
-  # be rake events:flesh_out_525
+  # be rake events:flesh_out_615
+  task :flesh_out_615 => :environment do
+    event = Event.where(name: "6/15 Protest - Dads for Democracy").first 
+    
+    event.add_speaker("Scott Johnson Opening Address - A Dad Meets Democracy", Speaker.scott_johnson,10)
+    event.add_buffer
+    event.add_speaker("Brian Jonasen",Speaker.brian_jonasen, 10)
+    event.add_buffer
+    event.add_march("March", 40)
+    event.add_buffer
+    event.add_musician("TBD", Musician.tbd, 15)
+    event.add_buffer
+    s = Speaker.where(identifier: "josh_lowry").first
+    event.add_speaker("Josh Lowry", s,10)
+    event.add_buffer
+    s = Speaker.where(identifier: "angie_foreman").first
+    event.add_speaker("Not a Dad but Still for Democracy",s, 10)
+    event.add_buffer
+    event.add_musician("TBD", Musician.tbd,15)
+    event.add_buffer    
+    event.add_speaker("Max Haddad ???", Speaker.max_haddad, 10)
+    event.add_buffer
+    event.add_speaker("An Immigrant Dad Speaks Out", Speaker.tbd, 10)
+    event.add_buffer
+    event.add_speaker("Open Mic", Speaker.open_mic, 30)
+    event.add_buffer
+    event.add_speaker("Scott Johnson Closing Remarks", Speaker.scott_johnson,5)
+    event.add_buffer
+    event.add_march("Closing March - Optional", 0)
+    
+    # slots = []
+    # slots << OpenStruct.new(
+    #
+    # )
+    #
+    # "Opening Address by Scott"
+    # slots << "Closing Address by Scott"
+    # slots << "Trump Executive Order Overview by Scott"
+    # slots << "Resisting Oracle on Executive Orders"
+    # slots << "Executive Orders by Destiny Wells"
+    
+  end
+  
+  # be rake events:flesh_out_66
   task :flesh_out_66 => :environment do
     event = Event.where(name: "6/6 Protest - D Day").first 
     
-    event.add_speaker("Scott Johnson Welcoming Remarks",5)
+    event.add_speaker("Scott Johnson Welcoming Remarks",Speaker.scott_johnson,5)
     event.add_buffer
-    event.add_musician("Jen Carlson Midkiff National Anthem", 15)
+    event.add_musician("Jen Carlson Midkiff National Anthem", Musician.jen_carlson_midkiff, 15)
     event.add_buffer
-    event.add_speaker("Color Guard Amy and Brian @ same time",0)
+    event.add_speaker("Color Guard Amy and Brian @ same time",Speaker.brian_jonasen,0)
     event.add_buffer
-    event.add_speaker("Moment of Silence and then Taps to Honor the Dead", 10)
+    event.add_speaker("Moment of Silence and then Taps to Honor the Dead", Speaker.brian_jonasen,10)
     event.add_buffer
-    event.add_speaker("Brian Jonasen Opening Remarks w/ Group Oath",10)
+    event.add_speaker("Brian Jonasen Opening Remarks w/ Group Oath",Speaker.brian_jonasen,10)
     event.add_buffer
-    event.add_speaker("David Hoffman, Retired Colonel, History Teacher - Intro by Amy", 10)
+    s = Speaker.find_by_identifier("david_hoffman")
+    event.add_speaker("David Hoffman, Retired Colonel, History Teacher - Intro by Amy", s,10)
     event.add_buffer
     event.add_march("March", 60)
     event.add_buffer
-    event.add_speaker("Renee Turner Pack, State Representative", 10)
+    s = Speaker.find_by_identifier("renee_turner_pack")
+    event.add_speaker("Renee Turner Pack, State Representative", s, 10)
     event.add_buffer
-    event.add_speaker("Jackson Franklin", 10)
+    s = Speaker.find_by_identifier("jackson_franklin")
+    event.add_speaker("Jackson Franklin",s, 10)
     event.add_buffer
-    event.add_speaker("Connie Karras", 10)
+    s = Speaker.find_by_identifier("connie_karras")
+    event.add_speaker("Connie Karras",s,  10)
     event.add_buffer
-    event.add_musician("TBD", 15)
+    event.add_musician("TBD", Musician.tbd, 15)
     event.add_buffer
-    event.add_speaker("J.D. Ford", 10)
+    s = Speaker.find_by_identifier("j_d_ford")    
+    event.add_speaker("J.D. Ford", s, 10)
     event.add_buffer
-    event.add_speaker("Amy - Trans People Have Always Served", 10)
+    event.add_speaker("Amy - Trans People Have Always Served", Speaker.amy_k, 10)
     event.add_buffer
-    event.add_march("Brian Closing Remarks", 10)
+    event.add_speaker("Open Mic - Veterans Speak Out", Speaker.tbd, 60)
     event.add_buffer
-    event.add_musician("Open Mic - Veterans Speak Out", 60)
+    event.add_speaker("Brian Closing Remarks", Speaker.brian_jonasen, 10)
     event.add_buffer
   end
   

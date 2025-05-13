@@ -1,8 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @event %>
-
 <%= render 'schedule', {event: @event}%>
+
+<%= render @event %>
 
 <div>
   <%= link_to "Edit this event", edit_event_path(@event) %> |
