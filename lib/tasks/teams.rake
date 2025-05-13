@@ -124,6 +124,26 @@ namespace :teams do
       date_expires: nil
     )
     
+    team_structs << 
+    OpenStruct.new(
+      name: "Event Video",
+      user_id: User.ryan.id,
+      organization_id: Organization.indiana50501.id, 
+      active: true,
+      chat_url: nil,
+      date_expires: nil
+    )
+    
+    team_structs << 
+    OpenStruct.new(
+      name: "GenCon",
+      user_id: User.scott.id,
+      organization_id: Organization.indiana50501.id, 
+      active: true,
+      chat_url: "https://signal.group/#CjQKIAzRAqaxiXh17Nx9jbIfNSPusFNt8L4rjj9dvpLUTBzvEhB11_c1Do0kKrb050YwWHiU",
+      date_expires: Date.new(2025,8,10)
+    )
+    
   
     add_teams(team_structs)
   end

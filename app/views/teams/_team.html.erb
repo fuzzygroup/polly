@@ -24,7 +24,7 @@
   </p>
   <p>
     <strong>Team Members: </strong>
-    <%= team.team_users.map(&:user).map(&:full_name).join(", ")%>
+    <%= team.team_users.map(&:user).map(&:full_name).sort.join(", ")%>
   </p>
 
 
