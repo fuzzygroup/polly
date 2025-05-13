@@ -103,6 +103,141 @@ namespace :speakers do
       identifier: "tbd_speaker"
     )
     
+    speaker_structs << 
+    OpenStruct.new(
+      name: "Open Mic",
+      url: "",
+      organization_id: Organization.indiana50501.id, 
+      pronouns: nil,
+      user_id: User.scott.id,
+      #contact_id: nil,
+      notes: "This is an Open Mic block",
+      identifier: "open_mic"
+    )
+    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "David Hoffman",
+      url: "",
+      organization_id: Organization.indiana50501.id, 
+      pronouns: "he / him",
+      user_id: User.amyk.id,
+      #contact_id: nil,
+      notes: "Retired Colonel, History Teacher - Introduced by Amy",
+      identifier: "david_hoffman"
+    )
+    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "Brian Jonasen",
+      url: "",
+      organization_id: Organization.indiana50501.id, 
+      pronouns: "he / him",
+      user_id: User.brian.id,
+      #contact_id: nil,
+      notes: nil,
+      identifier: "brian_jonasen"
+    )
+    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "Amy Kleyla",
+      url: "",
+      organization_id: Organization.indiana50501.id, 
+      pronouns: "he / him",
+      user_id: User.amyk.id,
+      #contact_id: nil,
+      notes: nil,
+      identifier: "amy_k"
+    )
+    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "Renee Turner Pack",
+      url: "https://iga.in.gov/legislative/2024/legislators/legislator_renee_pack_1",
+      organization_id: Organization.indiana50501.id, 
+      pronouns: nil,
+      user_id: User.brian.id,
+      #contact_id: nil,
+      notes: "State Representative",
+      identifier: "renee_turner_pack"
+    )
+    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "Jackson Franklin",
+      url: "https://jacksonfranklinforcongress.com/",
+      organization_id: Organization.indiana50501.id, 
+      pronouns: nil,
+      user_id: User.brian.id,
+      #contact_id: nil,
+      notes: nil,
+      identifier: "jackson_franklin"
+    )
+    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "Connie Karras",
+      url: nil,
+      organization_id: Organization.indiana50501.id, 
+      pronouns: nil,
+      user_id: User.brian.id,
+      #contact_id: nil,
+      notes: nil,
+      identifier: "connie_karras"
+    )
+    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "Josh Lowry",
+      url: nil,
+      organization_id: Organization.indiana50501.id, 
+      pronouns: nil,
+      user_id: User.angie_foreman.id,
+      #contact_id: nil,
+      notes: nil,
+      identifier: "josh_lowry"
+    )
+    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "J. D. Ford",
+      url: nil,
+      organization_id: Organization.indiana50501.id, 
+      pronouns: nil,
+      user_id: User.scott.id,
+      #contact_id: nil,
+      notes: nil,
+      identifier: "j_d_ford"
+    )
+    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "TBD",
+      url: nil,
+      organization_id: Organization.indiana50501.id, 
+      pronouns: nil,
+      user_id: User.scott.id,
+      #contact_id: nil,
+      notes: nil,
+      identifier: "TBD"
+    )
+    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "Open Mic",
+      url: nil,
+      organization_id: Organization.indiana50501.id, 
+      pronouns: nil,
+      user_id: User.scott.id,
+      #contact_id: nil,
+      notes: nil,
+      identifier: "open_mic"
+    )
+    
+    
+    
+    
     # speaker_structs <<
     # OpenStruct.new(
     # name: "GallifreyanValkyrie")

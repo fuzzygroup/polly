@@ -23,6 +23,21 @@ class Speaker < ApplicationRecord
     Speaker.where(identifier: "resisting_oracle").first
   end
   
+  def self.brian_jonasen
+    Speaker.where(identifier: "brian_jonasen").first
+  end
   
+  def self.amy_k
+    Speaker.where(identifier: "amy_k").first
+  end
+  
+  def self.tbd
+    Speaker.where(identifier: "TBD").first
+  end
+
+  def self.open_mic
+    Speaker.where(identifier: "open_mic").first
+  end
+
   
 end
