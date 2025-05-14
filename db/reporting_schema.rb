@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_12_145129) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_14_133623) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -68,6 +68,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_145129) do
     t.index ["event_id"], name: "index_bank_deposits_on_event_id"
     t.index ["organization_id"], name: "index_bank_deposits_on_organization_id"
     t.index ["user_id"], name: "index_bank_deposits_on_user_id"
+  end
+
+  create_table "confirmations", force: :cascade do |t|
+    t.string "confirmable_type"
+    t.bigint "confirmable_id"
+    t.bigint "event_slot_id"
+    t.boolean "confirmed", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["confirmable_type", "confirmable_id"], name: "index_confirmations_on_confirmable"
+    t.index ["event_slot_id"], name: "index_confirmations_on_event_slot_id"
   end
 
   create_table "contact_cards", force: :cascade do |t|
@@ -172,6 +183,21 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_145129) do
     t.index ["user_id"], name: "index_event_types_on_user_id"
   end
 
+  create_table "event_volunteers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "pronouns"
+    t.string "phone_number"
+    t.string "email"
+    t.bigint "event_id"
+    t.bigint "user_id"
+    t.text "how_do_you_want_to_help"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_volunteers_on_event_id"
+    t.index ["user_id"], name: "index_event_volunteers_on_user_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.bigint "event_type_id"
@@ -240,6 +266,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_145129) do
     t.index ["contact_card_id"], name: "index_musicians_on_contact_card_id"
     t.index ["identifier"], name: "index_musicians_on_identifier", unique: true
     t.index ["user_id"], name: "index_musicians_on_user_id"
+  end
+
+  create_table "offline_promotion_locations", force: :cascade do |t|
+    t.string "name"
+    t.bigint "contact_card_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contact_card_id"], name: "index_offline_promotion_locations_on_contact_card_id"
   end
 
   create_table "organization_rules", force: :cascade do |t|
@@ -526,6 +560,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_145129) do
   add_foreign_key "bank_deposits", "events"
   add_foreign_key "bank_deposits", "organizations"
   add_foreign_key "bank_deposits", "users"
+  add_foreign_key "confirmations", "event_slots"
   add_foreign_key "contact_cards", "organizations"
   add_foreign_key "contact_cards", "users"
   add_foreign_key "event_attendances", "events"
@@ -539,6 +574,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_145129) do
   add_foreign_key "event_slots", "speakers"
   add_foreign_key "event_types", "organizations"
   add_foreign_key "event_types", "users"
+  add_foreign_key "event_volunteers", "events"
+  add_foreign_key "event_volunteers", "users"
   add_foreign_key "events", "event_types"
   add_foreign_key "events", "organizations"
   add_foreign_key "events", "share_codes"
@@ -550,6 +587,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_12_145129) do
   add_foreign_key "groups", "organizations"
   add_foreign_key "musicians", "contact_cards"
   add_foreign_key "musicians", "users"
+  add_foreign_key "offline_promotion_locations", "contact_cards"
   add_foreign_key "organization_rules", "organizations"
   add_foreign_key "organization_rules", "rules"
   add_foreign_key "organization_user_rules", "organizations"
