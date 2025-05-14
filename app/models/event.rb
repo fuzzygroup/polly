@@ -107,6 +107,9 @@ class Event < ApplicationRecord
   end
   
   def duration_in_minutes
+    if self.event_slots.empty?
+      return (self.time_end - self.time_start).to_f / 60
+    end
     durations = []
     self.event_slots.each do |es|
       durations << es.duration
@@ -115,6 +118,9 @@ class Event < ApplicationRecord
   end
   
   def duration_in_hours
+    if self.event_slots.empty?
+      return (self.time_end - self.time_start).to_f / 60 /60
+    end
     d = self.duration_in_minutes
     (d.to_f / 60).round(2)
   end

@@ -5,6 +5,9 @@
       <td class="text-center"><%= event_slot.event_slot_type.name %></td>
       <td><%= event_slot.name %></td>      
       <td class="text-center"><%= event_slot.duration %></td>
+      <td class="text-center"></td>
+      <td class="text-center"></td>
+      <td class="text-center"><%= link_to(show_yes_no(event_slot.is_confirmed?), new_confirmation_path({:event_slot_id => event_slot.id})) %></td>
       <td><%#= event.time_start.strftime("%H:%M") %></td>
       <td><%#= event.time_end.strftime("%H:%M") %></td>
     </tr>

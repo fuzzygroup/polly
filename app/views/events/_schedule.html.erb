@@ -1,7 +1,7 @@
 <h2 class="text-center">Schedule for <%= event.name %></h2>
 
 <p class="text-center">
-  Protest Starts At: <strong><%=@event.time_start.strftime("%H:%M")%></strong>
+  Event Starts At: <strong><%=@event.time_start.strftime("%H:%M")%></strong>
 </p>
 <p class="text-center">
   Event Duration: <strong><%=@event.duration_in_minutes%> minutes or <%= @event.duration_in_hours%> hours</strong>

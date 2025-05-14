@@ -23,11 +23,11 @@ namespace :events do
     event.add_buffer
     event.add_speaker("Captain Crunch Goes to the Capital",Speaker.captain_crunch, 10)
     event.add_buffer
-    event.add_musician("Jen Carlson Midkiff", Musician.jen_carlson_midkiff, 15)
+    event.add_musician("TBD", Musician.tbd, 15)
     event.add_buffer
-    event.add_speaker("Resisting Oracle on XYZ", Speaker.resisting_oracle,10)
+    event.add_speaker("Resisting Oracle on Something or Other", Speaker.resisting_oracle,10)
     event.add_buffer
-    event.add_speaker("Scott Johnson Roams Over the Madness of Exec Orders",Speaker.scott_johnson, 10)
+    event.add_speaker("Scott Johnson Roams Over the Madness of Exec Orders (if no one else comes to speak)",Speaker.scott_johnson, 10)
     event.add_buffer
     #event.add_speaker("Jamie Flemington on Abortion", 10)
     #event.add_buffer
