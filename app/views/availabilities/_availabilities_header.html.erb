@@ -1,11 +1,13 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <% if current_user && current_user.is_superuser? %>
       <th scope="col">#</th>
+      <% end %>
       <th scope="col">Who</th>
       <th scope="col">Date Start</th>
       <th scope="col">Date End</th>
-      <th scope="col">Available ?</th>
+      <th scope="col" class="text-center">Available ?</th>
     </tr>
   </thead>
   <tbody>
