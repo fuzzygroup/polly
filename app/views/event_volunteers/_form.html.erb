@@ -1,0 +1,57 @@
+<%= form_with(model: event_volunteer) do |form| %>
+  <% if event_volunteer.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(event_volunteer.errors.count, "error") %> prohibited this event_volunteer from being saved:</h2>
+
+      <ul>
+        <% event_volunteer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :pronouns, style: "display: block" %>
+    <%= form.text_field :pronouns %>
+  </div>
+
+  <div>
+    <%= form.label :phone_number, style: "display: block" %>
+    <%= form.text_field :phone_number %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :event_id, style: "display: block" %>
+    <%= form.text_field :event_id %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :how_do_you_want_to_help, style: "display: block" %>
+    <%= form.textarea :how_do_you_want_to_help %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
