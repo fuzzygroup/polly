@@ -68,6 +68,52 @@ namespace :availabilities do
       availability: false
     )
 
+    availabilities_structs << 
+    OpenStruct.new(
+      user_id: User.jen_carlson_midkiff.id,
+      organization_id: Organization.indiana50501.id,
+      date_start: Date.new(2025, 5, 17),
+      date_end: Date.new(2025, 5, 17),
+      availability: false
+    )
+    
+    availabilities_structs << 
+    OpenStruct.new(
+      user_id: User.jen_carlson_midkiff.id,
+      organization_id: Organization.indiana50501.id,
+      date_start: Date.new(2025, 5, 25),
+      date_end: Date.new(2025, 5, 25),
+      availability: false
+    )
+    
+    availabilities_structs << 
+    OpenStruct.new(
+      user_id: User.belladonna.id,
+      organization_id: Organization.indiana50501.id,
+      date_start: Date.new(2025, 5, 25),
+      date_end: Date.new(2025, 5, 25),
+      availability: false
+    )
+    
+    availabilities_structs << 
+    OpenStruct.new(
+      user_id: User.jen_carlson_midkiff.id,
+      organization_id: Organization.indiana50501.id,
+      date_start: Date.new(2025, 6, 6),
+      date_end: Date.new(2025, 6, 6),
+      availability: true
+    )
+    
+    availabilities_structs << 
+    OpenStruct.new(
+      user_id: User.jen_carlson_midkiff.id,
+      organization_id: Organization.indiana50501.id,
+      date_start: Date.new(2025, 6, 15),
+      date_end: Date.new(2025, 6, 15),
+      availability: true
+    )
+    
+
 
     add_availabilities(availabilities_structs)
   end
