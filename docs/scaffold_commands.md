@@ -42,6 +42,10 @@ bin/rails g scaffold EventType name:string organization:references user:referenc
 
 bin/rails g scaffold EventSlotType name:string default_duration:integer default_duration_units:string
 
+bin/rails g scaffold EventVolunteer first_name:string last_name:string pronouns:string phone_number:string email:string event:references user:references how_do_you_want_to_help:text
+
+
+
 bin/rails g scaffold Speaker name:string bio:text url:string pronouns:string speaking_count:integer notes:text organization_name:string user:references contact_card:references url:string
 
 bin/rails g scaffold Musician name:string band_name:string bio:text url:string pronouns:string play_count:integer notes:text user:references contact_card:references 
@@ -96,3 +100,7 @@ bin/rails g scaffold EventShift name:string duration:integer time_start:time tim
 bin/rails g scaffold EventProp name:string
 
 bin/rails g scaffold EventAttendance event:references organization:references user:references status:boolean name:string ip_address:string user_agent:string
+
+rails generate scaffold Confirmation confirmable:references{polymorphic} event_slot:references confirmed:boolean
+
+rails generate scaffold OfflinePromotionLocations name:string contact_card:references
