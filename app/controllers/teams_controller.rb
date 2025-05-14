@@ -5,6 +5,28 @@ class TeamsController < ApplicationController
   # GET /teams or /teams.json
   def index
     @teams = Team.where(organization_id: current_user.organization.id, active: true).order("name ASC")
+    
+    #@my_teams = current_user.teams_i_created
+    @my_teams = current_user.all_my_teams
+    
+    #@my_teams = current_user.teams.active.order("name ASC")
+    #my_teams = current_user.team_user
+    
+    # teams_i_created = current_user.teams.active.order("name ASC")
+    # teams_i_created_in_team_ids = teams_i_created.map(&:id)
+    #
+    # #raise teams_i_created_in_team_ids.inspect
+    #
+    # teams_i_participate_in = current_user.team_users.active
+    # teams_i_participate_in_team_ids = teams_i_participate_in.map(&:team_id)
+    # #debugger
+    # all_ids = (teams_i_created_in_team_ids + teams_i_participate_in_team_ids).flatten.uniq
+    #
+    # all_my_teams = Team.where(id:  all_ids).order('name ASC')
+    
+    #@teams_i_participate_in = 
+    
+    #@my_teams = current_user.teams.where(active: true).order('name ASC')
     #raise "foo"
   end
 

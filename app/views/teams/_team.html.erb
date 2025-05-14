@@ -11,7 +11,7 @@
 
   <p>
     <strong>Team Created By:</strong>
-    <%= team.user.full_name %>
+    <%= link_to(team.user.full_name, user_path(team.user)) %>
   </p>
 
   <p>
@@ -29,11 +29,13 @@
 
 
   <% if team.team_rules.any? %>
+  <div class="alert alert-warning" role="alert">
   <p>This team has these rules attached to it:</p>
-    <ul>
+      <ul class="mb-0">
       <% team.team_rules.each do |team_rule| %>
         <li><%= team_rule.rule.name %>
       <% end %>
     </ul>
+</div>
   <% end %>
 </div>

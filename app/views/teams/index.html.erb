@@ -2,6 +2,18 @@
 
 <% content_for :title, "Teams" %>
 
+<h1>My Teams</h1>
+
+<div id="my_teams">
+  <!-- insert partial reference -->
+  <%= render 'teams_header' %>
+  
+  <% @my_teams.each do |team| %>
+    <%= render 'teams', {team: team} %>
+  <% end %>
+  <%= render 'teams_footer' %>
+</div>
+
 <h1>Active Teams</h1>
 
 <div id="teams">
