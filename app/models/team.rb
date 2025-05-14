@@ -8,6 +8,8 @@ class Team < ApplicationRecord
   has_many :team_users
   has_many :team_rules
   
+  scope :active, -> { where(active: true) }
+  
   #
   # Scott Changes from Here On
   #
@@ -17,6 +19,10 @@ class Team < ApplicationRecord
   
   def new
     self.organization = current_user.organization_id
+  end
+  
+  def add_creator_as_team_user_and_leader
+    self.team_users.new(leader: true, user_id: self.user_id, primary_team_role: "Leadership").save
   end
   
   

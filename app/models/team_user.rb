@@ -6,4 +6,6 @@ class TeamUser < ApplicationRecord
   IDENTITY_COLUMNS = [:team_id, :user_id]
   include FindOrCreate
   
+  scope :active, -> { where(active: true) }
+  
 end
