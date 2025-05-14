@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :offline_promotion_locations
+  resources :confirmations
+  resources :event_volunteers
   resources :event_attendances
   resources :event_props
   resources :musicians
