@@ -30,6 +30,13 @@ module ApplicationHelper
     #  <%#= button_to "Destroy this team", @team, method: :delete %>
   end
   
+  def show_id_col
+    return '' if current_user.nil?
+    return '' if current_user.is_not_superuser?
+    output = []
+    
+  end
+  
   def show_active(obj)
     if obj.respond_to?(:active)
       return 'Yes' if obj.active
@@ -46,8 +53,14 @@ module ApplicationHelper
   end
   
   def show_availability(obj)
-    return 'Available' if obj.availability == true
-    return 'Away' if obj.availability == false
+
+    if obj.availability == true
+      msg = 'Available' 
+    else 
+      msg = 'Away'
+    end
+    #return 'Away' if obj.availability == false
+    return link_to(msg, availability_path(obj ))
   end
   
   def chat_link(obj)
