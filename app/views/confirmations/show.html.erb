@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @confirmation %>
+
+<div>
+  <%= link_to "Edit this confirmation", edit_confirmation_path(@confirmation) %> |
+  <%= link_to "Back to confirmations", confirmations_path %>
+
+  <%= button_to "Destroy this confirmation", @confirmation, method: :delete %>
+</div>

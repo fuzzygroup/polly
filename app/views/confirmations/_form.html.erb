@@ -1,0 +1,32 @@
+<%= form_with(model: confirmation) do |form| %>
+  <% if confirmation.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(confirmation.errors.count, "error") %> prohibited this confirmation from being saved:</h2>
+
+      <ul>
+        <% confirmation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :confirmable_id, style: "display: block" %>
+    <%= form.text_field :confirmable_id %>
+  </div>
+
+  <div>
+    <%= form.label :event_slot_id, style: "display: block" %>
+    <%= form.text_field :event_slot_id %>
+  </div>
+
+  <div>
+    <%= form.label :confirmed, style: "display: block" %>
+    <%= form.checkbox :confirmed %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

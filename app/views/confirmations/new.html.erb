@@ -1,0 +1,11 @@
+<% content_for :title, "New confirmation" %>
+
+<h1>New confirmation</h1>
+
+<%= render "form", confirmation: @confirmation %>
+
+<br>
+
+<div>
+  <%= link_to "Back to confirmations", confirmations_path %>
+</div>

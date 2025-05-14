@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Confirmations" %>
+
+<h1>Confirmations</h1>
+
+<div id="confirmations">
+  <% @confirmations.each do |confirmation| %>
+    <%= render confirmation %>
+    <p>
+      <%= link_to "Show this confirmation", confirmation %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New confirmation", new_confirmation_path %>
