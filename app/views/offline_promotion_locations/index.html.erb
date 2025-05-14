@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Offline promotion locations" %>
+
+<h1>Offline promotion locations</h1>
+
+<div id="offline_promotion_locations">
+  <% @offline_promotion_locations.each do |offline_promotion_location| %>
+    <%= render offline_promotion_location %>
+    <p>
+      <%= link_to "Show this offline promotion location", offline_promotion_location %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New offline promotion location", new_offline_promotion_location_path %>

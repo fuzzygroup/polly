@@ -1,0 +1,12 @@
+<% content_for :title, "Editing offline promotion location" %>
+
+<h1>Editing offline promotion location</h1>
+
+<%= render "form", offline_promotion_location: @offline_promotion_location %>
+
+<br>
+
+<div>
+  <%= link_to "Show this offline promotion location", @offline_promotion_location %> |
+  <%= link_to "Back to offline promotion locations", offline_promotion_locations_path %>
+</div>

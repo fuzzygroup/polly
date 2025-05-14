@@ -1,0 +1,1 @@
+json.partial! "offline_promotion_locations/offline_promotion_location", offline_promotion_location: @offline_promotion_location

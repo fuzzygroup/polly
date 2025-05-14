@@ -1,0 +1,27 @@
+<%= form_with(model: offline_promotion_location) do |form| %>
+  <% if offline_promotion_location.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(offline_promotion_location.errors.count, "error") %> prohibited this offline_promotion_location from being saved:</h2>
+
+      <ul>
+        <% offline_promotion_location.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :contact_card_id, style: "display: block" %>
+    <%= form.text_field :contact_card_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

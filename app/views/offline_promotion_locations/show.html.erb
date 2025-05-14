@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @offline_promotion_location %>
+
+<div>
+  <%= link_to "Edit this offline promotion location", edit_offline_promotion_location_path(@offline_promotion_location) %> |
+  <%= link_to "Back to offline promotion locations", offline_promotion_locations_path %>
+
+  <%= button_to "Destroy this offline promotion location", @offline_promotion_location, method: :delete %>
+</div>
