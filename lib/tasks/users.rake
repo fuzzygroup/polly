@@ -134,6 +134,9 @@ namespace :users do
         splits << "first_name:Bri|last_name:Hall|username:bri|password:fdfdfdfdaaa!|email:bri@foo.com 
 |role:user|organization_id:#{Organization.indiana50501.id}"
 
+        splits << "first_name:Jen|last_name:Carlson Midkiff|username:jenmidkiff|password:harpistrule!|email:jenmidkiff@foo.com 
+|role:user|organization_id:#{Organization.indiana50501.id}"
+
 
 
     
