@@ -11,7 +11,7 @@
         <%#= form%>
         <%#= link_to 'Upvote', upvote_project_path(project), method: :post, data: { turbo: false } %>
         <%= link_to 'Upvote', upvote_project_path(project), data: { turbo_method: :post } %> | 
-        <%= link_to 'Upvote', downvote_project_path(project), data: { turbo_method: :post } %>
+        <%= link_to 'Downvote', downvote_project_path(project), data: { turbo_method: :post } %>
         <%#= link_to "Upvote", upvote_project_path(project), data: { turbo_method: :post } %>
         <%#= link_to 'Downvote', downvote_project_path(project), method: :put %>
       </td>

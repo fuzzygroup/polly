@@ -1,5 +1,22 @@
 class User < ApplicationRecord
   
+  #belongs_to :team_user
+  #belongs_to :team
+  has_many :teams
+  has_many :team_users
+  
+  def teams_i_created
+    self.teams.active
+  end
+  
+  def teams_i_participate_in
+    self.team_users.active.map(&:team)
+  end
+  
+  def all_my_teams
+    (teams_i_created + teams_i_participate_in).uniq.sort_by { |u| u.name.downcase }
+  end
+  
   #
   # Scott Changes from Here On
   #
