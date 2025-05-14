@@ -5,6 +5,11 @@ class User < ApplicationRecord
   has_many :teams
   has_many :team_users
   
+  def has_destroy_rights?(obj)
+    return true if self.is_superuser?
+    return true if self.id == obj.user_id
+  end
+  
   def teams_i_created
     self.teams.active
   end
@@ -17,6 +22,14 @@ class User < ApplicationRecord
     (teams_i_created + teams_i_participate_in).uniq.sort_by { |u| u.name.downcase }
   end
   
+  def is_not_superuser?
+    return true unless self.role == 'superuser'
+  end
+  
+  def is_superuser?
+    return true if self.role == 'superuser'
+  end
+
   #
   # Scott Changes from Here On
   #
@@ -138,6 +151,9 @@ class User < ApplicationRecord
     User.where(username: "angie").first
   end
 
+  def self.jen_carlson_midkiff
+    User.where(username: "jenmidkiff").first
+  end
 
   private
 
