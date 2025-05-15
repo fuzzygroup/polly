@@ -12,26 +12,48 @@
   <% end %>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%#= form.label :user_id, style: "display: block" %>
+    <%#= form.text_field :user_id %>
+    
+  </div>
+  
+  <div class="mb-3">
+    <%= form.label :user_id, "Who is or isn't available for the date below", class: 'form-label' %>
+    <%= form.select :user_id, options_from_collection_for_select(@users, :id, :full_name), {}, class: 'form-select' %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :date_start, style: "display: block" %>
     <%= form.date_field :date_start %>
   </div>
 
-  <div>
+  <div  class="mb-3">
     <%= form.label :date_end, style: "display: block" %>
     <%= form.date_field :date_end %>
   </div>
 
-  <div>
-    <%= form.label :availability, style: "display: block" %>
-    <%= form.checkbox :availability %>
+  <div  class="mb-3">
+    <%#= form.label :availability, style: "display: block" %>
+    <%#= form.checkbox :availability %>
+  </div>
+  
+  <div class="mb-3">
+      <label class="form-label">Are you available?</label>
+  
+  <div class="form-check">
+    <%= form.radio_button :availability, true, id: 'available_true', class: 'form-check-input' %>
+    <%= form.label :availability, "Yes I'm available", value: true, class: 'form-check-label', for: 'available_true' %>
   </div>
 
-  <div>
+  <div class="form-check">
+    <%= form.radio_button :availability, false, id: 'available_false', class: 'form-check-input' %>
+    <%= form.label :availability, "No I'm not available", value: false, class: 'form-check-label', for: 'available_true' %>
+  </div>
+  
+</div>
+  
+
+  <div class="text-center">
     <%= form.submit %>
   </div>
 <% end %>
