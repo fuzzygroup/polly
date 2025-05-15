@@ -13,6 +13,7 @@ class AvailabilitiesController < ApplicationController
   # GET /availabilities/new
   def new
     @availability = Availability.new
+    @users = User.all.order("last_name DESC")
   end
 
   # GET /availabilities/1/edit
@@ -21,7 +22,7 @@ class AvailabilitiesController < ApplicationController
 
   # POST /availabilities or /availabilities.json
   def create
-    @availability = Availability.new(availability_params)
+    @availability = Availability.new(availability_params.merge(organization_id: current_user.organization_id))
 
     respond_to do |format|
       if @availability.save
