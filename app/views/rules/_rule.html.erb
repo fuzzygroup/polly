@@ -11,12 +11,12 @@
 
   <p>
     <strong>User:</strong>
-    <%= rule.user_id %>
+    <%= rule.user.full_name %>
   </p>
 
   <p>
     <strong>Team:</strong>
-    <%= rule.team_id %>
+    <%= rule.team.name if rule.team.try(:name) %>
   </p>
 
   <p>

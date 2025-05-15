@@ -9,6 +9,43 @@ namespace :events do
     Rake::Task["events:metrics"].invoke
   end
   
+  # be rake events:flesh_out_614_fort_wayne
+  task :flesh_out_614_fort_wayne => :environment do
+    event = Event.where(name: "6/14 - Fort Wayne - No Kings Day").first 
+    
+    event.add_speaker("Kyle Quandt Opening Address - The Good and the Bad", Speaker.scott_johnson,10)
+    event.add_buffer
+    event.add_speaker("TBD",Speaker.tbd, 10)
+    event.add_buffer
+    event.add_speaker("Indivisible",Speaker.tbd, 10)
+    event.add_buffer
+    event.add_speaker("Fort Wayne Dems",Speaker.tbd, 10)
+    event.add_buffer
+    event.add_speaker("Resisting Oracle on Something or Other", Speaker.resisting_oracle,10)
+    event.add_buffer
+    event.add_speaker("Open Mic -- How Do You Feel / What's Bugging You",Speaker.scott_johnson, 30)
+    event.add_buffer
+    event.add_musician("TBD", Musician.tbd, 15)
+    event.add_buffer
+    event.add_speaker("Max Haddad: Let's Mock the King's Decrees", Speaker.max_haddad, 10)
+    event.add_buffer
+    event.add_speaker("Kyle Quandt Closing Remarks", Speaker.scott_johnson,5)
+    event.add_buffer
+    event.add_march("Closing March - Optional", 0)
+    
+    # slots = []
+    # slots << OpenStruct.new(
+    #
+    # )
+    #
+    # "Opening Address by Scott"
+    # slots << "Closing Address by Scott"
+    # slots << "Trump Executive Order Overview by Scott"
+    # slots << "Resisting Oracle on Executive Orders"
+    # slots << "Executive Orders by Destiny Wells"
+    
+  end
+  
   # 5/25 start with march -- 1st hour or 45 minutes 
   # 5/25 START WITH def MARCHING
   # March at the end 
@@ -25,7 +62,7 @@ namespace :events do
     event.add_buffer
     event.add_musician("TBD", Musician.tbd, 15)
     event.add_buffer
-    event.add_speaker("Resisting Oracle on Something or Other", Speaker.resisting_oracle,10)
+    event.add_speaker("Resisting Oracle on The Very Essence of Being a Nation of Law Not a Nation of Executive Orders", Speaker.resisting_oracle,10)
     event.add_buffer
     event.add_speaker("Scott Johnson Roams Over the Madness of Exec Orders (if no one else comes to speak)",Speaker.scott_johnson, 10)
     event.add_buffer
@@ -75,6 +112,8 @@ namespace :events do
     event.add_speaker("Max Haddad ???", Speaker.max_haddad, 10)
     event.add_buffer
     event.add_speaker("An Immigrant Dad Speaks Out", Speaker.tbd, 10)
+    event.add_buffer
+    event.add_speaker("Jackson Franklin Speaks Up", Speaker.jackson_franklin, 10)
     event.add_buffer
     event.add_speaker("Open Mic", Speaker.open_mic, 30)
     event.add_buffer
@@ -290,6 +329,26 @@ Board President, Earth Day Indiana
       body: "Need to get AVER's flags"
       
     )
+
+    event_structs << 
+    OpenStruct.new(
+      name: "6/14 - Fort Wayne - No Kings Day",
+      user_id: User.scott.id,
+      organization_id: Organization.indiana50501.id,
+      event_type: EventType.protest,
+      date_start: Date.new(2025,6,14),
+      date_end: Date.new(2025,6,14),
+      time_start: "12:00",
+      time_end: "14:00",
+      location: "Allen County Court House",
+      has_speakers: true,
+      has_musicians: true,
+      has_props: false,
+      has_partners: true,
+      body: ""
+      
+    )
+
   
     add_events(event_structs)
   end

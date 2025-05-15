@@ -144,6 +144,16 @@ namespace :teams do
       date_expires: Date.new(2025,8,10)
     )
     
+    team_structs << 
+    OpenStruct.new(
+      name: "Kayla's Research Team",
+      user_id: User.pride.id,
+      organization_id: Organization.indiana50501.id, 
+      active: true,
+      chat_url: nil,
+      date_expires: Date.new(2025,8,10)
+    )
+    
   
     add_teams(team_structs)
   end
