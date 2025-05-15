@@ -6,5 +6,5 @@
   <%= link_to "Edit this availability", edit_availability_path(@availability) %> |
   <%= link_to "Back to availabilities", availabilities_path %>
 
-  <%= button_to "Destroy this availability", @availability, method: :delete if current_user && current_user.has_destroy_rights?(obj)%>
+  <%= button_to "Destroy this availability", @availability, method: :delete if current_user && current_user.has_destroy_rights?(@availability)%>
 </div>
