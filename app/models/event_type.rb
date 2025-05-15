@@ -9,6 +9,11 @@ class EventType < ApplicationRecord
   def self.protest
     EventType.where(name: "Protest").first
   end
+
+  def self.tabling
+    EventType.where(name: "Tabling").first
+  end
+
   
   def self.rally
     EventType.where(name: "Rally").first

@@ -348,6 +348,26 @@ Board President, Earth Day Indiana
       body: ""
       
     )
+    
+    event_structs << 
+    OpenStruct.new(
+      name: "6/7 - Greenwood Pride Indiana 50501 Table",
+      user_id: User.jacqui.id,
+      organization_id: Organization.indiana50501.id,
+      event_type: EventType.tabling,
+      date_start: Date.new(2025,6,7),
+      date_end: Date.new(2025,6,7),
+      time_start: "12:00",
+      time_end: "18:00",
+      location: "Woodmen Park (near the Greenwood High School)",
+      has_speakers: false,
+      has_musicians: false,
+      has_props: true,
+      has_partners: false,
+      body: "Indiana 50501 is delighted to be participating in Greenwood Pride.  We will be a vendor with a table, giveaways and things to sell.  Come one, come all and witness the magnificence of our Anti Trump merchandise."
+      
+    )
+    
 
   
     add_events(event_structs)

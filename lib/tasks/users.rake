@@ -137,6 +137,12 @@ namespace :users do
         splits << "first_name:Jen|last_name:Carlson Midkiff|username:jenmidkiff|password:harpistrule!|email:jenmidkiff@foo.com 
 |role:user|organization_id:#{Organization.indiana50501.id}"
 
+        splits << "first_name:Gallifreyan|last_name:Valkyrie |username:gallifreyanvalkyrie|password:tardistobattle!|email:gallifreyanvalkyrie@foo.com 
+|role:user|organization_id:#{Organization.indiana50501.id}"
+
+        splits << "first_name:Aric|last_name:Maddox |username:aric|password:piforever32p!|email:madducks@gmail.com 
+|role:admin|organization_id:#{Organization.indiana50501.id}"
+
 
 
     
