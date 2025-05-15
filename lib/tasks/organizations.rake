@@ -4,8 +4,125 @@ namespace :organizations do
   
   # be rake organizations:init --trace
   task :init => :environment do
-    Rake::Task["organizations:seed"].invoke
+    Rake::Task["organizations:seed2"].invoke
     Rake::Task["organizations:metrics"].invoke
+  end
+  
+  task :seed2 => :environment do
+    organizations = []
+    organizations << 
+    OpenStruct.new(
+      name: "Indiana 50501",
+      state: "Indiana",
+      organization_type: "collective",
+      identifier: "indiana50501"
+    )
+
+    organizations << 
+    OpenStruct.new(
+      name: "Indiana 50501 District 1",
+      state: "Indiana",
+      organization_type: "collective",
+      identifier: "indiana50501_district1"
+    )
+    
+    organizations << 
+    OpenStruct.new(
+      name: "Indiana 50501 District 2",
+      state: "Indiana",
+      organization_type: "collective",
+      identifier: "indiana50501_district2"
+    )
+    
+    organizations << 
+    OpenStruct.new(
+      name: "Indiana 50501 District 3",
+      state: "Indiana",
+      organization_type: "collective",
+      identifier: "indiana50501_district3"
+    )
+    
+    organizations << 
+    OpenStruct.new(
+      name: "Indiana 50501 District 4",
+      state: "Indiana",
+      organization_type: "collective",
+      identifier: "indiana50501_district4"
+    )
+    
+    organizations << 
+    OpenStruct.new(
+      name: "Indiana 50501 District 5",
+      state: "Indiana",
+      organization_type: "collective",
+      identifier: "indiana50501_district5"
+    )
+    
+    organizations << 
+    OpenStruct.new(
+      name: "Indiana 50501 District 6",
+      state: "Indiana",
+      organization_type: "collective",
+      identifier: "indiana50501_district6"
+    )
+    
+    organizations << 
+    OpenStruct.new(
+      name: "Indiana 50501 District 7",
+      state: "Indiana",
+      organization_type: "collective",
+      identifier: "indiana50501_district7"
+    )
+    
+    organizations << 
+    OpenStruct.new(
+      name: "Indiana 50501 District 8",
+      state: "Indiana",
+      organization_type: "collective",
+      identifier: "indiana50501_district8_evansville_resistance"
+    )
+    
+    organizations << 
+    OpenStruct.new(
+      name: "Indiana 50501 District 9",
+      state: "Indiana",
+      organization_type: "collective",
+      identifier: "indiana50501_district9"
+    )
+    
+    organizations << 
+    OpenStruct.new(
+      name: "NWI Takes Action",
+      state: "Indiana",
+      organization_type: "facebook_group",
+      identifier: "nwitakesaction"
+    )
+    
+    organizations << 
+    OpenStruct.new(
+      name: "Westside Democrats",
+      state: "Indiana",
+      organization_type: "collective",
+      identifier: "westsidedemocrats"
+    )
+    
+    organizations << 
+    OpenStruct.new(
+      name: "Westfield Democrats",
+      state: "Indiana",
+      organization_type: "collective",
+      identifier: "westfield_democrats"
+    )
+    
+    organizations << 
+    OpenStruct.new(
+      name: "We're Folking Mad",
+      state: "Indiana",
+      organization_type: "collective",
+      identifier: "we_are_folking_mad"
+    )
+
+    add_organizations2(organizations)
   end
   
   # be rake user:seed --trace
@@ -23,6 +140,12 @@ namespace :organizations do
     add_organizations(splits)
     
     
+  end
+  
+  def add_organizations2(organizations)
+    organizations.each do |organization|
+      status, new_organization = Organization.find_or_create(organization)
+    end
   end
   
   def add_organizations(splits) 
