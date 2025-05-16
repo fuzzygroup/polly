@@ -86,7 +86,7 @@ namespace :users do
   # be rake user:seed --trace
   task :seed => :environment do
     splits = []
-    splits <<   "first_name:Scott|last_name:Johnson|username:fuzzygroup|password:dd87934aadfed!|email:fuzzygroup@tutamail.com|role:superuser|organization_id:#{Organization.indiana50501.id}"
+    splits <<   "first_name:Scott|last_name:Johnson|username:fuzzygroup|password:!|email:fuzzygroup@tutamail.com|role:superuser|organization_id:#{Organization.indiana50501.id}"
     
     splits << "first_name:Taelar|last_name:Christman|username:taelar|password:christmas3334|email:Yogitaelar@tutamail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
     
@@ -96,7 +96,7 @@ namespace :users do
     
     splits << "first_name:Morgan|last_name:Mullins|username:morgan|password:Halloween2025|email:Mcmullins92@proton.me|role:admin|organization_id:#{Organization.indiana50501.id}"
 
-    splits << "first_name:Christina |last_name:|username:helpfulhippie|password:Dragon2023!|email:helpfulhippie@gmail.com|role:admin|email:foo@bar.com|organization_id:#{Organization.district_8_50501.id}"
+    splits << "first_name:Christina |last_name:|username:helpfulhippie|password:Dragon2023!|email:helpfulhippie@gmail.com|role:admin|email:foo@bar.com|organization_id:#{Organization.indiana50501_district8_evansville_resistance.id}"
     
     splits << "first_name:Kim |last_name:Saylor|username:belladonna|password:TransRights2025!|role:volunteer|email:belladonnanightshade@tutamail.com|organization_id:#{Organization.indiana50501.id}"
     
@@ -110,10 +110,8 @@ namespace :users do
     
     splits << "first_name:Sara|last_name:|username:sara|password:fuckice!|email:sara-idont-know@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
 
-    # splits << "first_name:Jacqui|last_name:|username:jacqui|password:oyveylife!|email:jackie-idont-know@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
+    splits << "first_name:Jacqui|last_name:|username:jacqui|password:oyveylife!|email:jackie-idont-know@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
     
-    # splits << "first_name:Jacqui|last_name:|username:jacqui|password:oyveylife!|email:jackie-idont-know@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
-
     splits << "first_name:Alisa|last_name:Advani|username:resisting_oracle|password:MatrixForever!|email:alias@something.com|role:admin|organization_id:#{Organization.indiana50501.id}"
         
         splits << "first_name:Lori|last_name:Daughtery|username:lorid|password:I_help_out!|email:alias111@something.com|role:user|organization_id:#{Organization.indiana50501.id}"

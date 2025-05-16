@@ -34,7 +34,6 @@ namespace :seed do
     Rake::Task["organization_rules:init"].invoke
     Rake::Task["team_rules:init"].invoke
     Rake::Task["team_user_rules:init"].invoke
-    
     Rake::Task["political_actions:init"].invoke
     Rake::Task["bank_deposits:init"].invoke
     Rake::Task["event_slot_types:init"].invoke
