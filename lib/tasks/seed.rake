@@ -18,7 +18,7 @@ namespace :seed do
     #
     # Core setup data
     #
-    Rake::Task["generate_passwords_env_file:init"].invoke
+    #Rake::Task["generate_passwords_env_file:init"].invoke
     Rake::Task["organization:init"].invoke
     Rake::Task["user:init"].invoke
     Rake::Task["vetting_questions:init"].invoke
@@ -41,8 +41,8 @@ namespace :seed do
     Rake::Task["events:init"].invoke
     Rake::Task["polls:init"].invoke
     Rake::Task["poll_options:init"].invoke
-    Rake::Task["teams:init"].invoke
-    Rake::Task["team_users:init"].invoke
+    # Rake::Task["teams:init"].invoke
+    # Rake::Task["team_users:init"].invoke
     
     #Rake::Task["project_environment:init"].invoke
     # Rake::Task["project:init"].invoke

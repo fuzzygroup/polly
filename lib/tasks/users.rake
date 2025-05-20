@@ -86,7 +86,7 @@ namespace :users do
   # be rake user:seed --trace
   task :seed => :environment do
     splits = []
-    splits <<   "first_name:Scott|last_name:Johnson|username:fuzzygroup|password:!|email:fuzzygroup@tutamail.com|role:superuser|organization_id:#{Organization.indiana50501.id}"
+    splits <<   "first_name:Scott|last_name:Johnson|username:fuzzygroup|password:dd3344!|email:fuzzygroup@tutamail.com|role:superuser|organization_id:#{Organization.indiana50501.id}"
     
     splits << "first_name:Taelar|last_name:Christman|username:taelar|password:christmas3334|email:Yogitaelar@tutamail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
     
