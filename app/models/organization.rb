@@ -37,5 +37,9 @@ class Organization < ApplicationRecord
   def self.we_are_folking_mad
     Organization.where(identifier: "we_are_folking_mad").first
   end
+  
+  def self.indiana50501_district8_evansville_resistance
+    Organization.where(identifier: "indiana50501_district8_evansville_resistance").first
+  end
 
 end

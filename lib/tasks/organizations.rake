@@ -14,6 +14,8 @@ namespace :organizations do
     OpenStruct.new(
       name: "Indiana 50501",
       state: "Indiana",
+      city: "Indianapolis",
+      location: "Congressional District 7",
       organization_type: "collective",
       identifier: "indiana50501"
     )

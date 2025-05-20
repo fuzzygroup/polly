@@ -1,5 +1,5 @@
 <div id="<%= dom_id event %>">
-  <p class="text-center">
+  
     <%= show_event_action_links(event) %>
   </p>
   <p>
@@ -24,12 +24,14 @@
 
   <p>
     <strong>Time start:</strong>
-    <%= event.time_start.strftime("%H:%M") %>
+    <%= event.time_start.strftime("%I:%M %p") %>
+    <%#= event.time_start.strftime("%H:%M") %>
   </p>
 
   <p>
     <strong>Time end:</strong>
-    <%= event.time_end.strftime("%H:%M") %>
+    <%= event.time_end.strftime("%I:%M %p") %>
+    <%#= event.time_end.strftime("%H:%M") %>
   </p>
 
   <p>

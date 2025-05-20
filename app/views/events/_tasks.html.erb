@@ -1,0 +1,23 @@
+<h2 class="text-center">Tasks for <%= event.name %></h2>
+
+<p class="text-center">
+  This event has <strong><%=event.event_tasks.size%></strong> tasks associated with it.
+</p>
+<p>
+
+
+<%# event.event_slots.each do |event_slot| %>
+
+<%# end %>
+<% if event.event_tasks.any? %>
+<div id="events">
+  <%= render 'tasks_header' %>
+  
+  <% event.event_tasks.each do |event_task| %>
+    <%= render 'tasks_event_tasks', {event_task: event_task} %>
+  <% end %>
+  <%= render 'tasks_footer' %>
+</div>
+<p class="text-center"><%=link_to("Add Event Task", new_event_task_path(event_id: event.id))%></p>
+  
+<% end %>

@@ -3,7 +3,9 @@ class AvailabilitiesController < ApplicationController
 
   # GET /availabilities or /availabilities.json
   def index
-    @availabilities = Availability.where(organization_id: current_user.organization.id).active.order("date_start DESC")
+    @organization = Organization.indiana50501
+    @organization = current_user.organization if current_user
+    @availabilities = Availability.where(organization_id: @organization.id).active.order("date_start DESC")
   end
 
   # GET /availabilities/1 or /availabilities/1.json

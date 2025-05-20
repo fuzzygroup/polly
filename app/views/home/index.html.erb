@@ -12,13 +12,15 @@ Polly is a web application designed to address the very <i>weird</i> nature of g
 
 <p><strong>Disclaimer</strong>: This is currently ALPHA software being developed using an agile methodology and it is continuously getting better.  We deploy every day, multiple times per day.</p>
 
-  <p>
+  <!-- <p>
     Here's what you can do here:
     <ul>
       <li><%= link_to("Create a poll to post into Signal", polls_path)%>
       <li><%= link_to("Look at / create / vote on projects", projects_path)%>
       <li><%= link_to("Look at / create / join teams", teams_path)%>
       <li><%= link_to("Tell us when you're taking time off and won't be available", availabilities_path)%>
+    </ul>
+  </p> -->
 <!--
       <li><%= link_to("Review fliers and vote on them", fliers_path)%>
       <li><%= link_to("Search / share / contribute / update contacts ", contact_cards_path)%>
@@ -26,21 +28,19 @@ Polly is a web application designed to address the very <i>weird</i> nature of g
       <li><%= link_to("Read Vetting Transcripts", vetting_transcripts_path)%>
       <li><%= link_to("Add a speaker to the system,", speakers_path)%>
 -->
-    </ul>
-  </p>
   
   <p>
     Here's an explanation of the data is organized in Polly and what that data enables:
   </p>
   <ol>
-    <li>At the top level of Polly is an <strong>organization</strong>.  An <%#=link_to("organization", organizations_path(current_user.organization)%> is a group of users united in a common political purpose or set of beliefs.  Examples include Indiana 50501, Westside Democrats, NWI Takes Action.</li>
+    <li>At the top level of Polly is an <strong>organization</strong>.  An <%#=link_to("organization", organizations_path(current_user.organization)%> is a group of users united in a common political purpose or set of beliefs.  Examples include Indiana 50501, Westside Democrats, NWI Takes Action.  Please note that these are examples of organizations NOT that these organizations (except for Indiana 50501) use Polly.</li>
     <li>Within an organization is a collection of <strong>users</strong> who are the people who make up an organization.
     <li>A <strong>rule</strong> is a governing principle that a user needs to agree to.  For example 50501 has one primary rule -- keep things non violent.  For a user to join an organization, they need to sign off on the organization's rules.  Rules can be added to organizations and teams.
     <li>A <strong>project</strong> is an overall goal, something to be accomplished.
     <li>A <strong>team</strong> is a collection of users that gather together to accomplish something.  Teams can be long lived or short lived and a team can have one or more than one leader.
     <li>A <strong>flier</strong> is a graphic object to be reviewed.  Fliers are designed to avoid the problem with fast moving organizations meaning well but getting messaging wrong often by misunderstanding cultural cues.
     <li>A <strong>contact card</strong> is a contact record for a human that is shared at the organization level.  Contact cards are <strong>designed</strong> to incorporate the <a href="https://en.wikipedia.org/wiki/Farley_file">Farley File</a> concept.
-    <li>A <strong>vetting question</strong> is a question that is used to help vet someone.
+    <li>A <strong>vetting question</strong> is a question that is used to help ensure someone joining an organization shares common goals.
     <li>A <strong>vetting transcript</strong> is a chat transcript from someone's vetting session.
     <li>An <strong>event</strong> is something that happens at a specific date and time designed to cause or assist political action.
     <li>A <strong>political action</strong> is a goal designed to be associated with some other activity.  For example you might want a political action at the end of a protest to be use 5 Calls to contact your representative.
@@ -49,7 +49,7 @@ Polly is a web application designed to address the very <i>weird</i> nature of g
   
 </div>
 
-<% if signed_in? && current_user.admin? %>
+<% if signed_in? && current_user.admin? && 3 == 4%>
   <%= render 'home/dashboard' %>
 <% end %>
 

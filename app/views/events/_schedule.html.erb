@@ -12,7 +12,7 @@
 <%# event.event_slots.each do |event_slot| %>
 
 <%# end %>
-
+<% if event.event_slots.any? %>
 <div id="events">
   <%= render 'schedule_event_slot_header' %>
   
@@ -31,5 +31,7 @@
     </p>
   <%# end %> -->
 </div>
-<p>&nbsp;</p>
+<p class="text-center">
   <strong>Note:</strong> The schedule above includes 3 minutes buffer time between each Speaker or Musician or Whatever.  This helps prevent time overruns.</p>
+  
+<% end %>

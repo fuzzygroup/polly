@@ -6,13 +6,27 @@ module ApplicationHelper
     end
   end
   
+  def add_link_bar_spacer
+    "&nbsp;&nbsp;&nbsp;"
+  end
+  
   def show_event_action_links(event)
+    return if Rails.env.production?
+    return if event.show_action_links == false
+    # return if event is in the past 
+    return if event.date_start < Time.now.to_date
     output = []
+    output << "<p class='text-center'>"
     output << link_to("I want to Attend", new_event_attendance_path(slug: event.slug))
-    output << "&nbsp;|&nbsp;"
+    output << add_link_bar_spacer
     output << link_to("I want to Volunteer", new_event_volunteer_path(slug: event.slug))
-    output << "&nbsp;|&nbsp;" if event.has_speakers?
-    output << link_to("I want to Speak", new_speaker_path(slug: event.slug)) if event.has_speakers?
+    output << add_link_bar_spacer
+    if event.has_speakers?
+      output << link_to("I want to Speak", new_speaker_path(slug: event.slug)) if event.has_speakers?
+      output << add_link_bar_spacer
+    end
+    output << link_to("I want to Add a Task", new_event_task_path(slug: event.slug)) if current_user && current_user.is_admin?
+    output << '</p>'
     output.join("").html_safe
     # <%#= )%>
     #

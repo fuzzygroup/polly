@@ -1,9 +1,15 @@
     <tr>
-      <% if current_user && current_user.is_superuser? %>      
-        <td scope="row"><%= availability.id%></th>
+      <% if availability == false%>
+      <% css_class = "text-decoration-line-through" %>
+      <% else %>
+      <% css_class = '' %>
       <% end %>
-      <td><%= link_to(availability.user.full_name, user_path(availability.user)) %></td>      
-      <td><%= availability.date_start %></td>
-      <td><%= availability.date_end %></td>
-      <td class="text-center"><%= show_availability(availability)%></td>
+      
+      <% if current_user && current_user.is_superuser? %>      
+        <td scope="row" class=<%=css_class%>><%= availability.id%></th>
+      <% end %>
+      <td  class=<%=css_class%><%= link_to(availability.user.full_name, user_path(availability.user)) %></td>      
+      <td  class=<%=css_class%>><%= availability.date_start %></td>
+      <td  class=<%=css_class%>><%= availability.date_end %></td>
+      <td class="text-center <%=css_class%>"><%= show_availability(availability)%></td>
     </tr>

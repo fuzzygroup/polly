@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @organization_role %>
+
+<div>
+  <%= link_to "Edit this organization role", edit_organization_role_path(@organization_role) %> |
+  <%= link_to "Back to organization roles", organization_roles_path %>
+
+  <%= button_to "Destroy this organization role", @organization_role, method: :delete %>
+</div>

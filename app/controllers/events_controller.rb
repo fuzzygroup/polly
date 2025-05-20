@@ -1,9 +1,14 @@
 class EventsController < ApplicationController
+  #before_action :set_organization
   before_action :set_event, only: %i[ show edit update destroy ]
 
   # GET /events or /events.json
   def index
-    @events = Event.active.where(organization: current_user.organization).order("date_start DESC")
+    if current_user
+      @events = Event.active.where(organization: current_user.organization).order("date_start DESC")
+    else
+      @events = Event.active.where(organization: Organization.indiana50501).order("date_start DESC")
+    end
     #.where(["date_start >= ?", Date.today])
   end
 

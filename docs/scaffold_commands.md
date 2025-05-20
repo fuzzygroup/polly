@@ -104,3 +104,17 @@ bin/rails g scaffold EventAttendance event:references organization:references us
 rails generate scaffold Confirmation confirmable:references{polymorphic} event_slot:references confirmed:boolean
 
 rails generate scaffold OfflinePromotionLocations name:string contact_card:references
+
+rails g scaffold EventTasks name:string event:references user:references team:references done:boolean body:text notes:text
+
+Name 
+Body
+Status
+User-id
+Assigned to id
+Project id
+Team id
+
+rails g scaffold MeetingNote name:string participants:string location:string meeting_date:date body:text 
+
+rails g scaffold OrganizationRole name:string user:references team:references job_description:text status:string

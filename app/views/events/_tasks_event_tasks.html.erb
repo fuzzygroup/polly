@@ -1,0 +1,9 @@
+    <tr>
+      <% if Rails.env.development? %>
+      <td scope="row"><%= event_task.id%></th>
+        <% end %>
+      <td class="text-center"><%= show_yes_no(event_task.done) %></td>
+      <td><%= event_task.name %></td>      
+      <td class="text-center"><%= event_task.user.full_name %></td>
+      <td class="text-center"><%= link_to("View", event_task.url) if event_task.url%></td>
+    </tr>
