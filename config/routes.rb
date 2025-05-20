@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :organization_roles
+  resources :event_tasks
   resources :offline_promotion_locations
   resources :confirmations
   resources :event_volunteers

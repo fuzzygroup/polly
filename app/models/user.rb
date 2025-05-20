@@ -10,6 +10,11 @@ class User < ApplicationRecord
     return true if self.id == obj.user_id
   end
   
+  def is_admin?
+    return true if self.role == 'admin'
+    return true if self.role == 'superuser'
+  end
+  
   def teams_i_created
     self.teams.active
   end

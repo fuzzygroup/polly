@@ -110,7 +110,7 @@ namespace :users do
     
     splits << "first_name:Sara|last_name:|username:sara|password:fuckice!|email:sara-idont-know@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
 
-    splits << "first_name:Jacqui|last_name:|username:jacqui|password:oyveylife!|email:jackie-idont-know@gmail.com |role:admin|organization_id:#{Organization.indiana50501.id}"
+    splits << "first_name:Jacqui|last_name:|username:jacqui|password:oyveylife!|email:jackie-idont-know@gmail.com|role:admin|organization_id:#{Organization.indiana50501.id}"
     
     splits << "first_name:Alisa|last_name:Advani|username:resisting_oracle|password:MatrixForever!|email:alias@something.com|role:admin|organization_id:#{Organization.indiana50501.id}"
         
@@ -160,6 +160,7 @@ namespace :users do
       #debugger
       #os.organization_id = Organization.indiana50501.id
       #os.terms_of_service = true
+      #debugger if os.username == 'jacqui'
       status, user = User.find_or_create(os)
       if user
         #user.update_column(:otp_backup_codes, [hash["password"]])

@@ -5,6 +5,7 @@ class Event < ApplicationRecord
   belongs_to :user
   
   has_many :event_slots
+  has_many :event_tasks
   
   IDENTITY_RELATIONSHIP = :all # could also be :all
   IDENTITY_COLUMNS = [:name, :user_id]
@@ -21,6 +22,14 @@ class Event < ApplicationRecord
 
   def to_param
     slug
+  end
+  
+  def team
+    Team.where(event_id: self.id).first
+  end
+  
+  def leaders
+    team.team_users.map(&:leader)
   end
   
   def non_buffer_slots

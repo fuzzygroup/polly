@@ -22,6 +22,37 @@ namespace :availabilities do
 
     availabilities_structs << 
     OpenStruct.new(
+      user_id: User.brian.id,
+      organization_id: Organization.indiana50501.id,
+      date_start: Date.new(2025, 5, 25),
+      date_end: Date.new(2025, 5, 25),
+      user_id: User.brian.id,
+      availability: false
+    )
+
+    availabilities_structs << 
+    OpenStruct.new(
+      user_id: User.brian.id,
+      organization_id: Organization.indiana50501.id,
+      date_start: Date.new(2025, 5, 25),
+      date_end: Date.new(2025, 5, 25),
+      user_id: User.sara.id,
+      availability: false
+    )
+    
+    availabilities_structs << 
+    OpenStruct.new(
+      user_id: User.tori.id,
+      organization_id: Organization.indiana50501.id,
+      date_start: Date.new(2025, 5, 25),
+      date_end: Date.new(2025, 5, 25),
+      user_id: User.tori.id,
+      availability: false
+    )
+
+
+    availabilities_structs << 
+    OpenStruct.new(
       user_id: User.resisting_oracle.id,
       organization_id: Organization.indiana50501.id,
       date_start: Date.new(2025, 6, 6),

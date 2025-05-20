@@ -6,6 +6,10 @@ class EventType < ApplicationRecord
   IDENTITY_COLUMNS = [:name]
   include FindOrCreate
   
+  def self.dead_dog
+    EventType.where(name: "Dead Dog Event After Party").first
+  end
+  
   def self.protest
     EventType.where(name: "Protest").first
   end

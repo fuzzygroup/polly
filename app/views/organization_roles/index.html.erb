@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Organization roles" %>
+
+<h1>Organization roles</h1>
+
+<div id="organization_roles">
+  <% @organization_roles.each do |organization_role| %>
+    <%= render organization_role %>
+    <p>
+      <%= link_to "Show this organization role", organization_role %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New organization role", new_organization_role_path %>

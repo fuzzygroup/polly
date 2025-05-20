@@ -38,4 +38,17 @@ class Team < ApplicationRecord
   def self.leadership
     Team.where(name: 'Leadership', organization_id: Organization.indiana50501.id).first
   end
+
+  def self.tiger_team_a
+    Team.where(name: "Tiger Team A", organization_id: Organization.indiana50501.id).first
+  end
+
+  def self.tiger_team_b
+    Team.where(name: "Tiger Team B", organization_id: Organization.indiana50501.id).first
+  end
+
+  
+  
+  
+  
 end

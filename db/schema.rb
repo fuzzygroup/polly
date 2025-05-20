@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_14_133623) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_20_122246) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -173,6 +173,24 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_133623) do
     t.index ["speaker_id"], name: "index_event_slots_on_speaker_id"
   end
 
+  create_table "event_tasks", force: :cascade do |t|
+    t.string "name"
+    t.bigint "organization_id"
+    t.bigint "event_id"
+    t.bigint "user_id"
+    t.bigint "team_id"
+    t.boolean "done", default: false
+    t.string "url"
+    t.text "body"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_tasks_on_event_id"
+    t.index ["organization_id"], name: "index_event_tasks_on_organization_id"
+    t.index ["team_id"], name: "index_event_tasks_on_team_id"
+    t.index ["user_id"], name: "index_event_tasks_on_user_id"
+  end
+
   create_table "event_types", force: :cascade do |t|
     t.string "name"
     t.bigint "organization_id"
@@ -218,6 +236,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_133623) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.boolean "active", default: true
+    t.time "time_setup"
+    t.string "visibility", default: "all"
+    t.boolean "show_action_links", default: true
     t.index ["event_type_id"], name: "index_events_on_event_type_id"
     t.index ["organization_id"], name: "index_events_on_organization_id"
     t.index ["share_code_id"], name: "index_events_on_share_code_id"
@@ -274,6 +295,18 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_133623) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["contact_card_id"], name: "index_offline_promotion_locations_on_contact_card_id"
+  end
+
+  create_table "organization_roles", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.bigint "team_id"
+    t.text "job_description"
+    t.string "status", default: "Waiting for the Right Person to Sign Up for Glory and Heroism; Text Scott at 317 531 4853 to join the rebellion."
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_organization_roles_on_team_id"
+    t.index ["user_id"], name: "index_organization_roles_on_user_id"
   end
 
   create_table "organization_rules", force: :cascade do |t|
@@ -572,6 +605,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_133623) do
   add_foreign_key "event_slots", "events"
   add_foreign_key "event_slots", "musicians"
   add_foreign_key "event_slots", "speakers"
+  add_foreign_key "event_tasks", "events"
+  add_foreign_key "event_tasks", "organizations"
+  add_foreign_key "event_tasks", "teams"
+  add_foreign_key "event_tasks", "users"
   add_foreign_key "event_types", "organizations"
   add_foreign_key "event_types", "users"
   add_foreign_key "event_volunteers", "events"
@@ -588,6 +625,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_133623) do
   add_foreign_key "musicians", "contact_cards"
   add_foreign_key "musicians", "users"
   add_foreign_key "offline_promotion_locations", "contact_cards"
+  add_foreign_key "organization_roles", "teams"
+  add_foreign_key "organization_roles", "users"
   add_foreign_key "organization_rules", "organizations"
   add_foreign_key "organization_rules", "rules"
   add_foreign_key "organization_user_rules", "organizations"

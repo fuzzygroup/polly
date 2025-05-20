@@ -189,14 +189,14 @@ namespace :team_users do
       
     )
     
-    team_users_structs << 
+    team_users_structs <<
     OpenStruct.new(
       team_id: Team.where(name: "GenCon").first.id,
       user_id: User.where(username: "bryan").first.id,
       leader: false,
       primary_team_role: "Stat Block",
       secondary_team_role: "One Shot"
-      
+
     )
     
     team_users_structs << 
@@ -245,6 +245,76 @@ namespace :team_users do
       user_id: User.where(username: "anne_edwards").first.id,
       leader: false,
       primary_team_role: "Tabling",
+      secondary_team_role: nil
+      
+    )
+    
+    team_users_structs << 
+    OpenStruct.new(
+      team_id: Team.tiger_team_a,
+      user_id: User.janet,
+      leader: false,
+      primary_team_role: nil,
+      secondary_team_role: nil
+      
+    )
+    
+    team_users_structs << 
+    OpenStruct.new(
+      team_id: Team.tiger_team_a,
+      user_id: User.tori,
+      leader: false,
+      primary_team_role: nil,
+      secondary_team_role: nil
+      
+    )
+    
+    team_users_structs << 
+    OpenStruct.new(
+      team_id: Team.tiger_team_a,
+      user_id: User.scott,
+      leader: false,
+      primary_team_role: nil,
+      secondary_team_role: nil
+      
+    )
+    
+    team_users_structs << 
+    OpenStruct.new(
+      team_id: Team.tiger_team_b,
+      user_id: User.scott,
+      leader: false,
+      primary_team_role: nil,
+      secondary_team_role: nil
+      
+    )
+    
+    team_users_structs << 
+    OpenStruct.new(
+      team_id: Team.where(name: "7/27 Environmental Protest").first.id,
+      user_id: User.scott,
+      leader: true,
+      primary_team_role: "Leadership / Speaker",
+      secondary_team_role: nil
+      
+    )
+    
+    team_users_structs << 
+    OpenStruct.new(
+      team_id: Team.where(name: "7/27 Environmental Protest").first.id,
+      user_id: User.resisting_oracle,
+      leader: true,
+      primary_team_role: "Leadership / Speaker",
+      secondary_team_role: nil
+      
+    )
+    
+    team_users_structs << 
+    OpenStruct.new(
+      team_id: Team.where(name: "7/27 Environmental Protest").first.id,
+      user_id: User.pride,
+      leader: true,
+      primary_team_role: nil,
       secondary_team_role: nil
       
     )

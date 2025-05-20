@@ -154,6 +154,36 @@ namespace :teams do
       date_expires: Date.new(2025,8,10)
     )
     
+    team_structs << 
+    OpenStruct.new(
+      name: "Tiger Team A",
+      user_id: User.scott.id,
+      organization_id: Organization.indiana50501.id, 
+      active: true,
+      chat_url: nil
+    )
+    
+    team_structs << 
+    OpenStruct.new(
+      name: "Tiger Team B",
+      user_id: User.scott.id,
+      organization_id: Organization.indiana50501.id, 
+      active: true,
+      chat_url: nil
+    )
+    
+    team_structs << 
+    OpenStruct.new(
+      name: "7/27 Environmental Protest",
+      user_id: User.scott.id,
+      organization_id: Organization.indiana50501.id, 
+      event_id: Event.where(name: "7/27 - We Have Only this Planet; The Environment Matters").first.id,
+      active: true,
+      chat_url: "https://signal.group/#CjQKIL9FbQ0AtWRxgC2O4MIvRkQpRUd-0ZNInTdxwGgC5ZMnEhCfTDObSoMf8cRgha7u-z5M",
+      date_expires: Date.new(2025,7,29)
+    )
+    
+    
   
     add_teams(team_structs)
   end

@@ -74,6 +74,13 @@ namespace :event_types do
       user_id: User.scott.id,
       organization_id: Organization.indiana50501.id
     )
+    
+    event_type_structs << 
+    OpenStruct.new(
+      name: "Dead Dog Event After Party",
+      user_id: User.scott.id,
+      organization_id: Organization.indiana50501.id
+    )
   
     add_event_types(event_type_structs)
   end
