@@ -4,7 +4,8 @@ class Event < ApplicationRecord
   belongs_to :organization
   belongs_to :user
   
-  has_many :event_slots
+#  has_many :event_slots, -> { order(start_time: :asc) }
+  has_many :event_slots, -> { order(id: :asc) }
   has_many :event_tasks
   
   IDENTITY_RELATIONSHIP = :all # could also be :all
@@ -121,7 +122,8 @@ class Event < ApplicationRecord
     end
     durations = []
     self.event_slots.each do |es|
-      durations << es.duration
+      #durations << es.duration
+      durations << es.computed_duration
     end
     durations.sum
   end

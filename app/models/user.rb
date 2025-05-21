@@ -173,6 +173,10 @@ class User < ApplicationRecord
   def self.jacqui
     User.where(username: "jacqui").first
   end
+  
+  def has_editing_privileges?
+    return true if self.is_superuser?
+  end
 
 
   private

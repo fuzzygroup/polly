@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<table class="table table-striped" border="0">
   <thead>
     <tr>
       <% if Rails.env.development? %>
@@ -8,9 +8,13 @@
       <th scope="col" class="text-center">Name</th>
       <th scope="col" class="text-center">How Long?</th>
       <th scope="col" class="text-center">Start</th>
-      <th scope="col" class="text-center">End</th>      
-      <th scope="col" class="text-center">Confirmed</th>      
-      
+      <th scope="col" class="text-center">End</th>     
+      <%  if 3 == 4 %> 
+      <th scope="col" class="text-center">Confirmed</th>   
+      <% end %>
+      <% if current_user && current_user.has_editing_privileges? %>   
+        <th scope="col" class="text-center">Edit</th>      
+      <% end %>
       
     </tr>
   </thead>

@@ -7,7 +7,7 @@ module ApplicationHelper
   end
   
   def add_link_bar_spacer
-    "&nbsp;&nbsp;&nbsp;"
+    "&nbsp;&nbsp;&nbsp;".html_safe
   end
   
   def show_event_action_links(event)

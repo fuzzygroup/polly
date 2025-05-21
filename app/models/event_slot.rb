@@ -1,4 +1,6 @@
 class EventSlot < ApplicationRecord
+  default_scope { where("event_slot_type_id <> 3") }
+  
   belongs_to :event
   belongs_to :event_slot_type
   belongs_to :speaker, optional: true
@@ -14,6 +16,18 @@ class EventSlot < ApplicationRecord
     return false
     #return true if self.confirmation.try(:confirmed)
     #return false
+  end
+  
+  def computed_duration
+    self.duration + 3
+  end
+  
+  def time_start
+    Time.now
+  end
+  
+  def time_end
+    Time.now
   end
   
 end
