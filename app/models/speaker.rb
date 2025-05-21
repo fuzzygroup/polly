@@ -42,6 +42,10 @@ class Speaker < ApplicationRecord
   def self.sally
     Speaker.where(identifier: "sally").first
   end
+  
+  def self.jackson_franklin
+    Speaker.where(identifier: 'jackson_franklin').first
+  end
 
   
 end

@@ -11,6 +11,20 @@ namespace :events do
     Rake::Task["events:flesh_out_615"].invoke    
     Rake::Task["events:metrics"].invoke
   end
+  
+  # be rake events:destroy_all_events_and_slots_and_tasks
+  task :destroy_all_events_and_slots_and_tasks => :environment do
+    events = Event.all
+    events.each do |event|
+      event.event_slots.each do |event_slot|
+        event_slot.destroy
+      end
+      event.event_tasks.each do |event_task|
+        event_task.destroy
+      end
+      event.destroy
+    end
+  end
 
   # be rake events:seed --trace
   task :seed => :environment do
@@ -370,7 +384,7 @@ Together, we’re building momentum for a greener, fairer future — and it star
     s = Speaker.where(identifier: "angie_foreman").first
     event.add_speaker("Not a Dad but Still for Democracy",s, 10)
     event.add_buffer
-    event.add_musician("James Does Donny Boy", 5)
+    event.add_musician("James Does Donny Boy", Musician.james, 5)
     event.add_buffer
     event.add_speaker("Max Haddad ???", Speaker.max_haddad, 10)
     event.add_buffer
@@ -382,7 +396,7 @@ Together, we’re building momentum for a greener, fairer future — and it star
     event.add_buffer
     event.add_speaker("Scott Johnson Closing Remarks", Speaker.scott_johnson,5)
     event.add_buffer
-    event.add_musician("Moontown Pickle Stompers for Closing Act", 0)
+    event.add_musician("Moontown Pickle Stompers for Closing Act", Musician.tbd, 0)
 
     # slots = []
     # slots << OpenStruct.new(
