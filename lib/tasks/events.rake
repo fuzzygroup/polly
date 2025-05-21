@@ -14,7 +14,7 @@ namespace :events do
   
   # be rake events:destroy_all_events_and_slots_and_tasks
   task :destroy_all_events_and_slots_and_tasks => :environment do
-    events = Event.find_by_slug('lnZZZiraEU')
+    events = Event.where(slug: 'lnZZZiraEU')
     events.each do |event|
       event.event_slots.each do |event_slot|
         event_slot.destroy
