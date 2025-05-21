@@ -59,7 +59,7 @@ namespace :projects do
     project_structs << 
     OpenStruct.new(
       name: "Make Up 50501 Buttons at a Public Library",
-      user_id: User.jackie.id,
+      user_id: User.jacqui.id,
       organization_id: Organization.indiana50501.id, 
       project_type: "marketing",
       active: false
@@ -78,7 +78,7 @@ namespace :projects do
     project_structs << 
     OpenStruct.new(
       name: "CiberTruck Challenge Videos",
-      user_id: User.jackie.id,
+      user_id: User.jacqui.id,
       organization_id: Organization.indiana50501.id, 
       project_type: "leadership",
       active: true,
@@ -88,7 +88,7 @@ namespace :projects do
     project_structs << 
     OpenStruct.new(
       name: "Make Sign Lanyards using Cord and Alligator Clips to Give Away",
-      user_id: User.jackie.id,
+      user_id: User.jacqui.id,
       organization_id: Organization.indiana50501.id, 
       project_type: "crafts",
       active: false      
@@ -97,7 +97,7 @@ namespace :projects do
     project_structs << 
     OpenStruct.new(
       name: "Make Executive Order Binders Like Project 2025 Binders",
-      user_id: User.jackie.id,
+      user_id: User.jacqui.id,
       organization_id: Organization.indiana50501.id, 
       project_type: "props",
       active: true,
@@ -139,7 +139,7 @@ namespace :projects do
     OpenStruct.new(
       name: "Stickers",
       body: "Get in touch with Lucy out of Pittsburgh.  Lucy found great sticker pricing out of MinuteMan and wanted to do anti trump stickers but got busy https://minuteman.com/us/locations/in/#8/40.675/-86.752",
-      user_id: User.jackie.id,
+      user_id: User.jacqui.id,
       organization_id: Organization.indiana50501.id, 
       project_type: "marketing", 
       due_date: Date.new(2025, 5,24),
@@ -179,7 +179,7 @@ namespace :projects do
     project_structs << 
     OpenStruct.new(
       name: "Paint the Collection Tarp the State Outline and Something Else",
-      user_id: User.jackie.id,
+      user_id: User.jacqui.id,
       organization_id: Organization.indiana50501.id, 
       project_type: "marketing", 
       due_date: Date.new(2025, 4,27),

@@ -19,8 +19,8 @@ namespace :seed do
     # Core setup data
     #
     #Rake::Task["generate_passwords_env_file:init"].invoke
-    Rake::Task["organization:init"].invoke
-    Rake::Task["user:init"].invoke
+    #Rake::Task["organizations:init"].invoke
+    #Rake::Task["users:seed"].invoke
     Rake::Task["vetting_questions:init"].invoke
     Rake::Task["fliers:init"].invoke
     Rake::Task["rules:init"].invoke
