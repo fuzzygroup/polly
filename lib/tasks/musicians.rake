@@ -55,6 +55,17 @@ namespace :musicians do
       identifier: "tbd"
     )
     
+    musician_structs << 
+    OpenStruct.new(
+      name: "James Kinsey",
+      url: "",
+      #organization_id: Organization.indiana50501.id, 
+      user_id: User.scott.id,
+      #contact_id: nil,
+      notes: "James Kinsey is a long time 50501 member, a poet, an avid Cards Against Humanity player, a lyricist and a performer",
+      identifier: "james"
+    )
+    
 
     
     # musician_structs <<

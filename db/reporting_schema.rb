@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_20_122246) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_21_123442) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -239,7 +239,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_20_122246) do
     t.time "time_setup"
     t.string "visibility", default: "all"
     t.boolean "show_action_links", default: true
+    t.string "fid"
     t.index ["event_type_id"], name: "index_events_on_event_type_id"
+    t.index ["fid"], name: "index_events_on_fid"
     t.index ["organization_id"], name: "index_events_on_organization_id"
     t.index ["share_code_id"], name: "index_events_on_share_code_id"
     t.index ["slug"], name: "index_events_on_slug"

@@ -19,28 +19,36 @@ namespace :seed do
     # Core setup data
     #
     #Rake::Task["generate_passwords_env_file:init"].invoke
-    #Rake::Task["organizations:init"].invoke
-    #Rake::Task["users:seed"].invoke
-    Rake::Task["vetting_questions:init"].invoke
-    #Rake::Task["fliers:init"].invoke
+    Rake::Task["organizations:init"].invoke
+    Rake::Task["users:seed"].invoke
     Rake::Task["rules:init"].invoke
-    Rake::Task["projects:init"].invoke
+    Rake::Task["speakers:init"].invoke
+    Rake::Task["musicians:init"].invoke
     Rake::Task["event_types:init"].invoke
+    Rake::Task["event_slot_types:init"].invoke
+    Rake::Task["event_slots:init"].invoke
+    Rake::Task["events:init"].invoke
+    Rake::Task["projects:init"].invoke
     Rake::Task["teams:init"].invoke
     Rake::Task["team_users:init"].invoke
-    Rake::Task["speakers:init"].invoke
-    Rake::Task["contact_cards:init"].invoke
-    Rake::Task["rules:init"].invoke
+
     Rake::Task["organization_rules:init"].invoke
     Rake::Task["team_rules:init"].invoke
     Rake::Task["team_user_rules:init"].invoke
     Rake::Task["political_actions:init"].invoke
+    Rake::Task["availabilities:init"].invoke
     Rake::Task["bank_deposits:init"].invoke
-    Rake::Task["event_slot_types:init"].invoke
-    Rake::Task["event_slots:init"].invoke
-    Rake::Task["events:init"].invoke
     Rake::Task["polls:init"].invoke
     Rake::Task["poll_options:init"].invoke
+    
+    # 
+    # #Rake::Task["fliers:init"].invoke
+    # #Rake::Task["speakers:init"].invoke
+    # Rake::Task["contact_cards:init"].invoke
+    # #Rake::Task["rules:init"].invoke
+    # 
+    # 
+    # 
     # Rake::Task["teams:init"].invoke
     # Rake::Task["team_users:init"].invoke
     

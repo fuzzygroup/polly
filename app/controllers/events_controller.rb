@@ -4,11 +4,20 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    if current_user
+    if current_user.nil?
+      @events = Event.active.where(organization: Organization.indiana50501, visibility: "all").order("date_start DESC")
+    elsif current_user
       @events = Event.active.where(organization: current_user.organization).order("date_start DESC")
-    else
-      @events = Event.active.where(organization: Organization.indiana50501).order("date_start DESC")
     end
+      
+      
+    # if current_user && current_user.is_admin?
+    #   @events = Event.active.where(organization: current_user.organization, visibility: "all", visibility: "").order("date_start DESC")
+    # elsif current_user
+    #
+    # else
+    #
+    # end
     #.where(["date_start >= ?", Date.today])
   end
 

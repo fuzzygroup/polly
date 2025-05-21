@@ -235,7 +235,17 @@ namespace :speakers do
       identifier: "open_mic"
     )
     
-    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "Sally Alsmeyer",
+      url: nil,
+      organization_id: Organization.indiana50501.id, 
+      pronouns: nil,
+      user_id: User.scott.id,
+      #contact_id: nil,
+      notes: "Sally Alsmeyer is a 16 year old poet who attends the 50501 protests and feels strongly about the direction of our country",
+      identifier: "sally"
+    )
     
     
     # speaker_structs <<
