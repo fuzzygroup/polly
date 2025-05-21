@@ -26,7 +26,6 @@ namespace :seed do
     Rake::Task["musicians:init"].invoke
     Rake::Task["event_types:init"].invoke
     Rake::Task["event_slot_types:init"].invoke
-    Rake::Task["event_slots:init"].invoke
     Rake::Task["events:init"].invoke
     Rake::Task["projects:init"].invoke
     Rake::Task["teams:init"].invoke
@@ -40,6 +39,7 @@ namespace :seed do
     Rake::Task["bank_deposits:init"].invoke
     Rake::Task["polls:init"].invoke
     Rake::Task["poll_options:init"].invoke
+    #Rake::Task["event_slots:init"].invoke
     
     # 
     # #Rake::Task["fliers:init"].invoke
