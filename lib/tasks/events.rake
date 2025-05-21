@@ -14,7 +14,7 @@ namespace :events do
   
   # be rake events:destroy_all_events_and_slots_and_tasks
   task :destroy_all_events_and_slots_and_tasks => :environment do
-    events = Event.all
+    events = Event.find_by_slug('lnZZZiraEU')
     events.each do |event|
       event.event_slots.each do |event_slot|
         event_slot.destroy
@@ -292,21 +292,21 @@ Together, we’re building momentum for a greener, fairer future — and it star
     event.add_buffer
     event.add_speaker("Captain Crunch Goes to the Capital",Speaker.captain_crunch, 10)
     event.add_buffer
-    event.add_musician("505051 Presents James and the Song Parodies", Musician.james, 15)
+    event.add_musician("505051 Presents James and the Song Parodies", Musician.james, 10)
     event.add_buffer
     event.add_speaker("Resisting Oracle on The Very Essence of Being a Nation of Law Not a Nation of Executive Orders", Speaker.resisting_oracle,15)
     event.add_buffer
     s = Speaker.where(name: "Sally Alsmeyer").first
-    event.add_speaker("Sally Alsmeyer - 50501's Youngest Poet Speaks Out",s, 10)
+    event.add_speaker("Sally Alsmeyer - 50501's Youngest Poet Speaks Out",s, 5)
     # event.add_speaker("Scott Johnson Roams Over the Madness of Exec Orders (if no one else comes to speak)",Speaker.scott_johnson, 10)
     event.add_buffer
     #event.add_speaker("Jamie Flemington on Abortion", 10)
     #event.add_buffer
     event.add_musician("Greg Zeismer", Musician.greg_ziesemer,15)
     event.add_buffer
-    event.add_speaker("Max Haddad: Let's Mock the King's Decrees", Speaker.max_haddad, 15)
+    event.add_speaker("TBD", Speaker.tbd, 10)
     event.add_buffer
-    event.add_speaker("Open Mic Time", Speaker.open_mic,15)
+    event.add_speaker("Open Mic Time", Speaker.open_mic,10)
     event.add_buffer
     event.add_speaker("Scott Johnson Closing Remarks", Speaker.scott_johnson,10)
     event.add_buffer
