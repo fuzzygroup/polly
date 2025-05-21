@@ -170,6 +170,11 @@ class User < ApplicationRecord
     User.where(username: "jenmidkiff").first
   end
 
+  def self.jacqui
+    User.where(username: "jacqui").first
+  end
+
+
   private
 
   def valid_date?
