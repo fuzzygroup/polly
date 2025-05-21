@@ -5,6 +5,42 @@ class User < ApplicationRecord
   has_many :teams
   has_many :team_users
   
+  #
+  # Scott Changes from Here On
+  #
+  IDENTITY_RELATIONSHIP = :any # could also be :all
+  IDENTITY_COLUMNS = [:username]
+  include FindOrCreate
+  
+  
+  # Include default devise modules. Others available are:
+  # :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable,
+         :confirmable, :lockable, :timeoutable, :trackable
+
+  # validates :email, presence: true, uniqueness: true
+  # validates :password, presence: true
+  # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :username, presence: true, uniqueness: true
+  validates :first_name, presence: true
+  validates :password, length: { maximum: 20 }
+  validate :valid_date?
+
+  enum :role, { user: "user", admin: "admin", volunteer: "volunteer", superuser: "superuser" }
+  validates :role, inclusion: { in: roles.keys }
+  
+  belongs_to :organization
+  
+  acts_as_voter
+  
+  # Skip confirmation email on creation if needed
+  def skip_confirmation_email!
+    self.skip_confirmation_notification!
+    self.confirmed_at = Time.current # Optional: auto-confirm
+  end
+  
+  
   def has_destroy_rights?(obj)
     return true if self.is_superuser?
     return true if self.id == obj.user_id
@@ -34,35 +70,9 @@ class User < ApplicationRecord
   def is_superuser?
     return true if self.role == 'superuser'
   end
+  
 
-  #
-  # Scott Changes from Here On
-  #
-  IDENTITY_RELATIONSHIP = :any # could also be :all
-  IDENTITY_COLUMNS = [:username]
-  include FindOrCreate
-  
-  
-  # Include default devise modules. Others available are:
-  # :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable, :timeoutable, :trackable
 
-  # validates :email, presence: true, uniqueness: true
-  # validates :password, presence: true
-  # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :username, presence: true, uniqueness: true
-  validates :first_name, presence: true
-  validates :password, length: { maximum: 20 }
-  validate :valid_date?
-
-  enum :role, { user: "user", admin: "admin", volunteer: "volunteer", superuser: "superuser" }
-  validates :role, inclusion: { in: roles.keys }
-  
-  belongs_to :organization
-  
-  acts_as_voter
 
   def full_name
     [ first_name, last_name ].join(" ")
