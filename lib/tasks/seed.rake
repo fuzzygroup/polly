@@ -22,7 +22,7 @@ namespace :seed do
     #Rake::Task["organizations:init"].invoke
     #Rake::Task["users:seed"].invoke
     Rake::Task["vetting_questions:init"].invoke
-    Rake::Task["fliers:init"].invoke
+    #Rake::Task["fliers:init"].invoke
     Rake::Task["rules:init"].invoke
     Rake::Task["projects:init"].invoke
     Rake::Task["event_types:init"].invoke
