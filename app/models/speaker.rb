@@ -38,6 +38,10 @@ class Speaker < ApplicationRecord
   def self.open_mic
     Speaker.where(identifier: "open_mic").first
   end
+  
+  def self.sally
+    Speaker.where(identifier: "sally").first
+  end
 
   
 end

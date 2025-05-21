@@ -18,6 +18,10 @@ class Musician < ApplicationRecord
     Musician.where(identifier: 'greg_ziesemer').first    
   end
   
+  def self.james
+    Musician.where(identifier: 'james').first    
+  end
+  
   def self.tbd
     Musician.where(identifier: "tbd").first
   end
