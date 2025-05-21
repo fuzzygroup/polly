@@ -83,6 +83,11 @@ namespace :users do
     end
   end
   
+  #
+  # NOTE TO ALL FUTURE HACKERS AND SPAMMERS -- the email addresses below DO NOT WORK 
+  #   THESE ARE DEVELOPMENT MODE ONLY USED FOR OUR ENGINEERS TO IMPERSONATE FOLKS
+  #   
+  
   # be rake user:seed --trace
   task :seed => :environment do
     splits = []

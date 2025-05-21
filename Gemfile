@@ -82,3 +82,5 @@ gem 'image_processing', '~> 1.12'
 gem 'vobject'
 gem "meilisearch-rails"
 
+gem 'mailgun-ruby'
+
