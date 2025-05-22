@@ -3,15 +3,20 @@ default: &default
   encoding: unicode
   pool: 5
   timeout: 5000
+  port: 5432
+  username: pcdbu
+  password: 17Xp860gpSpu8Of0N2WkeHpJ/Kg=
 
 development:
   primary:
     <<: *default
     database: polly_development
+    host: localhost
 
   reporting:
     <<: *default
     database: polly_development
+    host: localhost
     
 #
 # NOTE: REQUIRED FOR DOCKERIZED ASSET COMPILATION
