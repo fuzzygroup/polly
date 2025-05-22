@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @speech %>
+
+<div>
+  <%= link_to "Edit this speech", edit_speech_path(@speech) %> |
+  <%= link_to "Back to speeches", speeches_path %>
+
+  <%= button_to "Destroy this speech", @speech, method: :delete %>
+</div>

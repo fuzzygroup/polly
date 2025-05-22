@@ -109,9 +109,9 @@ module FindOrCreate
       #   # pull that entry out of the open struct
       # end
       
-      
+      #debugger
       thing = self.new(struct.to_h)
-
+      debugger
       thing.save
       #debugger
       if thing.persisted?

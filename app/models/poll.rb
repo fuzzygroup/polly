@@ -7,6 +7,7 @@ class Poll < ApplicationRecord
   
   IDENTITY_RELATIONSHIP = :all # could also be :all
   IDENTITY_COLUMNS = [:name, :user_id]
+  
   include FindOrCreate
   include ShareCodeConcern
   

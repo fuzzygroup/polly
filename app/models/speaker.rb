@@ -10,6 +10,11 @@ class Speaker < ApplicationRecord
   def self.scott_johnson
     Speaker.where(identifier: "scott_johnson").first
   end
+
+  def self.scott
+    Speaker.where(identifier: "scott_johnson").first
+  end
+
   
   def self.captain_crunch
     Speaker.where(identifier: "captain_crunch").first
@@ -45,6 +50,10 @@ class Speaker < ApplicationRecord
   
   def self.jackson_franklin
     Speaker.where(identifier: 'jackson_franklin').first
+  end
+  
+  def full_name
+    name
   end
 
   

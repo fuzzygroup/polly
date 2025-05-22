@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Speeches" %>
+
+<h1>Speeches</h1>
+
+<div id="speeches">
+  <ul>
+  <% @speeches.each do |speech| %>
+    <li>
+      <%=link_to(speech.presentation_title, speech_path(speech))%>
+    </li>
+    <%#= render speech %>
+      <%#= link_to "Show this speech", speech %>
+  <% end %>
+  </ul>
+</div>
+
+<%= link_to "New speech", new_speech_path %>

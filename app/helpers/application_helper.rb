@@ -10,8 +10,21 @@ module ApplicationHelper
     "&nbsp;&nbsp;&nbsp;".html_safe
   end
   
+  def show_speech_link(speech)
+    output = []
+    if speech.event
+      date = speech.event.date_start.to_s
+    else speech
+      date =speech.created_at.to_s
+    end
+    output << link_to("#{date} : #{speech.name}", speech_path(speech))
+    #output << " by #{link_to(speech.speaker.full_name, speaker_path(speech.speaker)}"
+    output.join("").html_safe
+  end
+  
   def show_event_action_links(event)
     return if Rails.env.production?
+    return
     return if event.show_action_links == false
     # return if event is in the past 
     return if event.date_start < Time.now.to_date

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_21_150220) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_22_082343) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -453,6 +453,24 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_21_150220) do
     t.index ["user_id"], name: "index_speakers_on_user_id"
   end
 
+  create_table "speeches", force: :cascade do |t|
+    t.string "name"
+    t.string "tags"
+    t.string "slug"
+    t.bigint "organization_id"
+    t.bigint "speaker_id"
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_speeches_on_event_id"
+    t.index ["organization_id"], name: "index_speeches_on_organization_id"
+    t.index ["slug"], name: "index_speeches_on_slug", unique: true
+    t.index ["speaker_id"], name: "index_speeches_on_speaker_id"
+    t.index ["user_id"], name: "index_speeches_on_user_id"
+  end
+
   create_table "team_rules", force: :cascade do |t|
     t.bigint "team_id"
     t.bigint "rule_id"
@@ -652,6 +670,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_21_150220) do
   add_foreign_key "share_codes", "users"
   add_foreign_key "speakers", "organizations"
   add_foreign_key "speakers", "users"
+  add_foreign_key "speeches", "events"
+  add_foreign_key "speeches", "organizations"
+  add_foreign_key "speeches", "speakers"
+  add_foreign_key "speeches", "users"
   add_foreign_key "team_rules", "rules"
   add_foreign_key "team_rules", "teams"
   add_foreign_key "team_user_rules", "rules"

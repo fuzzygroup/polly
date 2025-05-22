@@ -118,3 +118,5 @@ Team id
 rails g scaffold MeetingNote name:string participants:string location:string meeting_date:date body:text 
 
 rails g scaffold OrganizationRole name:string user:references team:references job_description:text status:string
+
+rails g scaffold Speech name:string tags:string speaker:references user:references event:references body:text 
