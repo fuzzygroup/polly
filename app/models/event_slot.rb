@@ -9,6 +9,8 @@ class EventSlot < ApplicationRecord
   has_one :confirmation
   #has_one :speech
   
+  
+  
   def speech
     Speech.where(id: self.speech_id).first
   end

@@ -12,6 +12,7 @@ class EventSlotType < ApplicationRecord
     EventSlotType.where(name: "Speech").first
   end
   
+  
   def self.buffer
     EventSlotType.where(name: "Buffer").first
   end

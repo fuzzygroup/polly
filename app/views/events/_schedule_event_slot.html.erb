@@ -6,7 +6,7 @@
       <td><%= link_to_speech_if_exists(event_slot)%></td>      
       <td class="text-center"><%= event_slot.duration %></td>
 
-      <td class="text-center"><%#= event_slot.time_start.strftime("%H:%M") %></td>
+      <td class="text-center"><%= event_slot.computed_start_at.strftime("%H:%M %p") %></td>
       <td class="text-center"><%#= event_slot.time_end.strftime("%H:%M") %></td>
       <% if 3 == 4 %>
       <td class="text-center"><%= link_to(show_yes_no(event_slot.is_confirmed?), new_confirmation_path({:event_slot_id => event_slot.id})) %></td>

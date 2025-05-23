@@ -12,6 +12,11 @@ class Event < ApplicationRecord
   IDENTITY_COLUMNS = [:name, :user_id]
   include FindOrCreate
   
+  #
+  # System level constant for amount of time to add to an event to account for switching
+  #
+  BUFFER_TIME = 3
+  
   scope :active, -> { where(active: true) }
   #scope :past, -> { where(["date_start <= ?", Date.today])}
   #scope :past, -> { where('date_start < ?', Time.current) }
@@ -23,14 +28,35 @@ class Event < ApplicationRecord
 
   validates :slug, presence: true, uniqueness: true
   
+  def aric_json
+  end
+  
   def calculate_times
-    buffer_event_slot_type = EventSlotType.where(name: 'Buffer').first
-    self.event_slots.where(["event_slot_type <> ?", buffer_event_slot_type.id]).count
+    # buffer_event_slot_type = EventSlotType.where(name: 'Buffer').firstds
+    # self.event_slots.where(["event_slot_type <> ?", buffer_event_slot_type.id]).count
+    
+    curr_time = self.time_start
+    last_slot = nil
+    self.non_buffer_slots.each_with_index do |slot, ctr|
+      puts "ctr = #{ctr}"
+      if ctr == 0
+        slot.update_attribute(:computed_start_at, curr_time)
+        last_slot = slot
+      else
+        puts "in else slot.id = #{slot.id} -- value = #{last_slot.computed_start_at + slot.duration}"
+        slot.update_attribute(:computed_start_at, last_slot.computed_start_at + last_slot.duration.minutes)
+        last_slot = slot
+      end
+    end
   end
 
   def to_param
     slug
   end
+  
+  # def non_buffer_slots
+  #   self.event_slots.where()
+  # end
   
   def team
     Team.where(event_id: self.id).first
@@ -42,8 +68,18 @@ class Event < ApplicationRecord
   
   def non_buffer_slots
     buffer_type = EventSlotType.buffer
-    self.event_slots.where(["event_slot_type_id <> ?", buffer_type.id])
+    self.event_slots.where(["event_slot_type_id <> ?", buffer_type.id]).order("event_slot_order ASC, id ASC")
   end
+  
+  def order_slots
+    slot_ctr = 0
+    self.non_buffer_slots.each do |slot|
+      slot_ctr = slot_ctr + 10
+      slot.update_attribute(:event_slot_order, slot_ctr)
+    end
+  end
+  
+  #def 
 
 
   # def ensure_unique_slug
