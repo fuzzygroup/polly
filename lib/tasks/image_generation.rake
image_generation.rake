@@ -5,7 +5,7 @@ namespace :image_generation do
 
     output_path = Rails.root.join('tmp', 'test_output.png')
 
-    composer = ImageGeneration::ImageComposer.new(gradient: ['#ffffff', '#ccddff', :horizontal])
+    composer = ImageGeneration::ImageComposer.new(gradient: ['#ffffff', '#0000ff', :horizontal])
 
     composer.compose_event_flyer(
       event_title: "ruby for rebels",

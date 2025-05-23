@@ -7,11 +7,11 @@ module ImageGeneration
   class ImageComposer
     include Magick
 
-    DEFAULT_WIDTH  = 1260
-    DEFAULT_HEIGHT = 1650
+    DEFAULT_WIDTH  = 1570
+    DEFAULT_HEIGHT = 2048
     DEFAULT_LOGO_PATH = Rails.root.join('app/assets/images/flierlogo.png').to_s
     DEFAULT_FONT_PATH = Rails.root.join('app/assets/images/break-down.ttf').to_s
-    DEFAULT_MARGIN = 80
+    DEFAULT_MARGIN = 60
 
 
     def initialize(output_width: DEFAULT_WIDTH, output_height: DEFAULT_HEIGHT, background_color: 'white', margin: DEFAULT_MARGIN, gradient: nil)
@@ -88,22 +88,22 @@ module ImageGeneration
 
       # Add title diagonally
       angle = -45
-      diagonal_x = @width/4
+      diagonal_x = @width/4.25
       diagonal_y = @height/1.5
 
       # Add event info block bottom right
-      info_x = @width - 440
-      info_y = @height/2
+      info_x = @width - 460
+      info_y = @height/1.85
 
-      add_text(event_title, x: diagonal_x, y: diagonal_y, font_size: 82, rotate: angle, font: DEFAULT_FONT_PATH)
+      add_text(event_title, x: diagonal_x, y: diagonal_y, font_size: 140, rotate: angle, font: DEFAULT_FONT_PATH)
 
       # And optionally for the rest:
-      add_text(event_date,  x: info_x, y: info_y, font_size: 48)
-      add_text(event_time,  x: info_x, y: info_y + 80, font_size: 48)
-      add_text(event_place, x: info_x, y: info_y + 160, font_size: 38)
+      add_text(event_date,  x: info_x, y: info_y + 120, font_size: 48)
+      add_text(event_time,  x: info_x, y: info_y + 200, font_size: 48)
+      add_text(event_place, x: info_x, y: info_y + 280, font_size: 38)
 
       # Add QR code below the info block
-      add_qr_code(qr_text, x: info_x - 20, y: info_y + 260, pixel_size: 15) if qr_text
+      add_qr_code(qr_text, x: info_x - 20, y: info_y + 380, pixel_size: 15) if qr_text
     end
 
     def save_to(path)
