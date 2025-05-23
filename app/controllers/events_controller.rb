@@ -5,9 +5,9 @@ class EventsController < ApplicationController
   # GET /events or /events.json
   def index
     if current_user.nil?
-      @events = Event.active.where(organization: Organization.indiana50501, visibility: "all").order("date_start DESC")
+      @events = Event.active.where(organization: Organization.indiana50501, visibility: "all").order("date_start DESC, time_start DESC")
     elsif current_user
-      @events = Event.active.where(organization: current_user.organization).order("date_start DESC")
+      @events = Event.active.where(organization: current_user.organization).order("date_start DESC, time_start DESC")
     end
       
       

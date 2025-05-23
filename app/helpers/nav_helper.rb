@@ -10,6 +10,7 @@ module NavHelper
   NAVS = [
     { path: "root_path", name: "Home" },
     { path: "events_path", name: "Events" },
+    { path: "speeches_path", name: "Speeches" },
     # { path: "organizations_path", name: "My Organization" },
     # { path: "rules_path", name: "Rules" },
     # { path: "teams_path", name: "Teams" },

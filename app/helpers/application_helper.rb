@@ -10,6 +10,27 @@ module ApplicationHelper
     "&nbsp;&nbsp;&nbsp;".html_safe
   end
   
+  #
+  # NOTE: obj is an object which is only 1 method call away from user 
+  # example: speech.speaker has speech.speaker.user
+  #
+  def link_to_user_if_exists(obj)
+    if obj.try(:user)
+      link_to(obj.user.full_name, obj.user)
+    else
+      obj.full_name
+    end
+  end
+  
+  def link_to_speech_if_exists(obj)
+    #return
+    if obj.try(:speech)
+      link_to(obj.speech.name, obj.speech)
+    else
+      obj.name
+    end
+  end
+  
   def show_speech_link(speech)
     output = []
     if speech.event

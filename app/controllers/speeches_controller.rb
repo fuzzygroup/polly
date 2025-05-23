@@ -1,5 +1,26 @@
 class SpeechesController < ApplicationController
-  before_action :set_speech, only: %i[ show edit update destroy ]
+  before_action :set_speech, only: %i[ show edit update destroy  upvote downvote]
+  
+  def upvote
+    #raise "foo"
+    if current_user.voted_up_on?(@speech)
+      @speech.unvote_by current_user
+    else
+      @speech.upvote_by current_user
+    end
+    #redirect_to @project
+    redirect_to '/speeches'
+  end
+
+  def downvote
+    if current_user.voted_down_on?(@speech)
+      @speech.unvote_by current_user
+    else
+      @speech.downvote_by current_user
+    end
+    #redirect_to @project
+    redirect_to '/speeches'
+  end
 
   # GET /speeches or /speeches.json
   def index
@@ -8,6 +29,28 @@ class SpeechesController < ApplicationController
 
   # GET /speeches/1 or /speeches/1.json
   def show
+    #require 'redcarpet'
+    #markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new)
+    #@speech_body = markdown.render(@speech.body)
+    # markdown_text = @speech.body
+    #
+    # renderer = Redcarpet::Render::HTML.new(
+    #       filter_html: true,
+    #       hard_wrap: true
+    #     )
+    #
+    #     markdown = Redcarpet::Markdown.new(renderer, {
+    #       autolink: true,
+    #       tables: true,
+    #       fenced_code_blocks: true
+    #     })
+    #
+    #     @speech_body = markdown.render(markdown_text).html_safe
+    
+    #require 'cmark-gfm'
+
+    markdown_text = "# Hello World\n\nThis is *GitHub* **Markdown**."
+    #html_output = CMarkGFM.render_html(markdown_text, :DEFAULT)
   end
 
   # GET /speeches/new

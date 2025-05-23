@@ -214,121 +214,130 @@ namespace :speeches do
       speaker_id: Speaker.resisting_oracle.id,
       event_id: Event.where(fid: '525_nk').first.id,
       #slug: ,
-      body: "# Defending the Constitution from Its Abusers
-      
-      Defending the Constitution from Its Abusers
+      body: "
+      **Defending the Constitution from Its Abusers**
 
       Delivered at The State House – May 2025
 
-      Good afternoon, Indianapolis! 
+      Good afternoon, Indianapolis! Thank you for showing up for our democracy!
 
-      Thank you for coming out to protest with us!
+      We are here today out of a fierce, unshakable love for our country. We are here because the Constitution—the foundation of our republic, our freedoms, our national identity—is under direct attack. And that attack is coming from the executive branch itself, led by a president who treats the rule of law like an obstacle to be bulldozed.
 
-      We stand here today out of fierce, unyielding devotion to this country. 
+      I’m here to directly speak about Donald Trump’s recent executive orders, all 152 of them. They are not just bad policy—they are constitutional violations. They undermine the principle of popular sovereignty and directly conflict with Article 6.
+      Each order is an erosion of our rights, each one a blow to the structure of the American government.
 
-      We gather in protest because the Constitution—the very document that binds us together as a nation of laws and not of kings—is under attack. 
+      Take Executive Order 14160 -- with one stroke of a pen, Trump attempted to strip citizenship from U.S.-born children of undocumented or temporary immigrants—gutting the 14th Amendment and dismissing over a century of legal precedent.
 
-      And the threat comes directly from the executive office and those who continue to enable this destructive agenda. 
+      Don’t let anyone tell you that this is a policy disagreement. It’s a direct assault on —the right of the soil—a principle upheld by the Supreme Court in 1898 when it ruled on the case: United States v. Wong Kim Ark. 
 
-      I am here today to talk to you about Donald Trump’s executive orders and how they directly undermine the popular sovereignty of the constitution, while also violating Article VI, known as the Supremacy Clause. 
+      The Constitution could not be clearer, and Trump could not be more defiant.
 
-      Since May 14th, Trump has signed over 152 executive orders—each one chipping away at our rights and eroding the core of our constitutional order. Let’s call them what they are: assaults on liberty, on accountability, and on the rule of law.
+      And he doesn’t stop there. That was just the beginning.
 
-      Consider Executive Order 14160—the so-called 
+      Seventeen Inspectors General—independent watchdogs whose job is to expose government misconduct—have been fired under the guise of **executive authority.** 
 
-      **Protecting the Meaning and Value of American Citizenship order.** 
+      These aren’t figureheads. They are the people who uncover fraud, waste, abuse, and corruption inside our government. Removing them isn’t just a bureaucratic reshuffle—it’s a purge. A purge that guts accountability and opens the door to unchecked power.
 
-      With a single stroke of his pen, Trump attempted to gut the 14th Amendment, stripping citizenship from children born on U.S. soil if their parents are undocumented or here temporarily. 
+      Michael J. Missal, the Inspector General of Veterans Affairs, was among those dismissed. He said it best: 
 
-      Let’s be clear, this is not a mere policy dispute—it’s a direct attack on a bedrock principle within our Constitution. Jus soli—the right of the soil – was settled by the Supreme Court in 1898 in United States v. Wong Kim Ark, affirming that every child born here, regardless of parentage, is an American. Yet Trump’s order spits in the face of that precedent—and of the Constitution itself.
+      **Inspectors General are nonpartisan and independent, and ensure transparency from our federal government. We fight fraud, waste, and abuse every day.**
 
-      And what about the mass firings of Inspectors General—17 independent watchdogs were purged under the guise of **executive authority.**
+      Every firing sends a chilling message: oversight is unwelcome. Transparency is a threat. And truth is optional. Trump is not just asserting control—he’s denying us ours.**
 
-      These inspectors serve to keep government honest, to shine the light of justice and prudence in dark corners. But with one wave of his hand, Trump gutted this vital check on presidential power—violating not just the spirit, but the letter of the Inspector General Act of 1978. 
+      And it’s not just oversight under attack—Trump is coming for due process itself. The right to fair treatment under the law—the backbone of American justice—is being systematically dismantled.
 
-      IGs investigate government misconduct: They expose fraud, waste, abuse, and corruption within federal agencies. Removing this independent regulatory body eliminated our independent oversight: Trump has weakened the very offices designed to hold his administration accountable. IGs uncover wrongdoing before it becomes public. Without them, Trump’s unfettered corruption can continue undetected. 
+      He invoked the Alien Enemies Act to fast-track deportations—no hearings, no appeals, no justice. His expanded, expedited removal policies strip people of the right to defend themselves before being forced out of the country.
 
-      Michael J. Missal, the former Inspector General of the U.S. Department of Veterans Affairs, was dismissed by Trump on January 24, 2025, as part of the mass firing. 
-      In response to his dismissal, Missal stated 
+      Let’s be clear: if the government can deny them a hearing today, it can deny you one tomorrow. That’s not immigration policy. That’s authoritarianism.
 
-      **Inspectors General are nonpartisan and independent, and ensure transparency from our federal government. We fight fraud, waste, and abuse every day. I am proud of the work we did to improve services and benefits for veterans and their families.**
+      These aren’t isolated abuses—they’re part of a strategy to destroy the legal safeguards that protect all of us. Make no mistake: when due process dies, dictatorship is born.
 
-      **With every firing, every silencing of oversight, Trump is not just asserting control—he’s denying us ours.**
+      Executive Order 14171—ironically titled **Restoring Accountability**
 
-      And it’s not just oversight that’s under attack. Trump’s executive actions are also striking at the very heart of due process—the fundamental right to fair treatment under the law.
+      —esurrects Schedule F, giving Trump power to fire tens of thousands of nonpartisan civil servants. These are career experts who serve the American people, not any one president. This isn’t reform. It’s a political purge—a hostile takeover of our government by loyalists.
 
-      Take, for example, his invocation of the Alien Enemies Act to expedite deportations without hearings, stripping individuals of their right to a fair hearing. Consider the expansion of expedited removal policies that deny people the opportunity to defend themselves before being forced out of the country. And if this miscarriage of justice can happen to them, it can happen to any American. 
+      With every firing, every silenced critic, Trump isn't just tightening his grip—he's choking the voice of the people.
 
-      These are not isolated incidents—they represent a calculated dismantling of the legal protections that safeguard every American. And make no mistake—when due process dies, dictatorship is alive.
+      He’s also targeting independent regulatory agencies—like the FTC and FCC— these bodies were designed to operate free from political interference. Trump’s orders drag them under direct presidential control, gutting their independence and clearing the path for unchecked power.
 
-      If that wasn’t bad enough, he’s gone a step further in his authoritarian power grab. Executive Order 14171, titled 
+      Worse still, he’s using that unchecked power to go after his critics.
 
-      **Restoring Accountability to Policy-Influencing Positions Within the Federal Workforce,**
+      Remember the executive order canceling federal contracts for law firms like Perkins Coie—simply because they dared to represent Americans challenging his agenda? He’s evoked their security clearances.
 
-      reintroduces and expands 
- 
-      **Schedule F,** 
- 
-      which allows him to fire tens of thousands of career civil servants. These nonpartisan experts serve the American people, not any one president. This is not reform. This is a hostile takeover of our government by political loyalists—a brazen assault on the separation of powers.
+      These are outrageous violations of the First Amendment, punishing people not for crimes, but for the mere act of dissent. That’s not governance—it’s retaliation. And it’s wrong. And it’s illegal. It’s not American.
 
-      With every purge, every silencing of oversight, Trump isn’t just tightening his grip—he’s choking our right to self-government. 
+      Our First Amendment guarantees the right to free speech. The right to petition the government for redress of grievances. The right to stand here, today, and raise our voices without fear of retribution. 
 
-      Let’s talk about Executive Orders targeting independent regulatory agencies like the FTC and FCC—agencies designed to act as a check on political interference. Trump’s orders drag them under his personal control, gutting their independence and silencing dissent.
+      But in Trump’s America, that promise becomes a threat:
 
-      Worse still, he’s used executive power to punish his critics directly. Remember his executive order targeting law firms—like Perkins Coie—that had the audacity to represent Americans opposing his administration? He ordered their federal contracts canceled and their security clearances revoked—an outrageous violation of the First Amendment, punishing people not for their actions, but for the mere act of dissent.
-      What does the First Amendment guarantee? The right to free speech. The right to petition the government for redress of grievances. The right to stand here, today, and raise our voices without fear of retribution. But Trump’s America twists that promise into a threat: fall in line or face the consequences.
+      Fall in line or face the consequences.
 
-      We know that the Constitution is our nation’s shield against tyranny. But when an evil power holds the shield, it becomes a weapon – a battering ram against the legions of laws designed to protect our republic and democratic process. We must demand answers from our Supreme Court. 
+      The Constitution was meant to be our shield against tyranny.
 
-      This same Court that claims to be **originalist**, demanding we interpret the Constitution in the purest, strictest sense of its words, flips their script when confronted with Trump’s orders—orders that eviscerate due process, checks and balances, and the fundamental rights of citizens—the Justices suddenly find room to maneuver, to equivocate, to allow these abuses to stand.
+      But when an evil power holds that shield, it becomes a weapon – a battering ram against the laws designed to protect our republic and our democratic process. 
+      And here’s a question that weighs on me daily. Where is the Supreme Court?
 
-      It’s hypocrisy at its finest. They call themselves guardians of the Constitution, but in truth, they are enablers of its erosion. Their so-called fidelity to the framers is exposed as selective, weaponized to protect and enable a corrupt power grab. The people are left in the ruins of the war on the law itself.
+      This same Court that calls itself **originalist**—that claims to purport the purest, most strict interpretations of the Constitution—suddenly loses its convictions when faced with Trump’s abuses. Why do these justices suddenly find room to maneuver, to equivocate, to allow orders that eviscerate due process, checks and balances, and the fundamental rights of citizens? 
 
-      We, the people, are told that the Constitution is our shield. But what good is a shield if those sworn to hold it up instead use it to block justice?
+      It’s hypocrisy—these Justices aren’t guarding the Constitution—they’re guarding corruption.
 
-      Friends, we know better. The Constitution is more than ink on parchment—it is a promise, a living covenant between the government and the governed. It is our task, and our sacred duty, to hold that promise alive.
+      Their **fidelity to the framers** is selective, weaponized, and hollow. And the people? We’re left in the rubble of their betrayal - left in the ruins of the war on the law itself.
 
-      We must fight back against the betrayal of our rights. We must demand the restoration of independent oversight. We must insist that the 14th Amendment be honored, not hollowed out. And we must call out the Court’s hypocrisy—because silence in the face of injustice is complicity.
+      We, the people, are told that the Constitution is our shield. But what good is a shield if those sworn to hold it up instead lay down their arms and surrender justice?
+      Frederick Douglass warned us that **The limits of tyrants are prescribed by the endurance of those whom they oppress.** Well, our endurance ends here.
+      We know better. The Constitution is much more than ink empty words on old parchment paper.
 
-      As Frederick Douglass once said, 
+      * It’s a promise—it’s a living covenant between the governed and the government.
 
-      **The limits of tyrants are prescribed by the endurance of those whom they oppress.**
+      * It is our task, and our sacred duty, to hold that promise alive.
 
-      Our endurance ends here.
+      * We must fight back. And we must fight hard.
 
-      We will not sit by as our Constitution is shredded for political gain. We will not allow executive overreach to become the norm. And we will not let the highest court in the land excuse the inexcusable.
+      * We demand independent oversight.
 
-      Together, let’s rise—not just in protest, but in purpose. Not just with outrage—but with unshakable resolve.
+      * We defend the 14th Amendment.
 
-      Because the Constitution does not defend itself—it relies on us.
+      * We call out the Court’s cowardice—because silence in the face of injustice is complicity.
+
+      * We will not stand by while the Constitution is shredded for political gain. We will not let executive overreach become the norm. And we will not let the highest court excuse the inexcusable.
+
+      * We protest with resolution - not just with outrage—but with unshakable tenacity.
+
+      Because the Constitution doesn’t defend itself. 
+
+      * It relies on us.
 
       * It relies on teachers who refuse to teach lies.
-      * On journalists who report truth in the face of propaganda.
-      * On veterans who fought for a country they still believe in.
-      * On activists who organize when others are silent.
-      * On workers who know that democracy doesn’t clock out at 5 p.m.
-      * On students who demand a future grounded in justice, not fear.
-      * On immigrants who believe in this country more fiercely than many born into it.
-      * It relies on parents raising children to question power, not worship it.
-      * On artists who speak what cannot be silenced.
-      * On whistleblowers who risk everything for transparency.
-      * On judges, when they remember their oath is to the Constitution—not to a man.
-      * It relies on farmers, nurses, scientists, neighbors, and voters—ordinary people doing extraordinary things simply by standing up and saying: **Enough.**
-      * It relies on you.
-      * On all of us.
 
-      In this moment, we draw a line in the sand.
+      * On journalists who tell the truth under threat.
 
-      Let today be the spark that lights the fire of accountability.
+      * It relies on veterans who still believe in the nation they served and on activists who organize when others go silent.
 
-      Let it be the roar that reminds those in power that we are still here.
+      * The Constitution counts on workers who know democracy doesn’t clock out at 5 pm, and on students who demand a future built on freedom and not fear.
 
-      We are the defenders of this democracy.
+      * It relies on immigrants who believe in America more fiercely than many born into it.
 
-      We are the guardians of the Constitution.
+      * It depends upon parents raising children who question power—not worship it, and on artists who speak what will not be silenced.
 
-      And we DO NOT yield.
-      
+      * Our freedom and way of life depends on the whistleblowers who risk everything for truth, and on judges—that remember their oath is to the Constitution, not to a man.
+      It relies on farmers, nurses, scientists, neighbors, and voters—
+
+      * Ordinary people doing extraordinary things simply by standing up and saying: **Enough.**
+
+      * It relies on you. It relies on me. It relies on all of us.
+
+      So today—we draw the line. We hold the wall.
+
+      This moment is the spark that ignites a fire for justice.
+
+      Let us be the roar that reminds those in power that we are still here.
+      Do you hear me? We are still here.
+
+      We are the defenders of democracy.
+
+      We are the guardians of the Constitution. We wield the shield and the sword. Our fury will not be quelled, and we DO NOT yield.
+
+      **And we now use the Smash-A-Tron 5000 to put copies of the executive orders into Trump's crown and smash them while he sits next to us in HIS El Salvadoran prison garb** 
       "
     )
     
@@ -347,7 +356,7 @@ namespace :speeches do
       status, sc = ShareCode.find_or_create(sc_struct)
       
       speech_struct.slug = sc.share_code
-      debugger
+      #debugger
       status, speech = Speech.find_or_create(speech_struct)
     end
   end

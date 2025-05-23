@@ -107,7 +107,7 @@ namespace :events do
       has_props: false,
       has_partners: false,
       visibility: 'admins_only',
-      body: "Unload the truck, eat burgers, drink moonshine ... AND POOL should the plumbing gods smile upon us (Pool gets filled on Friday 5/23 so it should be ready but 🤞).  Seriously -- we all work hard and deserve some play time.  If you helped setup and / or run the event, I'd love to entertain you.  And if it rains?  *Wicked Laugh* -- we don't melt.  Elon's weather machine can't hurt us any more than it already has",
+      body: "Unload the truck, eat burgers, drink moonshine ... AND POOL should the plumbing gods smile upon us (Pool gets filled on Friday 5/23 so it should be ready but 🤞).  Seriously -- we all work hard and deserve some play time.  If you helped setup and / or run the event, I'd love to entertain you.  And if it rains?  *Wicked Laugh* -- we don't melt.  Elon's weather machine can't hurt us any more than it already has.  Alas -- it is now a Pool-Less party because while the plumbing gods did smile upon us, the Vinyl gods demanded tribute and took it.  ",
       fid: '525_deaddog'
       
     )
@@ -287,29 +287,29 @@ Together, we’re building momentum for a greener, fairer future — and it star
     event = Event.where(fid: '525_nk').first
 
     event.add_march("Opening March", 60)
-    event.add_buffer
+    #event.add_buffer
     event.add_speaker("Scott Johnson Opening Address - The Good and the Bad", Speaker.scott_johnson,10)
-    event.add_buffer
+    #event.add_buffer
     event.add_speaker("Captain Crunch Goes to the Capital",Speaker.captain_crunch, 10)
-    event.add_buffer
+    #event.add_buffer
     event.add_musician("505051 Presents James and the Song Parodies", Musician.james, 10)
-    event.add_buffer
-    event.add_speaker("Resisting Oracle on The Very Essence of Being a Nation of Law Not a Nation of Executive Orders", Speaker.resisting_oracle,15)
-    event.add_buffer
+    #event.add_buffer
+    event.add_speaker("Resisting Oracle on Defending the Constitution from Its Abusers", Speaker.resisting_oracle,15)
+    #event.add_buffer
     s = Speaker.where(name: "Sally Alsmeyer").first
     event.add_speaker("Sally Alsmeyer - 50501's Youngest Poet Speaks Out",s, 5)
     # event.add_speaker("Scott Johnson Roams Over the Madness of Exec Orders (if no one else comes to speak)",Speaker.scott_johnson, 10)
-    event.add_buffer
+    #event.add_buffer
     #event.add_speaker("Jamie Flemington on Abortion", 10)
     #event.add_buffer
     event.add_musician("Greg Zeismer", Musician.greg_ziesemer,15)
-    event.add_buffer
-    event.add_speaker("TBD", Speaker.tbd, 10)
-    event.add_buffer
+    #event.add_buffer
+    #event.add_speaker("TBD", Speaker.tbd, 10)
+    #event.add_buffer
     event.add_speaker("Open Mic Time", Speaker.open_mic,10)
-    event.add_buffer
+    #event.add_buffer
     event.add_speaker("Scott Johnson Closing Remarks", Speaker.scott_johnson,10)
-    event.add_buffer
+    #event.add_buffer
     event.add_march("Closing March - Optional", 0)
 
     # slots = []

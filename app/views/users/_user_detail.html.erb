@@ -12,7 +12,7 @@
           <%
             url = if devise_controller?
                     edit_user_registration_path
-                  elsif current_user.super_admin?
+                  elsif current_user && current_user.super_admin?
                     edit_user_path(user)
                   end
           %>
@@ -154,12 +154,16 @@
         </div>
       </div>
       <div class='col-md-6'>
+          <% if current_user %>
         <div class="alert alert-warning" role="alert">
           Last sign in IP: <%= user.last_sign_in_ip || 'Never' %>
         </div>
+          <% end %>
+          <% if current_user %>
         <div class="alert alert-<%= user.current_sign_in_ip != user.last_sign_in_ip ? 'danger' : 'warning' %>" role="alert">
           Current sign in IP: <%= user.current_sign_in_ip || 'Never' %>
         </div>
+          <% end %>
       </div>
     </div>
   </div>

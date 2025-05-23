@@ -1,0 +1,14 @@
+    <tr>
+      
+      <% if Rails.env.development? || Rails.env.production && current_user.is_super_user? %>
+        <td scope="row"><%= speech.id%></th>
+      <% end %>
+      <td><%= speech.date %></td>
+      <td><%= link_to(speech.name, speech_path(speech)) %></td>      
+      <td><%= link_to_user_if_exists(speech.speaker)%></td>
+      <td>
+        <%= link_to 'Upvote', upvote_speech_path(speech), data: { turbo_method: :post } %> | 
+        <%= link_to 'Downvote', downvote_speech_path(speech), data: { turbo_method: :post } %>
+      </td>
+      <td><%= speech.votes_for.size%></td>
+    </tr>

@@ -7,6 +7,11 @@ class EventSlot < ApplicationRecord
   belongs_to :musician, optional: true
   
   has_one :confirmation
+  #has_one :speech
+  
+  def speech
+    Speech.where(id: self.speech_id).first
+  end
   
   IDENTITY_RELATIONSHIP = :all # could also be :all
   IDENTITY_COLUMNS = [:name, :event_id]

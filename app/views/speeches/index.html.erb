@@ -5,15 +5,24 @@
 <h1>Speeches</h1>
 
 <div id="speeches">
-  <ul>
-  <% @speeches.each do |speech| %>
+  <!-- <ul>
+  <%# @speeches.each do |speech| %>
     <li>
-      <%=link_to(speech.presentation_title, speech_path(speech))%>
+      <%#=link_to(speech.presentation_title, speech_path(speech))%>
     </li>
     <%#= render speech %>
       <%#= link_to "Show this speech", speech %>
-  <% end %>
-  </ul>
+  <%# end %>
+  </ul> -->
+    <%= render 'speeches_header' %>
+  
+    <% @speeches.each do |speech| %>
+      <%= render 'speeches', {speech: speech} %>
+      <!-- <p>
+        <%#= link_to "Show this project", project %>
+      </p> -->
+    <% end %>
+    <%= render 'speeches_footer' %>
 </div>
 
 <%= link_to "New speech", new_speech_path %>

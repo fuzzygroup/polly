@@ -3,10 +3,14 @@ class Speech < ApplicationRecord
   belongs_to :organization
   belongs_to :speaker, optional: true
   belongs_to :user, optional: true
-  belongs_to :event
+  belongs_to :event_slot
+  #belongs_to
   
   IDENTITY_RELATIONSHIP = :all # could also be :all
   IDENTITY_COLUMNS = [:name, :user_id]
+  
+  acts_as_votable
+  
 
   include FindOrCreate
   #include ShareCodeConcern
@@ -28,12 +32,15 @@ class Speech < ApplicationRecord
     slug
   end
   
-  def presentation_title
+  def date
     if self.event
       date = self.event.date_start.to_s
     else self
       date =self.created_at.to_s
     end
+  end
+  
+  def presentation_title
     "#{date} : #{self.name} by #{self.speaker.full_name}"
   end
   

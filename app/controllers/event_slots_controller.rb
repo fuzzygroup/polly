@@ -17,6 +17,7 @@ class EventSlotsController < ApplicationController
 
   # GET /event_slots/1/edit
   def edit
+    @speeches = Speech.all
   end
 
   # POST /event_slots or /event_slots.json
@@ -65,6 +66,6 @@ class EventSlotsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_slot_params
-      params.expect(event_slot: [ :name, :event_id, :event_slot_type_id, :speaker_id, :duration, :computed_start_at, :body ])
+      params.expect(event_slot: [ :name, :event_id, :event_slot_type_id, :speaker_id, :duration, :computed_start_at, :body, :speech_id])
     end
 end

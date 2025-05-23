@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  resources :speeches
+  resources :speeches do
+    member do
+      #put 'upvote'
+      #put 'downvote'
+      post 'upvote'
+      post 'downvote'
+    end
+    
+  end
   resources :organization_roles
   resources :event_tasks
   resources :offline_promotion_locations

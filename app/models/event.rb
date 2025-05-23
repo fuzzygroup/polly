@@ -13,13 +13,20 @@ class Event < ApplicationRecord
   include FindOrCreate
   
   scope :active, -> { where(active: true) }
-  #scope :non_buffer_slots, -> { where }
+  #scope :past, -> { where(["date_start <= ?", Date.today])}
+  #scope :past, -> { where('date_start < ?', Time.current) }
+  #scope :non_buffer_slots, -> { where }  
   
   #after_create :set_share_code
   
   before_validation :generate_slug, on: :create
 
   validates :slug, presence: true, uniqueness: true
+  
+  def calculate_times
+    buffer_event_slot_type = EventSlotType.where(name: 'Buffer').first
+    self.event_slots.where(["event_slot_type <> ?", buffer_event_slot_type.id]).count
+  end
 
   def to_param
     slug

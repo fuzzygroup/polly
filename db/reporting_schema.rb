@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_22_082343) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_23_090928) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -168,10 +168,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_22_082343) do
     t.datetime "updated_at", null: false
     t.bigint "musician_id"
     t.integer "event_slot_order"
+    t.bigint "speech_id"
     t.index ["event_id"], name: "index_event_slots_on_event_id"
     t.index ["event_slot_type_id"], name: "index_event_slots_on_event_slot_type_id"
     t.index ["musician_id"], name: "index_event_slots_on_musician_id"
     t.index ["speaker_id"], name: "index_event_slots_on_speaker_id"
+    t.index ["speech_id"], name: "index_event_slots_on_speech_id"
   end
 
   create_table "event_tasks", force: :cascade do |t|
@@ -626,6 +628,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_22_082343) do
   add_foreign_key "event_slots", "events"
   add_foreign_key "event_slots", "musicians"
   add_foreign_key "event_slots", "speakers"
+  add_foreign_key "event_slots", "speeches"
   add_foreign_key "event_tasks", "events"
   add_foreign_key "event_tasks", "organizations"
   add_foreign_key "event_tasks", "teams"

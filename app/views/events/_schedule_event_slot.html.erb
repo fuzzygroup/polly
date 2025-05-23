@@ -3,7 +3,7 @@
       <td scope="row"><%= event_slot.id%></th>
         <% end %>
       <td class="text-center"><%= event_slot.event_slot_type.name %></td>
-      <td><%= event_slot.name %></td>      
+      <td><%= link_to_speech_if_exists(event_slot)%></td>      
       <td class="text-center"><%= event_slot.duration %></td>
 
       <td class="text-center"><%#= event_slot.time_start.strftime("%H:%M") %></td>
