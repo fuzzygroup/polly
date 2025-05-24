@@ -6,10 +6,10 @@
 
 <div id="speakers">
   <% @speakers.each do |speaker| %>
-    <%= render speaker %>
-    <p>
-      <%= link_to "Show this speaker", speaker %>
-    </p>
+    <%#= render speaker %>
+    <ul>
+      <li><%= link_to speaker.full_name, speaker %></li>
+    </ul>
   <% end %>
 </div>
 

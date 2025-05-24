@@ -21,7 +21,9 @@ namespace :speakers do
       user_id: User.scott.id,
       #contact_id: Contact.jamie_flemington.id,
       notes: "The Scott",
-      identifier: "scott_johnson"
+      identifier: "scott_johnson",
+      is_me: true,
+      bio: "Scott Johnson is the State Organizer for 50501 Indiana.  A software engineer with almost 40 years in tech, a writer with multiple published books, a father, a blogger and more, Scott's call sign is Roomba indicating his almost constant motion."
     )
     
     speaker_structs << 
@@ -32,7 +34,9 @@ namespace :speakers do
       user_id: User.resisting_oracle.id,
       #contact_id: Contact.jamie_flemington.id,
       notes: "The One, The Only",
-      identifier: "resisting_oracle"
+      identifier: "resisting_oracle",
+      is_me: true,
+      bio: "Alisa Advani Brown is ... The Resisting Oracle.  She is 50501's heavy hitter in terms of speakers being both constantly in demand and constantly brilliant.  Her speaking has now extended beyond 50501 to Indiana's Earth Day."
     )
     
     speaker_structs << 
@@ -43,7 +47,9 @@ namespace :speakers do
       user_id: User.max_haddad.id,
       #contact_id: Contact.jamie_flemington.id,
       notes: "",
-      identifier: "max_haddad"
+      identifier: "max_haddad",
+      is_me: true,
+      bio: ""
     )
     
     speaker_structs << 
@@ -52,9 +58,11 @@ namespace :speakers do
       url: nil,
       organization_id: Organization.indiana50501.id, 
       user_id: User.alex_hardy.id,
-      #contact_id: Contact.jamie_flemington.id,
       notes: "",
-      identifier: "captain_crunch"
+      identifier: "captain_crunch",
+      is_me: true,
+      bio: "I'm an Army veteran (25Q) who served from 2005 to 2010, including two deployments to Iraq during Operation Iraqi Freedom (OIF 5 & 7). After the military, I worked on the frontlines of the COVID-19 pandemic as a janitor at the Orlando VA Hospital. Over the years, I've worn many hats—writer, game designer, stand-up comedian, cocktail server, janitor, and Army IT specialist—gaining a diverse range of experiences that shape my perspective.
+My commitment to understanding global issues has taken me abroad, including time in China studying water quality and three weeks in Bogotá, Colombia, examining the peace process between the Colombian government and FARC. Now, I'm focused on bringing long-overdue progressive policies to Indiana—policies rooted in justice, equity, and dignity. My mission is simple: More Rights, Not Less."
     )
     
 
@@ -66,7 +74,9 @@ namespace :speakers do
       user_id: User.scott.id,
       #contact_id: Contact.jamie_flemington.id,
       notes: "Wants to speak at May 25 on Trump's executive orders and Abortion Rights; suffered from an Ectopic pregnancy and would likely be DEAD under today's laws",
-      identifier: "jamie_flemington"
+      identifier: "jamie_flemington",
+      is_me: false,
+      bio: ""
     )
     
 
@@ -77,7 +87,9 @@ namespace :speakers do
       url: "https://www.aarp.org",
       user_id: User.scott.id,
       notes: "",
-      identifier: "aarp"
+      identifier: "aarp",
+      is_me: false,
+      bio: ""
     )
     
     speaker_structs << 
@@ -88,7 +100,9 @@ namespace :speakers do
       user_id: User.scott.id,
       #contact_id: ContactCard.jamie_flemington.id,
       notes: "Maybe get her to talk about Trump using executive orders to go after law firms",
-      identifier: "destiny_wells"
+      identifier: "destiny_wells",
+      is_me: false,
+      bio: ""
     )
     
     speaker_structs << 
@@ -100,7 +114,9 @@ namespace :speakers do
       user_id: User.scott.id,
       #contact_id: nil,
       notes: "This is a speaker still to be found",
-      identifier: "tbd_speaker"
+      identifier: "tbd_speaker",
+      is_me: false,
+      bio: ""
     )
     
     speaker_structs << 
@@ -112,7 +128,9 @@ namespace :speakers do
       user_id: User.scott.id,
       #contact_id: nil,
       notes: "This is an Open Mic block",
-      identifier: "open_mic"
+      identifier: "open_mic",
+      is_me: false,
+      bio: ""
     )
     
     speaker_structs << 
@@ -124,7 +142,9 @@ namespace :speakers do
       user_id: User.amyk.id,
       #contact_id: nil,
       notes: "Retired Colonel, History Teacher - Introduced by Amy",
-      identifier: "david_hoffman"
+      identifier: "david_hoffman",
+      is_me: false,
+      bio: ""
     )
     
     speaker_structs << 
@@ -136,7 +156,9 @@ namespace :speakers do
       user_id: User.brian.id,
       #contact_id: nil,
       notes: nil,
-      identifier: "brian_jonasen"
+      identifier: "brian_jonasen",
+      is_me: true,
+      bio: ""
     )
     
     speaker_structs << 
@@ -148,7 +170,9 @@ namespace :speakers do
       user_id: User.amyk.id,
       #contact_id: nil,
       notes: nil,
-      identifier: "amy_k"
+      identifier: "amy_k",
+      is_me: true,
+      bio: ""
     )
     
     speaker_structs << 
@@ -160,7 +184,9 @@ namespace :speakers do
       user_id: User.brian.id,
       #contact_id: nil,
       notes: "State Representative",
-      identifier: "renee_turner_pack"
+      identifier: "renee_turner_pack",
+      is_me: false,
+      bio: ""
     )
     
     speaker_structs << 
@@ -172,7 +198,9 @@ namespace :speakers do
       user_id: User.brian.id,
       #contact_id: nil,
       notes: nil,
-      identifier: "jackson_franklin"
+      identifier: "jackson_franklin",
+      is_me: false,
+      bio: ""
     )
     
     speaker_structs << 
@@ -184,7 +212,9 @@ namespace :speakers do
       user_id: User.brian.id,
       #contact_id: nil,
       notes: nil,
-      identifier: "connie_karras"
+      identifier: "connie_karras",
+      is_me: false,
+      bio: ""
     )
     
     speaker_structs << 
@@ -196,7 +226,9 @@ namespace :speakers do
       user_id: User.angie_foreman.id,
       #contact_id: nil,
       notes: nil,
-      identifier: "josh_lowry"
+      identifier: "josh_lowry",
+      is_me: false,
+      bio: ""
     )
     
     speaker_structs << 
@@ -205,10 +237,12 @@ namespace :speakers do
       url: nil,
       organization_id: Organization.indiana50501.id, 
       pronouns: nil,
-      user_id: User.scott.id,
+      user_id: User.amyk.id,
       #contact_id: nil,
       notes: nil,
-      identifier: "j_d_ford"
+      identifier: "j_d_ford",
+      is_me: false,
+      bio: ""
     )
     
     speaker_structs << 
@@ -220,7 +254,9 @@ namespace :speakers do
       user_id: User.scott.id,
       #contact_id: nil,
       notes: nil,
-      identifier: "TBD"
+      identifier: "TBD",
+      is_me: false,
+      bio: ""
     )
     
     speaker_structs << 
@@ -232,7 +268,9 @@ namespace :speakers do
       user_id: User.scott.id,
       #contact_id: nil,
       notes: nil,
-      identifier: "open_mic"
+      identifier: "open_mic",
+      is_me: false,
+      bio: ""
     )
     
     speaker_structs << 
@@ -244,7 +282,23 @@ namespace :speakers do
       user_id: User.scott.id,
       #contact_id: nil,
       notes: "Sally Alsmeyer is a 16 year old poet who attends the 50501 protests and feels strongly about the direction of our country",
-      identifier: "sally"
+      identifier: "sally",
+      is_me: false,
+      bio: ""
+    )
+    
+    speaker_structs << 
+    OpenStruct.new(
+      name: "Bill Smith",
+      url: nil,
+      organization_id: Organization.indiana50501.id, 
+      pronouns: nil,
+      user_id: User.scott.id,
+      #contact_id: nil,
+      notes: "Bill Smith is 50501's Legal Observer.  He attends every protest and is ever present to make sure that if Police get involved, the law is followed.  Bill is a local Indianapolis resident engaged in the fight against Fascism.",
+      identifier: "bill_smith",
+      is_me: false,
+      bio: ""
     )
     
     

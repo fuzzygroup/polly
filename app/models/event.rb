@@ -44,7 +44,7 @@ class Event < ApplicationRecord
         last_slot = slot
       else
         puts "in else slot.id = #{slot.id} -- value = #{last_slot.computed_start_at + slot.duration}"
-        slot.update_attribute(:computed_start_at, last_slot.computed_start_at + last_slot.duration.minutes + Event::BUFFER_TIME)
+        slot.update_attribute(:computed_start_at, last_slot.computed_start_at + last_slot.duration.minutes + Event::BUFFER_TIME.minutes)
         last_slot = slot
       end
     end
@@ -53,6 +53,9 @@ class Event < ApplicationRecord
   def to_param
     slug
   end
+  
+  
+  
   
   # def non_buffer_slots
   #   self.event_slots.where()
@@ -70,6 +73,18 @@ class Event < ApplicationRecord
     buffer_type = EventSlotType.buffer
     self.event_slots.where(["event_slot_type_id <> ?", buffer_type.id]).order("event_slot_order ASC, id ASC")
   end
+  
+  def speakers
+    speakers = []
+    self.non_buffer_slots.each do |non_buffer_slot|
+      if non_buffer_slot.has_speaker?
+        speakers << non_buffer_slot.speaker
+      end
+    end
+    speakers.uniq.sort_by(&:name)
+    #speakers.uniq.sort_by {|obj| obj.name}
+  end
+  
   
   def order_slots
     slot_ctr = 0

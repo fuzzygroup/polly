@@ -6,6 +6,10 @@ module ApplicationHelper
     end
   end
   
+  def show_kst(time_obj)
+    time_obj.strftime("%I:%M %p")
+  end
+  
   def add_link_bar_spacer
     "&nbsp;&nbsp;&nbsp;".html_safe
   end

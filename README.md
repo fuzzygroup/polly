@@ -48,6 +48,11 @@ Follow the steps below to set up the project locally:
    Install Bootstrap 5 and other JavaScript packages using Yarn:
 
    ```bash
+   nvm use 22 
+   ```
+
+
+   ```bash
    yarn install
    ```
 

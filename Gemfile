@@ -84,5 +84,5 @@ gem "meilisearch-rails"
 
 gem 'mailgun-ruby'
 
-gem 'rmagick'
-gem 'rqrcode'
+# gem 'rmagick'
+# gem 'rqrcode'

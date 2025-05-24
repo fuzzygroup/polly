@@ -8,12 +8,14 @@
       <th scope="col" class="text-center">Name</th>
       <th scope="col" class="text-center">How Long?</th>
       <th scope="col" class="text-center">Start</th>
-      <th scope="col" class="text-center">End</th>     
-      <%  if 3 == 4 %> 
-      <th scope="col" class="text-center">Confirmed</th>   
+      <%  if current_user && current_user.is_admin? %> 
+        <th scope="col" class="text-center">Confirmed</th>   
       <% end %>
       <% if current_user && current_user.has_editing_privileges? %>   
-        <th scope="col" class="text-center">Edit</th>      
+        <th scope="col" class="text-center"></th>      
+      <% end %>
+      <% if current_user && current_user.has_editing_privileges? %>   
+        <th scope="col" class="text-center"></th>      
       <% end %>
       
     </tr>

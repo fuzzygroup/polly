@@ -4,7 +4,7 @@ class SpeakersController < ApplicationController
 
   # GET /speakers or /speakers.json
   def index
-    @speakers = Speaker.all
+    @speakers = Speaker.all.order("name ASC")
   end
 
   # GET /speakers/1 or /speakers/1.json

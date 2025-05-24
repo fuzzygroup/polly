@@ -1,0 +1,13 @@
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<% if event.event_slots.any? %>
+<div id="events">
+  <h2>Speaker Info for <%=event.name%></h2>
+  <% event.speakers.each do |speaker| %>
+    <ul>
+      <h3>Bio for <%=speaker.full_name%></h3>
+      <%= speaker.bio %>
+    </ul>
+  <% end %>
+</div>
+<% end %>

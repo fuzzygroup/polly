@@ -9,7 +9,9 @@ class EventSlot < ApplicationRecord
   has_one :confirmation
   #has_one :speech
   
-  
+  def has_speaker?
+    return true if self.event_slot_type_id == EventSlotType.speech.id
+  end
   
   def speech
     Speech.where(id: self.speech_id).first

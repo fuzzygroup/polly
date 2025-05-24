@@ -296,8 +296,11 @@ Together, we’re building momentum for a greener, fairer future — and it star
     #event.add_buffer
     event.add_speaker("Resisting Oracle on Defending the Constitution from Its Abusers", Speaker.resisting_oracle,15)
     #event.add_buffer
-    s = Speaker.where(name: "Sally Alsmeyer").first
-    event.add_speaker("Sally Alsmeyer - 50501's Youngest Poet Speaks Out",s, 5)
+    # s = Speaker.where(name: "Sally Alsmeyer").first
+    # event.add_speaker("Sally Alsmeyer - 50501's Youngest Poet Speaks Out",s, 5)
+
+    s = Speaker.where(name: "Bill Smith").first
+    event.add_speaker("50501's Legal Observer Tackles the Executive Orders on Mental Health",s, 5)
     # event.add_speaker("Scott Johnson Roams Over the Madness of Exec Orders (if no one else comes to speak)",Speaker.scott_johnson, 10)
     #event.add_buffer
     #event.add_speaker("Jamie Flemington on Abortion", 10)

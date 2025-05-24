@@ -4,8 +4,8 @@ default: &default
   pool: 5
   timeout: 5000
   port: 5432
-  username: pcdbu
-  password: 17Xp860gpSpu8Of0N2WkeHpJ/Kg=
+  # username: pcdbu
+  # password: 17Xp860gpSpu8Of0N2WkeHpJ/Kg=
 
 development:
   primary:

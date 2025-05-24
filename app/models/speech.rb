@@ -33,7 +33,7 @@ class Speech < ApplicationRecord
   end
   
   def date
-    if self.event
+    if 3==4 && self.event
       date = self.event.date_start.to_s
     else self
       date =self.created_at.to_s

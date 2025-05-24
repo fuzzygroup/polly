@@ -1,0 +1,5 @@
+class AddIsMeToSpeakers < ActiveRecord::Migration[8.0]
+  def change
+    add_column :speakers, :is_me, :boolean, default: false
+  end
+end
