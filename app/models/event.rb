@@ -44,7 +44,7 @@ class Event < ApplicationRecord
         last_slot = slot
       else
         puts "in else slot.id = #{slot.id} -- value = #{last_slot.computed_start_at + slot.duration}"
-        slot.update_attribute(:computed_start_at, last_slot.computed_start_at + last_slot.duration.minutes)
+        slot.update_attribute(:computed_start_at, last_slot.computed_start_at + last_slot.duration.minutes + Event::BUFFER_TIME)
         last_slot = slot
       end
     end
